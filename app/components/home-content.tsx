@@ -71,11 +71,13 @@ export default function HomeContent() {
         <div className={`mt-4 mb-8 ${isLoaded && isFirstVisit ? 'animate-fade-in' : isLoaded ? '' : 'opacity-0'}`}>
           <Image
             src="/harshith-anime.png"
-            alt="Harshith Avatar"
+            alt="Harshith Vaddiparthy - AI Product Engineer and Entrepreneur"
             width={160}
             height={160}
             className="rounded-xl w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44"
             style={{ width: 'auto', height: 'auto' }}
+            priority
+            loading="eager"
           />
         </div>
         
@@ -87,15 +89,15 @@ export default function HomeContent() {
         {/* About Section */}
         <div className={`mb-8 text-center max-w-2xl mx-auto px-4 ${isLoaded && isFirstVisit ? 'animate-fade-in' : isLoaded ? '' : 'opacity-0'}`}>
           <h2 className="text-xs sm:text-sm text-zinc-500 leading-relaxed">
-            I'm an AI Product Engineer, currently Head of Growth at{" "}
+            I'm <strong className="text-zinc-400">Harshith Vaddiparthy</strong>, an <strong className="text-zinc-400">AI Product Engineer</strong> and <strong className="text-zinc-400">entrepreneur</strong>, currently <strong className="text-zinc-400">Head of Growth</strong> at{" "}
             <Link
               target="_blank"
               href="https://justpaid.io"
-              className="underline duration-500 hover:text-zinc-300"
+              className="underline duration-500 hover:text-zinc-300 font-medium"
             >
               JustPaid
             </Link>
-            , a YC [W23] company. With a strong technical background and entrepreneurial mindset, I excel at building and scaling AI-powered products that solve real-world problems.
+            , a <strong className="text-zinc-400">Y Combinator W23</strong> company. With expertise in <strong className="text-zinc-400">machine learning</strong>, <strong className="text-zinc-400">product management</strong>, and <strong className="text-zinc-400">growth engineering</strong>, I specialize in building and scaling AI-powered products that solve real-world problems for startups and enterprises.
           </h2>
         </div>
         
@@ -143,7 +145,7 @@ export default function HomeContent() {
           >
             <Image 
               src="/icons8-medium.svg" 
-              alt="Medium" 
+              alt="Harshith Vaddiparthy on Medium - AI and Tech Articles" 
               width={16} 
               height={16} 
               className="h-4 w-4 invert opacity-60 hover:opacity-100"
@@ -156,7 +158,7 @@ export default function HomeContent() {
           >
             <Image 
               src="/forbes-icon.svg" 
-              alt="Forbes Technology Council" 
+              alt="Harshith Vaddiparthy - Forbes Technology Council Member" 
               width={16} 
               height={16} 
               className="h-4 w-4 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
