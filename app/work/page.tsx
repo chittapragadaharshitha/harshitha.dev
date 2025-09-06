@@ -135,7 +135,16 @@ export default async function ProjectsPage() {
               .filter((_, i) => i % 3 === 0)
               .map((exp, index) => (
                 <Card key={`exp-0-${index}`}>
-                  <Link href={exp.title === "Harshith Ventures" ? "/work/harshith-ventures" : "#"}>
+                  <Link href={
+                    exp.title === "Harshith Ventures" ? "/work/harshith-ventures" : 
+                    exp.title === "JustPaid AI (YC W23)" ? "/work/justpaid-ai" :
+                    exp.title === "Metaschool" ? "/work/metaschool" :
+                    exp.title === "ARTIFIN.ai" ? "/work/artifin" :
+                    exp.title === "BasedAF" ? "/work/basedaf" :
+                    exp.title === "Ambassadors Solutions" ? "/work/ambassadors-solutions" :
+                    exp.title === "Love, Death & Robots [Netflix Show]" ? "/work/love-death-robots" :
+                    "#"
+                  }>
                     <article className="relative w-full h-full p-4 sm:p-6 md:p-8 min-h-[200px] md:min-h-[250px]">
                       <h2 className="z-20 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium duration-1000 text-zinc-200 group-hover:text-white font-display">
                         {exp.title}
@@ -158,7 +167,16 @@ export default async function ProjectsPage() {
               .filter((_, i) => i % 3 === 1)
               .map((exp, index) => (
                 <Card key={`exp-1-${index}`}>
-                  <Link href={exp.title === "Harshith Ventures" ? "/work/harshith-ventures" : "#"}>
+                  <Link href={
+                    exp.title === "Harshith Ventures" ? "/work/harshith-ventures" : 
+                    exp.title === "JustPaid AI (YC W23)" ? "/work/justpaid-ai" :
+                    exp.title === "Metaschool" ? "/work/metaschool" :
+                    exp.title === "ARTIFIN.ai" ? "/work/artifin" :
+                    exp.title === "BasedAF" ? "/work/basedaf" :
+                    exp.title === "Ambassadors Solutions" ? "/work/ambassadors-solutions" :
+                    exp.title === "Love, Death & Robots [Netflix Show]" ? "/work/love-death-robots" :
+                    "#"
+                  }>
                     <article className="relative w-full h-full p-4 sm:p-6 md:p-8 min-h-[200px] md:min-h-[250px]">
                       <h2 className="z-20 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium duration-1000 text-zinc-200 group-hover:text-white font-display">
                         {exp.title}
@@ -181,7 +199,16 @@ export default async function ProjectsPage() {
               .filter((_, i) => i % 3 === 2)
               .map((exp, index) => (
                 <Card key={`exp-2-${index}`}>
-                  <Link href={exp.title === "Harshith Ventures" ? "/work/harshith-ventures" : "#"}>
+                  <Link href={
+                    exp.title === "Harshith Ventures" ? "/work/harshith-ventures" : 
+                    exp.title === "JustPaid AI (YC W23)" ? "/work/justpaid-ai" :
+                    exp.title === "Metaschool" ? "/work/metaschool" :
+                    exp.title === "ARTIFIN.ai" ? "/work/artifin" :
+                    exp.title === "BasedAF" ? "/work/basedaf" :
+                    exp.title === "Ambassadors Solutions" ? "/work/ambassadors-solutions" :
+                    exp.title === "Love, Death & Robots [Netflix Show]" ? "/work/love-death-robots" :
+                    "#"
+                  }>
                     <article className="relative w-full h-full p-4 sm:p-6 md:p-8 min-h-[200px] md:min-h-[250px]">
                       <h2 className="z-20 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium duration-1000 text-zinc-200 group-hover:text-white font-display">
                         {exp.title}
