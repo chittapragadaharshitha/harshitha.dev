@@ -3,9 +3,6 @@ const nextConfig = {
 	pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 	compress: true,
 	poweredByHeader: false,
-	experimental: {
-		optimizeCss: true,
-	},
 	images: {
 		formats: ['image/webp', 'image/avif'],
 		minimumCacheTTL: 60,
