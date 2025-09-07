@@ -89,7 +89,7 @@ export default function HomeContent() {
         {/* About Section */}
         <div className={`mb-8 text-center max-w-2xl mx-auto px-4 ${isLoaded && isFirstVisit ? 'animate-fade-in' : isLoaded ? '' : 'opacity-0'}`}>
           <h2 className="text-xs sm:text-sm text-zinc-500 leading-relaxed">
-            I'm <strong className="text-zinc-400">Harshith Vaddiparthy</strong>, an <strong className="text-zinc-400">AI Product Engineer</strong> and <strong className="text-zinc-400">entrepreneur</strong>, currently <strong className="text-zinc-400">Head of Growth</strong> at{" "}
+            I'm Harshith Vaddiparthy, an AI Product Engineer and entrepreneur, currently Head of Growth at{" "}
             <Link
               target="_blank"
               href="https://justpaid.io"
@@ -97,7 +97,7 @@ export default function HomeContent() {
             >
               JustPaid
             </Link>
-            , a <strong className="text-zinc-400">Y Combinator W23</strong> company. With expertise in <strong className="text-zinc-400">machine learning</strong>, <strong className="text-zinc-400">product management</strong>, and <strong className="text-zinc-400">growth engineering</strong>, I specialize in building and scaling AI-powered products that solve real-world problems for startups and enterprises.
+            , a Y Combinator W23 company. With expertise in machine learning, product management, and growth engineering, I specialize in building and scaling AI-powered products that solve real-world problems for startups and enterprises.
           </h2>
         </div>
         
