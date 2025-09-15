@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://harshith.com/og.png",
-        width: 1920,
-        height: 1080,
+        width: 478,
+        height: 466,
         alt: "Harshith Vaddiparthy - AI Product Engineer & Entrepreneur",
       },
     ],
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
       {
         url: "/favicon.ico",
         sizes: "32x32",
-        type: "image/x-icon",
+        type: "image/png",
       },
       {
         url: "/favicon.png",
