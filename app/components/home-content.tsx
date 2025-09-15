@@ -5,12 +5,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Particles from "./particles";
 import { Navigation } from "./nav";
-import { FaGithub, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaYoutube, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiGmail, SiGooglescholar } from "react-icons/si";
 import { BsCalendarCheck } from "react-icons/bs";
 import { useFirstVisit } from "../hooks/useFirstVisit";
 import { Menu, X } from "lucide-react";
+import WhatsAppModal from "./whatsapp-modal";
 
 const navigation = [
   { name: "Story", href: "/story" },
@@ -24,6 +25,7 @@ const navigation = [
 export default function HomeContent() {
   const { isFirstVisit, isLoaded } = useFirstVisit();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isWhatsAppModalOpen, setIsWhatsAppModalOpen] = useState(false);
 
   // Always render the same structure to avoid hydration mismatch
   // Use opacity and visibility to control what shows
@@ -124,6 +126,12 @@ export default function HomeContent() {
           >
             <FaLinkedinIn className="h-4 w-4" />
           </Link>
+          <button
+            onClick={() => setIsWhatsAppModalOpen(true)}
+            className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+          >
+            <FaWhatsapp className="h-4 w-4" />
+          </button>
           <Link
             href="https://youtube.com/@harshithvaddiparthy"
             target="_blank"
@@ -192,6 +200,12 @@ export default function HomeContent() {
           <Navigation />
         </div>
       </div>
+
+      {/* WhatsApp Modal */}
+      <WhatsAppModal 
+        isOpen={isWhatsAppModalOpen} 
+        onClose={() => setIsWhatsAppModalOpen(false)} 
+      />
     </div>
   );
 }
