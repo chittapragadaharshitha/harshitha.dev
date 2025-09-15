@@ -5,66 +5,27 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Particles from "./particles";
 import { Navigation } from "./nav";
+import { MobileNav } from "./mobile-nav";
 import { FaGithub, FaLinkedinIn, FaYoutube, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiGmail, SiGooglescholar } from "react-icons/si";
 import { BsCalendarCheck } from "react-icons/bs";
 import { useFirstVisit } from "../hooks/useFirstVisit";
-import { Menu, X } from "lucide-react";
 import WhatsAppModal from "./whatsapp-modal";
 
-const navigation = [
-  { name: "Story", href: "/story" },
-  { name: "Work", href: "/work" },
-  { name: "Media", href: "/media" },
-  { name: "Essays", href: "/essays" },
-  { name: "Holdings", href: "https://harshith.vc", external: true },
-  { name: "Meet", href: "/meet" },
-];
+// Navigation items are now handled in the MobileNav component
 
 export default function HomeContent() {
   const { isFirstVisit, isLoaded } = useFirstVisit();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isWhatsAppModalOpen, setIsWhatsAppModalOpen] = useState(false);
 
   // Always render the same structure to avoid hydration mismatch
   // Use opacity and visibility to control what shows
 
   return (
-    <div className="flex flex-col items-center justify-center w-screen min-h-screen overflow-x-hidden bg-gradient-to-tl from-zinc-950/50 from-0% via-zinc-600/20 via-50% to-zinc-950/50 to-100%">
-      {/* Mobile Hamburger Menu */}
-      <div className="md:hidden fixed top-4 right-4 z-50">
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="duration-200 text-zinc-400 hover:text-zinc-100"
-        >
-          {isMobileMenuOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu Dropdown */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden fixed top-14 right-4 z-50 bg-zinc-900/95 backdrop-blur rounded-lg border border-zinc-800">
-          <div className="px-4 py-3 flex flex-col gap-2 text-sm">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noopener noreferrer" : undefined}
-                className="duration-200 text-zinc-400 hover:text-zinc-100 py-1.5"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
+    <div className="flex flex-col items-center justify-center w-full min-h-screen min-h-[100dvh] overflow-x-hidden bg-gradient-to-tl from-zinc-950/50 from-0% via-zinc-600/20 via-50% to-zinc-950/50 to-100%">
+      {/* New Mobile Navigation */}
+      <MobileNav showLogo={false} />
       
       {/* Main Content Container - Properly centered with uniform spacing */}
       <div className="flex flex-col items-center px-6 pt-16 pb-8 max-w-4xl mx-auto">
@@ -104,86 +65,179 @@ export default function HomeContent() {
         </div>
         
         {/* Social Media Icons */}
-        <div className={`mt-4 flex items-center justify-center gap-2 flex-wrap ${isLoaded && isFirstVisit ? 'animate-fade-in' : isLoaded ? '' : 'opacity-0'}`}>
-          <Link
-            href="https://github.com/harshith-vaddiparthy"
-            target="_blank"
-            className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-          >
-            <FaGithub className="h-4 w-4" />
-          </Link>
-          <Link
-            href="https://twitter.com/harshithio"
-            target="_blank"
-            className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-          >
-            <FaXTwitter className="h-4 w-4" />
-          </Link>
-          <Link
-            href="https://linkedin.com/in/harshith-vaddiparthy"
-            target="_blank"
-            className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-          >
-            <FaLinkedinIn className="h-4 w-4" />
-          </Link>
-          <button
-            onClick={() => setIsWhatsAppModalOpen(true)}
-            className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-          >
-            <FaWhatsapp className="h-4 w-4" />
-          </button>
-          <Link
-            href="https://youtube.com/@harshithvaddiparthy"
-            target="_blank"
-            className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-          >
-            <FaYoutube className="h-4 w-4" />
-          </Link>
-          <Link
-            href="https://scholar.google.com/citations?user=W-bXoUMAAAAJ&hl=en"
-            target="_blank"
-            className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-          >
-            <SiGooglescholar className="h-4 w-4" />
-          </Link>
-          <Link
-            href="https://harshith-vaddiparthy.medium.com"
-            target="_blank"
-            className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-          >
-            <Image 
-              src="/icons8-medium.svg" 
-              alt="Harshith Vaddiparthy on Medium - AI and Tech Articles" 
-              width={16} 
-              height={16} 
-              className="h-4 w-4 invert opacity-60 hover:opacity-100"
-            />
-          </Link>
-          <Link
-            href="https://councils.forbes.com/profile/Harshith-Vaddiparthy-Head-Growth-JustPaid/5747f601-ca29-4255-a79b-3518154819a7"
-            target="_blank"
-            className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-          >
-            <Image 
-              src="/forbes-icon.svg" 
-              alt="Harshith Vaddiparthy - Forbes Technology Council Member" 
-              width={16} 
-              height={16} 
-              className="h-4 w-4 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
-            />
-          </Link>
-          <Link
-            href="mailto:hi@harshith.io"
-            className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-          >
-            <SiGmail className="h-4 w-4" />
-          </Link>
-          <Link
-            href="/meet"
-            className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-          >
-            <BsCalendarCheck className="h-4 w-4" />
-          </Link>
+        <div className={`mt-4 ${isLoaded && isFirstVisit ? 'animate-fade-in' : isLoaded ? '' : 'opacity-0'}`}>
+          {/* Desktop: Single row */}
+          <div className="hidden md:flex items-center justify-center gap-2 flex-wrap">
+            <Link
+              href="https://github.com/harshith-vaddiparthy"
+              target="_blank"
+              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+            >
+              <FaGithub className="h-4 w-4" />
+            </Link>
+            <Link
+              href="https://twitter.com/harshithio"
+              target="_blank"
+              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+            >
+              <FaXTwitter className="h-4 w-4" />
+            </Link>
+            <Link
+              href="https://linkedin.com/in/harshith-vaddiparthy"
+              target="_blank"
+              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+            >
+              <FaLinkedinIn className="h-4 w-4" />
+            </Link>
+            <button
+              onClick={() => setIsWhatsAppModalOpen(true)}
+              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+            >
+              <FaWhatsapp className="h-4 w-4" />
+            </button>
+            <Link
+              href="https://youtube.com/@harshithvaddiparthy"
+              target="_blank"
+              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+            >
+              <FaYoutube className="h-4 w-4" />
+            </Link>
+            <Link
+              href="https://scholar.google.com/citations?user=W-bXoUMAAAAJ&hl=en"
+              target="_blank"
+              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+            >
+              <SiGooglescholar className="h-4 w-4" />
+            </Link>
+            <Link
+              href="https://harshith-vaddiparthy.medium.com"
+              target="_blank"
+              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+            >
+              <Image 
+                src="/icons8-medium.svg" 
+                alt="Harshith Vaddiparthy on Medium - AI and Tech Articles" 
+                width={16} 
+                height={16} 
+                className="h-4 w-4 invert opacity-60 hover:opacity-100"
+              />
+            </Link>
+            <Link
+              href="https://councils.forbes.com/profile/Harshith-Vaddiparthy-Head-Growth-JustPaid/5747f601-ca29-4255-a79b-3518154819a7"
+              target="_blank"
+              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+            >
+              <Image 
+                src="/forbes-icon.svg" 
+                alt="Harshith Vaddiparthy - Forbes Technology Council Member" 
+                width={16} 
+                height={16} 
+                className="h-4 w-4 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
+              />
+            </Link>
+            <Link
+              href="mailto:hi@harshith.io"
+              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+            >
+              <SiGmail className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/meet"
+              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+            >
+              <BsCalendarCheck className="h-4 w-4" />
+            </Link>
+          </div>
+
+          {/* Mobile: Two rows of 5 icons each */}
+          <div className="flex flex-col items-center justify-center gap-3 md:hidden">
+            {/* First Row - 5 Icons */}
+            <div className="flex items-center justify-center gap-2">
+              <Link
+                href="https://github.com/harshith-vaddiparthy"
+                target="_blank"
+                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+              >
+                <FaGithub className="h-4 w-4" />
+              </Link>
+              <Link
+                href="https://twitter.com/harshithio"
+                target="_blank"
+                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+              >
+                <FaXTwitter className="h-4 w-4" />
+              </Link>
+              <Link
+                href="https://linkedin.com/in/harshith-vaddiparthy"
+                target="_blank"
+                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+              >
+                <FaLinkedinIn className="h-4 w-4" />
+              </Link>
+              <button
+                onClick={() => setIsWhatsAppModalOpen(true)}
+                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+              >
+                <FaWhatsapp className="h-4 w-4" />
+              </button>
+              <Link
+                href="https://youtube.com/@harshithvaddiparthy"
+                target="_blank"
+                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+              >
+                <FaYoutube className="h-4 w-4" />
+              </Link>
+            </div>
+            
+            {/* Second Row - 5 Icons */}
+            <div className="flex items-center justify-center gap-2">
+              <Link
+                href="https://scholar.google.com/citations?user=W-bXoUMAAAAJ&hl=en"
+                target="_blank"
+                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+              >
+                <SiGooglescholar className="h-4 w-4" />
+              </Link>
+              <Link
+                href="https://harshith-vaddiparthy.medium.com"
+                target="_blank"
+                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+              >
+                <Image 
+                  src="/icons8-medium.svg" 
+                  alt="Harshith Vaddiparthy on Medium - AI and Tech Articles" 
+                  width={16} 
+                  height={16} 
+                  className="h-4 w-4 invert opacity-60 hover:opacity-100"
+                />
+              </Link>
+              <Link
+                href="https://councils.forbes.com/profile/Harshith-Vaddiparthy-Head-Growth-JustPaid/5747f601-ca29-4255-a79b-3518154819a7"
+                target="_blank"
+                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+              >
+                <Image 
+                  src="/forbes-icon.svg" 
+                  alt="Harshith Vaddiparthy - Forbes Technology Council Member" 
+                  width={16} 
+                  height={16} 
+                  className="h-4 w-4 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
+                />
+              </Link>
+              <Link
+                href="mailto:hi@harshith.io"
+                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+              >
+                <SiGmail className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/meet"
+                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+              >
+                <BsCalendarCheck className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
