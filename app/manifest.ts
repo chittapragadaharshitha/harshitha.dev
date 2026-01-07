@@ -2,8 +2,8 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Harshith Vaddiparthy - AI Product Engineer & Entrepreneur',
-    short_name: 'Harshith',
+    name: 'Harshitha Vaddiparthy - AI Product Engineer & Entrepreneur',
+    short_name: 'Harshitha',
     description: 'AI Product Engineer and entrepreneur, Head of Growth at JustPaid (YC W23). Expert in building and scaling AI-powered products.',
     start_url: '/',
     display: 'standalone',

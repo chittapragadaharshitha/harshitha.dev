@@ -9,7 +9,7 @@ import Particles from "../components/particles";
 
 const workExperience = [
   {
-    title: "Harshith Ventures",
+    title: "Harshitha Ventures",
     role: "Building & Investing",
     period: "Jan 2023 - Present",
     description: "Personal holding company focused on building and investing in transformative technologies at the intersection of AI, blockchain, and human progress. Portfolio of innovative projects and strategic investments.",
@@ -136,7 +136,7 @@ export default async function ProjectsPage() {
               .map((exp, index) => (
                 <Card key={`exp-0-${index}`}>
                   <Link href={
-                    exp.title === "Harshith Ventures" ? "/work/harshith-ventures" : 
+                    exp.title === "Harshitha Ventures" ? "/work/harshith-ventures" : 
                     exp.title === "JustPaid AI (YC W23)" ? "/work/justpaid-ai" :
                     exp.title === "Metaschool" ? "/work/metaschool" :
                     exp.title === "ARTIFIN.ai" ? "/work/artifin" :
@@ -168,7 +168,7 @@ export default async function ProjectsPage() {
               .map((exp, index) => (
                 <Card key={`exp-1-${index}`}>
                   <Link href={
-                    exp.title === "Harshith Ventures" ? "/work/harshith-ventures" : 
+                    exp.title === "Harshitha Ventures" ? "/work/harshith-ventures" : 
                     exp.title === "JustPaid AI (YC W23)" ? "/work/justpaid-ai" :
                     exp.title === "Metaschool" ? "/work/metaschool" :
                     exp.title === "ARTIFIN.ai" ? "/work/artifin" :
@@ -200,7 +200,7 @@ export default async function ProjectsPage() {
               .map((exp, index) => (
                 <Card key={`exp-2-${index}`}>
                   <Link href={
-                    exp.title === "Harshith Ventures" ? "/work/harshith-ventures" : 
+                    exp.title === "Harshitha Ventures" ? "/work/harshith-ventures" : 
                     exp.title === "JustPaid AI (YC W23)" ? "/work/justpaid-ai" :
                     exp.title === "Metaschool" ? "/work/metaschool" :
                     exp.title === "ARTIFIN.ai" ? "/work/artifin" :

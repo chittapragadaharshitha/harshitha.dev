@@ -8,7 +8,7 @@ import { Card } from "../../components/card";
 import Particles from "../../components/particles";
 import { ArrowLeft, Building2, TrendingUp, Lightbulb, Target, Rocket, Award, Code, Globe, Zap, Users, DollarSign } from "lucide-react";
 
-export default function HarshithVenturesPage() {
+export default function HarshithaVenturesPage() {
   const keyAchievements = [
     "Portfolio of innovative projects and strategic investments",
     "Established partnerships with leading AI research labs",
@@ -72,7 +72,7 @@ export default function HarshithVenturesPage() {
           <div className="flex items-start justify-between flex-wrap gap-6 mb-8">
             <div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-100 mb-4 font-display">
-                Harshith Ventures
+                Harshitha Ventures
               </h1>
               <p className="text-xl text-zinc-400 font-light">Building & Investing</p>
             </div>
