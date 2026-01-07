@@ -28,11 +28,11 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 				<header ref={ref}>
 					<div className="fixed inset-x-0 top-0 z-50 justify-center pt-4 md:pt-6 hidden md:flex">
 						<nav className="flex w-fit items-center gap-3.5 md:gap-5 rounded-lg p-2 text-xs md:text-sm font-light pointer-events-auto shadow-lg bg-zinc-900/60 backdrop-blur-md border border-zinc-800/50 text-zinc-400">
-							
+
 							{/* Home Link */}
-							<Link 
-								rel="nofollow" 
-								className="block overflow-hidden hover:[&>div]:-translate-y-[20px] pl-2" 
+							<Link
+								rel="nofollow"
+								className="block overflow-hidden hover:[&>div]:-translate-y-[20px] pl-2"
 								href="/"
 							>
 								<div className="h-[20px] will-change-transform transition-transform duration-300">
@@ -42,9 +42,9 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 							</Link>
 
 							{/* Story Link */}
-							<Link 
-								rel="nofollow" 
-								className="block overflow-hidden hover:[&>div]:-translate-y-[20px]" 
+							<Link
+								rel="nofollow"
+								className="block overflow-hidden hover:[&>div]:-translate-y-[20px]"
 								href="/story"
 							>
 								<div className="h-[20px] will-change-transform transition-transform duration-300">
@@ -54,9 +54,9 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 							</Link>
 
 							{/* Work Link */}
-							<Link 
-								rel="nofollow" 
-								className="block overflow-hidden hover:[&>div]:-translate-y-[20px]" 
+							<Link
+								rel="nofollow"
+								className="block overflow-hidden hover:[&>div]:-translate-y-[20px]"
 								href="/work"
 							>
 								<div className="h-[20px] will-change-transform transition-transform duration-300">
@@ -65,22 +65,22 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 								</div>
 							</Link>
 
-							{/* Media Link */}
-							<Link 
-								rel="nofollow" 
-								className="block overflow-hidden hover:[&>div]:-translate-y-[20px]" 
+							{/* Media Link - Hidden */}
+							{/* <Link
+								rel="nofollow"
+								className="block overflow-hidden hover:[&>div]:-translate-y-[20px]"
 								href="/media"
 							>
 								<div className="h-[20px] will-change-transform transition-transform duration-300">
 									<span className="flex h-[20px] items-center">Media</span>
 									<span className="flex h-[20px] items-center text-zinc-50">Media</span>
 								</div>
-							</Link>
+							</Link> */}
 
 							{/* Essays Link */}
-							<Link 
-								rel="nofollow" 
-								className="block overflow-hidden hover:[&>div]:-translate-y-[20px]" 
+							<Link
+								rel="nofollow"
+								className="block overflow-hidden hover:[&>div]:-translate-y-[20px]"
 								href="/essays"
 							>
 								<div className="h-[20px] will-change-transform transition-transform duration-300">
@@ -89,9 +89,9 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 								</div>
 							</Link>
 
-							{/* Holdings Link */}
-							<Link 
-								className="block overflow-hidden hover:[&>div]:-translate-y-[20px]" 
+							{/* Holdings Link - Hidden */}
+							{/* <Link
+								className="block overflow-hidden hover:[&>div]:-translate-y-[20px]"
 								href="https://harshith.vc"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -100,10 +100,10 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 									<span className="flex h-[20px] items-center">Holdings</span>
 									<span className="flex h-[20px] items-center text-zinc-50">Holdings</span>
 								</div>
-							</Link>
+							</Link> */}
 
 							{/* Get in touch Button */}
-							<Link 
+							<Link
 								href="/meet"
 							>
 								<button className="
@@ -113,7 +113,7 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 									before:absolute before:inset-0
 									before:-z-10 before:translate-y-[200%]
 									before:scale-[2.5]
-									before:rounded-[100%] 
+									before:rounded-[100%]
 									before:transition-transform before:duration-1000
 									before:content-['']
 									hover:before:translate-y-[0%]
@@ -138,9 +138,9 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 		<nav className="hidden md:flex w-fit items-center gap-3.5 md:gap-5 rounded-lg p-2 text-xs md:text-sm font-light pointer-events-auto z-20 shadow-lg bg-zinc-900/60 backdrop-blur-md border border-zinc-800/50 text-zinc-400">
 
 			{/* All Original Navigation Links with New Hover Animation */}
-			<Link 
-				rel="nofollow" 
-				className="block overflow-hidden hover:[&>div]:-translate-y-[20px] pl-2" 
+			<Link
+				rel="nofollow"
+				className="block overflow-hidden hover:[&>div]:-translate-y-[20px] pl-2"
 				href="/"
 			>
 				<div className="h-[20px] will-change-transform transition-transform duration-300">
@@ -149,9 +149,9 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 				</div>
 			</Link>
 
-			<Link 
-				rel="nofollow" 
-				className="block overflow-hidden hover:[&>div]:-translate-y-[20px]" 
+			<Link
+				rel="nofollow"
+				className="block overflow-hidden hover:[&>div]:-translate-y-[20px]"
 				href="/story"
 			>
 				<div className="h-[20px] will-change-transform transition-transform duration-300">
@@ -160,9 +160,9 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 				</div>
 			</Link>
 
-			<Link 
-				rel="nofollow" 
-				className="block overflow-hidden hover:[&>div]:-translate-y-[20px]" 
+			<Link
+				rel="nofollow"
+				className="block overflow-hidden hover:[&>div]:-translate-y-[20px]"
 				href="/work"
 			>
 				<div className="h-[20px] will-change-transform transition-transform duration-300">
@@ -171,20 +171,21 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 				</div>
 			</Link>
 
-			<Link 
-				rel="nofollow" 
-				className="block overflow-hidden hover:[&>div]:-translate-y-[20px]" 
+			{/* Media Link - Hidden */}
+			{/* <Link
+				rel="nofollow"
+				className="block overflow-hidden hover:[&>div]:-translate-y-[20px]"
 				href="/media"
 			>
 				<div className="h-[20px] will-change-transform transition-transform duration-300">
 					<span className="flex h-[20px] items-center">Media</span>
 					<span className="flex h-[20px] items-center text-zinc-50">Media</span>
 				</div>
-			</Link>
+			</Link> */}
 
-			<Link 
-				rel="nofollow" 
-				className="block overflow-hidden hover:[&>div]:-translate-y-[20px]" 
+			<Link
+				rel="nofollow"
+				className="block overflow-hidden hover:[&>div]:-translate-y-[20px]"
 				href="/essays"
 			>
 				<div className="h-[20px] will-change-transform transition-transform duration-300">
@@ -193,8 +194,9 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 				</div>
 			</Link>
 
-			<Link 
-				className="block overflow-hidden hover:[&>div]:-translate-y-[20px]" 
+			{/* Holdings Link - Hidden */}
+			{/* <Link
+				className="block overflow-hidden hover:[&>div]:-translate-y-[20px]"
 				href="https://harshith.vc"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -203,10 +205,10 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 					<span className="flex h-[20px] items-center">Holdings</span>
 					<span className="flex h-[20px] items-center text-zinc-50">Holdings</span>
 				</div>
-			</Link>
+			</Link> */}
 
 			{/* Get in touch Button with Special Styling */}
-			<Link 
+			<Link
 				href="/meet"
 			>
 				<button className="
@@ -216,7 +218,7 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 					before:absolute before:inset-0
 					before:-z-10 before:translate-y-[200%]
 					before:scale-[2.5]
-					before:rounded-[100%] 
+					before:rounded-[100%]
 					before:transition-transform before:duration-1000
 					before:content-['']
 					hover:before:translate-y-[0%]
