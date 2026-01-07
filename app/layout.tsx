@@ -8,13 +8,13 @@ import StructuredData from "./components/structured-data";
 export const metadata: Metadata = {
   metadataBase: new URL("https://harshith.com"),
   title: {
-    default: "Harshith Vaddiparthy - AI Product Engineer & Entrepreneur",
-    template: "%s | Harshith Vaddiparthy",
+    default: "Harshitha Vaddiparthy - AI Product Engineer & Entrepreneur",
+    template: "%s | Harshitha Vaddiparthy",
   },
-  description: "Harshith Vaddiparthy is an AI Product Engineer and entrepreneur, Head of Growth at JustPaid (YC W23). Expert in building and scaling AI-powered products, machine learning, and growth strategies.",
+  description: "Harshitha Vaddiparthy is an AI Product Engineer and entrepreneur, Head of Growth at JustPaid (YC W23). Expert in building and scaling AI-powered products, machine learning, and growth strategies.",
   keywords: [
-    "Harshith Vaddiparthy",
-    "Harshith",
+    "Harshitha Vaddiparthy",
+    "Harshitha",
     "AI Product Engineer",
     "Machine Learning Engineer",
     "Entrepreneur",
@@ -28,26 +28,26 @@ export const metadata: Metadata = {
     "Artificial Intelligence",
     "Software Engineering"
   ],
-  authors: [{ name: "Harshith Vaddiparthy" }],
-  creator: "Harshith Vaddiparthy",
-  publisher: "Harshith Vaddiparthy",
+  authors: [{ name: "Harshitha Vaddiparthy" }],
+  creator: "Harshitha Vaddiparthy",
+  publisher: "Harshitha Vaddiparthy",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "Harshith Vaddiparthy - AI Product Engineer & Entrepreneur",
+    title: "Harshitha Vaddiparthy - AI Product Engineer & Entrepreneur",
     description:
       "AI Product Engineer and entrepreneur, Head of Growth at JustPaid (YC W23). Expert in building and scaling AI-powered products, machine learning, and growth strategies.",
     url: "https://harshith.com",
-    siteName: "Harshith Vaddiparthy",
+    siteName: "Harshitha Vaddiparthy",
     images: [
       {
         url: "https://harshith.com/og.png",
         width: 478,
         height: 466,
-        alt: "Harshith Vaddiparthy - AI Product Engineer & Entrepreneur",
+        alt: "Harshitha Vaddiparthy - AI Product Engineer & Entrepreneur",
       },
     ],
     locale: "en-US",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harshith Vaddiparthy - AI Product Engineer & Entrepreneur",
+    title: "Harshitha Vaddiparthy - AI Product Engineer & Entrepreneur",
     description: "AI Product Engineer and entrepreneur, Head of Growth at JustPaid (YC W23). Expert in building and scaling AI-powered products.",
     creator: "@harshithio",
     images: ["https://harshith.com/og.png"],

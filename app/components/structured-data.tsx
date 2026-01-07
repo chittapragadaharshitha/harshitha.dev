@@ -5,8 +5,8 @@ export default function StructuredData() {
       {
         "@type": "Person",
         "@id": "https://harshith.com/#person",
-        "name": "Harshith Vaddiparthy",
-        "alternateName": "Harshith",
+        "name": "Harshitha Vaddiparthy",
+        "alternateName": "Harshitha",
         "description": "AI Product Engineer and entrepreneur, Head of Growth at JustPaid (YC W23). Expert in building and scaling AI-powered products, machine learning, and growth strategies.",
         "url": "https://harshith.com",
         "image": {
@@ -49,8 +49,8 @@ export default function StructuredData() {
         "@type": "WebSite",
         "@id": "https://harshith.com/#website",
         "url": "https://harshith.com",
-        "name": "Harshith Vaddiparthy",
-        "description": "Personal website of Harshith Vaddiparthy, AI Product Engineer and entrepreneur",
+        "name": "Harshitha Vaddiparthy",
+        "description": "Personal website of Harshitha Vaddiparthy, AI Product Engineer and entrepreneur",
         "publisher": {
           "@id": "https://harshith.com/#person"
         },
@@ -60,7 +60,7 @@ export default function StructuredData() {
         "@type": "WebPage",
         "@id": "https://harshith.com/#webpage",
         "url": "https://harshith.com",
-        "name": "Harshith Vaddiparthy - AI Product Engineer & Entrepreneur",
+        "name": "Harshitha Vaddiparthy - AI Product Engineer & Entrepreneur",
         "description": "AI Product Engineer and entrepreneur, Head of Growth at JustPaid (YC W23). Expert in building and scaling AI-powered products, machine learning, and growth strategies.",
         "isPartOf": {
           "@id": "https://harshith.com/#website"
@@ -81,7 +81,7 @@ export default function StructuredData() {
       {
         "@type": "Organization",
         "@id": "https://harshith.com/#organization",
-        "name": "Harshith Vaddiparthy",
+        "name": "Harshitha Vaddiparthy",
         "url": "https://harshith.com",
         "logo": {
           "@type": "ImageObject",
