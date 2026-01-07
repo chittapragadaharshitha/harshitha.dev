@@ -9,9 +9,9 @@ const menuItems = [
   { text: "Home", href: "/" },
   { text: "Story", href: "/story" },
   { text: "Work", href: "/work" },
-  { text: "Media", href: "/media" },
+  // { text: "Media", href: "/media" }, // Hidden
   { text: "Essays", href: "/essays" },
-  { text: "Holdings", href: "https://harshith.vc", external: true },
+  // { text: "Holdings", href: "https://harshith.vc", external: true }, // Hidden
 ]
 
 interface MobileNavProps {
