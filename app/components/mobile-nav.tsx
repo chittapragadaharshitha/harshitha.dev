@@ -5,7 +5,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const menuItems = [
+interface MenuItem {
+  text: string;
+  href: string;
+  external?: boolean;
+}
+
+const menuItems: MenuItem[] = [
   { text: "Home", href: "/" },
   { text: "Story", href: "/story" },
   { text: "Work", href: "/work" },
