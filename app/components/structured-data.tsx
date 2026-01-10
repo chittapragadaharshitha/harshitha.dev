@@ -16,9 +16,9 @@ export default function StructuredData() {
           "height": 160
         },
         "sameAs": [
-          "https://github.com/harshith-vaddiparthy",
-          "https://twitter.com/harshithio",
-          "https://linkedin.com/in/harshith-vaddiparthy",
+          "https://github.com/chittapragadaharshitha",
+          "https://x.com/Harshitha_AM",
+          "https://www.linkedin.com/in/chittapragadaharshitha/",
           "https://youtube.com/@harshithvaddiparthy",
           "https://scholar.google.com/citations?user=W-bXoUMAAAAJ&hl=en",
           "https://harshith-vaddiparthy.medium.com",
@@ -43,7 +43,7 @@ export default function StructuredData() {
           "Software Engineering",
           "Entrepreneurship"
         ],
-        "email": "hi@harshith.io"
+        "email": "chittapragadaharshitha@gmail.com"
       },
       {
         "@type": "WebSite",
@@ -93,9 +93,9 @@ export default function StructuredData() {
           "@id": "https://harshith.com/#person"
         },
         "sameAs": [
-          "https://github.com/harshith-vaddiparthy",
-          "https://twitter.com/harshithio",
-          "https://linkedin.com/in/harshith-vaddiparthy"
+          "https://github.com/chittapragadaharshitha",
+          "https://x.com/Harshitha_AM",
+          "https://www.linkedin.com/in/chittapragadaharshitha/"
         ]
       }
     ]
