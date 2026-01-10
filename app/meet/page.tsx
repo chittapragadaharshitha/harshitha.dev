@@ -70,7 +70,7 @@ export default function MeetPage() {
           
           <div className="w-full h-[600px] sm:h-[700px] md:h-[800px]">
             <Cal namespace="15min"
-              calLink="harshithvaddiparthy/15min"
+              calLink="sai-harshitha-fa5zdl/15min"
               style={{width:"100%",height:"100%",overflow:"scroll"}}
               config={{"layout":"month_view"}}
             />

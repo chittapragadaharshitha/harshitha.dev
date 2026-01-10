@@ -71,14 +71,14 @@ export default function HomeContent() {
               <FaGithub className="h-4 w-4" />
             </Link>
             <Link
-              href="https://twitter.com/harshithio"
+              href="https://x.com/Harshitha_AM"
               target="_blank"
               className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
             >
               <FaXTwitter className="h-4 w-4" />
             </Link>
             <Link
-              href="https://linkedin.com/in/harshith-vaddiparthy"
+              href="https://www.linkedin.com/in/chittapragadaharshitha/"
               target="_blank"
               className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
             >
@@ -131,7 +131,7 @@ export default function HomeContent() {
               />
             </Link> */}
             <Link
-              href="mailto:hi@harshith.io"
+              href="mailto:chittapragadaharshitha@gmail.com"
               className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
             >
               <SiGmail className="h-4 w-4" />
@@ -156,14 +156,14 @@ export default function HomeContent() {
                 <FaGithub className="h-4 w-4" />
               </Link>
               <Link
-                href="https://twitter.com/harshithio"
+                href="https://x.com/Harshitha_AM"
                 target="_blank"
                 className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
               >
                 <FaXTwitter className="h-4 w-4" />
               </Link>
               <Link
-                href="https://linkedin.com/in/harshith-vaddiparthy"
+                href="https://www.linkedin.com/in/chittapragadaharshitha/"
                 target="_blank"
                 className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
               >
@@ -220,7 +220,7 @@ export default function HomeContent() {
                 />
               </Link> */}
               <Link
-                href="mailto:hi@harshith.io"
+                href="mailto:chittapragadaharshitha@gmail.com"
                 className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
               >
                 <SiGmail className="h-4 w-4" />

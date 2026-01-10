@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Harshitha Vaddiparthy - AI Product Engineer & Entrepreneur",
     description: "AI Product Engineer and entrepreneur, Head of Growth at JustPaid (YC W23). Expert in building and scaling AI-powered products.",
-    creator: "@harshithio",
+    creator: "@Harshitha_AM",
     images: ["https://harshith.com/og.png"],
   },
   verification: {
