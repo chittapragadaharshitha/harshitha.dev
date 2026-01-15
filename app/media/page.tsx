@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const pressArticles = [
   {
-    title: "Harshitha Vaddiparthy Joins Forbes Technology Council",
+    title: "Harshitha Chittapragada Joins Forbes Technology Council",
     publication: "Forbes Technology Council",
     date: "2025-07-15",
     description: "Accepted into Forbes Technology Council, an invitation-only community for world-class CIOs, CTOs, and technology executives. As Head of Growth at JustPaid [YC W23], recognized for successfully impacting business growth metrics and contributions to AI-powered growth strategies.",
@@ -17,7 +17,7 @@ const pressArticles = [
     tags: ["Forbes Council", "Technology Leadership", "AI Growth Strategy", "JustPaid", "Y Combinator", "Professional Recognition"]
   },
   {
-    title: "Q&A with Harshitha Vaddiparthy, Head of Growth at JustPaid",
+    title: "Q&A with Harshitha Chittapragada, Head of Growth at JustPaid",
     publication: "CityBiz",
     date: "2025-07-14",
     description: "In-depth interview discussing how AI is becoming 'the front door to enterprise software,' JustPaid's AI Agent achieving 85% trial-to-paid conversion, 45% reduction in AR processes, and the vision for the JustPaid Marketplace as the 'central nervous system' of B2B finance.",
@@ -26,7 +26,7 @@ const pressArticles = [
     tags: ["AI Finance", "Product-Led Growth", "B2B SaaS", "JustPaid Marketplace", "Revenue Automation", "Y Combinator"]
   },
   {
-    title: "Harshitha Vaddiparthy Brings AI Expertise to JustPaid's Strategic Partnership with Scritch",
+    title: "Harshitha Chittapragada Brings AI Expertise to JustPaid's Strategic Partnership with Scritch",
     publication: "AP News",
     date: "2025-06-03",
     description: "Featured in AP News for spearheading JustPaid's partnership with Scritch to revolutionize veterinary practices with AI agents. As Head of Growth at JustPaid, Harshitha highlights how AI-first teams can integrate and grow without operational drag.",
@@ -38,13 +38,13 @@ const pressArticles = [
     title: "JustPaid's Head of Growth Drives AI Integration for Veterinary Care",
     publication: "Yahoo Finance",
     date: "2025-06-03",
-    description: "Featured in Yahoo Finance as Harshitha Vaddiparthy, Head of Growth at Y Combinator-backed JustPaid, leads the strategic partnership with Scritch to transform veterinary practices through AI-powered billing and invoicing automation.",
+    description: "Featured in Yahoo Finance as Harshitha Chittapragada, Head of Growth at Y Combinator-backed JustPaid, leads the strategic partnership with Scritch to transform veterinary practices through AI-powered billing and invoicing automation.",
     url: "https://finance.yahoo.com/news/justpaid-scritch-announce-strategic-partnership-130100707.html",
     type: "Press Release",
     tags: ["AI Integration", "Veterinary Care", "Strategic Partnership", "JustPaid", "Y Combinator", "Revenue Automation"]
   },
   {
-    title: "Harshitha Vaddiparthy: 'Modern B2B Collaboration Powered by AI'",
+    title: "Harshitha Chittapragada: 'Modern B2B Collaboration Powered by AI'",
     publication: "MarketWatch",
     date: "2025-06-03",
     description: "Featured in MarketWatch highlighting Harshitha's role as Head of Growth at JustPaid, the AI-powered revenue automation platform backed by Y Combinator, partnering with Scritch to automate veterinary billing operations and eliminate manual intervention.",
@@ -56,7 +56,7 @@ const pressArticles = [
     title: "Young Tech Entrepreneur Predicted The White-Collar AI Bloodbath And Built The Solution",
     publication: "News Channel Nebraska",
     date: "2025-06-02",
-    description: "Featured in News Channel Nebraska: 22-year-old Harshitha Vaddiparthy, who exited AI startup ARTIFIN for $50K in December 2023, warns that most entry-level jobs are now 'email jobs using ChatGPT to reply to ChatGPT' and advocates for strategic AI implementation.",
+    description: "Featured in News Channel Nebraska: 22-year-old Harshitha Chittapragada, who exited AI startup ARTIFIN for $50K in December 2023, warns that most entry-level jobs are now 'email jobs using ChatGPT to reply to ChatGPT' and advocates for strategic AI implementation.",
     url: "https://northeast.newschannelnebraska.com/story/52819387/young-tech-entrepreneur-predicted-the-white-collar-ai-bloodbath-and-built-the-solution",
     type: "Press Release",
     tags: ["AI Impact", "Future of Work", "Innovation", "Solutions", "ARTIFIN Exit", "White-Collar Automation"]
@@ -65,7 +65,7 @@ const pressArticles = [
     title: "JustPaid and Scritch Announce Strategic Partnership to Power Veterinary Practices with AI Agents",
     publication: "Morningstar",
     date: "2025-06-03",
-    description: "Featured in Morningstar on June 3, 2025 for JustPaid's strategic partnership with Scritch. As Head of Growth at JustPaid, Harshitha Vaddiparthy helps ensure that Scritch's team 'never has to touch billing code again' as they scale their veterinary AI solution.",
+    description: "Featured in Morningstar on June 3, 2025 for JustPaid's strategic partnership with Scritch. As Head of Growth at JustPaid, Harshitha Chittapragada helps ensure that Scritch's team 'never has to touch billing code again' as they scale their veterinary AI solution.",
     url: "https://www.morningstar.com/news/pr-newswire/20250603sf01417/justpaid-and-scritch-announce-strategic-partnership-to-power-veterinary-practices-with-ai-agents",
     type: "Press Release",
     tags: ["JustPaid", "AI Agents", "Veterinary Tech", "Partnership", "Y Combinator", "AI-First Startups"]
@@ -80,7 +80,7 @@ const pressArticles = [
     tags: ["AI Impact", "Future of Work", "Innovation"]
   },
   {
-    title: "Harshitha Vaddiparthy Redefines AI-Native Development with Vibe Coding",
+    title: "Harshitha Chittapragada Redefines AI-Native Development with Vibe Coding",
     publication: "Barchart",
     date: "2025-05",
     description: "Featured in Barchart for pioneering Vibe Coding methodology and thought leadership in generative AI ecosystem",
@@ -89,7 +89,7 @@ const pressArticles = [
     tags: ["Vibe Coding", "AI-Native Development", "Thought Leadership"]
   },
   {
-    title: "Harshitha Vaddiparthy Emerges as a Rising AI Thought Leader",
+    title: "Harshitha Chittapragada Emerges as a Rising AI Thought Leader",
     publication: "Benzinga",
     date: "2025-05",
     description: "Featured in Benzinga for startup exit, open source innovation, and AI thought leadership",

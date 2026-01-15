@@ -71,7 +71,7 @@ export default function HomeContent() {
               <FaGithub className="h-4 w-4" />
             </Link>
             <Link
-              href="https://x.com/Harshitha_AM"
+              href="https://x.com/harshithaa_ch"
               target="_blank"
               className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
             >
@@ -111,7 +111,7 @@ export default function HomeContent() {
             >
               <Image 
                 src="/icons8-medium.svg" 
-                alt="Harshitha Vaddiparthy on Medium - AI and Tech Articles" 
+                alt="Harshitha Chittapragada on Medium - AI and Tech Articles" 
                 width={16} 
                 height={16} 
                 className="h-4 w-4 invert opacity-60 hover:opacity-100"
@@ -124,7 +124,7 @@ export default function HomeContent() {
             >
               <Image
                 src="/forbes-icon.svg"
-                alt="Harshitha Vaddiparthy - Forbes Technology Council Member"
+                alt="Harshitha Chittapragada - Forbes Technology Council Member"
                 width={16}
                 height={16}
                 className="h-4 w-4 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
@@ -156,7 +156,7 @@ export default function HomeContent() {
                 <FaGithub className="h-4 w-4" />
               </Link>
               <Link
-                href="https://x.com/Harshitha_AM"
+                href="https://x.com/harshithaa_ch"
                 target="_blank"
                 className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
               >
@@ -200,7 +200,7 @@ export default function HomeContent() {
               >
                 <Image 
                   src="/icons8-medium.svg" 
-                  alt="Harshitha Vaddiparthy on Medium - AI and Tech Articles" 
+                  alt="Harshitha Chittapragada on Medium - AI and Tech Articles" 
                   width={16} 
                   height={16} 
                   className="h-4 w-4 invert opacity-60 hover:opacity-100"
@@ -213,7 +213,7 @@ export default function HomeContent() {
               >
                 <Image
                   src="/forbes-icon.svg"
-                  alt="Harshitha Vaddiparthy - Forbes Technology Council Member"
+                  alt="Harshitha Chittapragada - Forbes Technology Council Member"
                   width={16}
                   height={16}
                   className="h-4 w-4 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
