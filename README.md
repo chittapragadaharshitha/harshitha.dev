@@ -10,13 +10,13 @@
 [![Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@chittapragadaharshitha)
 [![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:chittapragadaharshitha@gmail.com)
 
-<img src="https://komarev.com/ghpvc/?username=chittapragadaharshitha&style=for-the-badge&color=6366F1" alt="Profile Views"/>
+![Profile Views](https://komarev.com/ghpvc/?username=chittapragadaharshitha&style=for-the-badge&color=6366F1)
 
 </div>
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Woman%20Technologist.png" alt="Woman Technologist" width="30" /> About Me
+## 👩‍💻 About Me
 
 ```javascript
 const harshitha = {
@@ -37,124 +37,118 @@ const harshitha = {
 };
 ```
 
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=chittapragadaharshitha&theme=tokyonight&hide_border=true&stroke=6366F1&ring=6366F1&fire=F97316&currStreakLabel=6366F1" alt="GitHub Streak" />
-</div>
-
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" alt="Tools" width="30" /> Tech Arsenal
+## 🛠️ Tech Arsenal
 
 <div align="center">
 
 ### Languages
-<p>
-<img src="https://skillicons.dev/icons?i=c,java,javascript,typescript,python&theme=dark" alt="Languages" />
-</p>
+![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
 ### Frontend
-<p>
-<img src="https://skillicons.dev/icons?i=html,css,react,nextjs,tailwind&theme=dark" alt="Frontend" />
-</p>
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 ### Backend & Database
-<p>
-<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,mysql,firebase&theme=dark" alt="Backend" />
-</p>
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 
 ### Tools & Platforms
-<p>
-<img src="https://skillicons.dev/icons?i=git,github,vscode,vercel,figma&theme=dark" alt="Tools" />
-</p>
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 
 </div>
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Briefcase.png" alt="Briefcase" width="30" /> Experience
-
-<table align="center">
-<tr>
-<td align="center" width="200">
-<img src="https://img.shields.io/badge/Google-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google"/><br/>
-<strong>Student Ambassador</strong><br/>
-<sub>Aug 2025 - Present</sub>
-</td>
-<td align="center" width="200">
-<img src="https://img.shields.io/badge/ESG_Inc-1E3A8A?style=for-the-badge&logoColor=white" alt="ESG"/><br/>
-<strong>Business Analyst</strong><br/>
-<sub>Oct - Nov 2025</sub>
-</td>
-<td align="center" width="200">
-<img src="https://img.shields.io/badge/DREP-6366F1?style=for-the-badge&logoColor=white" alt="DREP"/><br/>
-<strong>AI Dev Engineer</strong><br/>
-<sub>Aug - Oct 2025</sub>
-</td>
-<td align="center" width="200">
-<img src="https://img.shields.io/badge/Infosys-007DC5?style=for-the-badge&logo=infosys&logoColor=white" alt="Infosys"/><br/>
-<strong>Pragati Trainee</strong><br/>
-<sub>Dec 2024 - Mar 2025</sub>
-</td>
-</tr>
-</table>
-
----
-
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Graduation%20Cap.png" alt="Education" width="30" /> Education
+## 💼 Experience
 
 <div align="center">
 
-| <img src="https://img.shields.io/badge/B.Tech_CSE-6366F1?style=flat-square" /> | **Vignan's IMTW** | 2022 - 2026 |
-|:---:|:---:|:---:|
-| <img src="https://img.shields.io/badge/Intermediate-10B981?style=flat-square" /> | **Sri Chaitanya** | 90% |
-| <img src="https://img.shields.io/badge/SSC-F59E0B?style=flat-square" /> | **Bhashyam High School** | CGPA: 10/10 |
+| Company | Role | Duration |
+|:-------:|:----:|:--------:|
+| ![Google](https://img.shields.io/badge/Google-4285F4?style=flat-square&logo=google&logoColor=white) | **Student Ambassador** | Aug 2025 - Present |
+| ![ESG](https://img.shields.io/badge/Executive_Software_Guild-1E3A8A?style=flat-square&logoColor=white) | **Business Analyst** | Oct - Nov 2025 |
+| ![DREP](https://img.shields.io/badge/DREP_Solutions-6366F1?style=flat-square&logoColor=white) | **AI Development Engineer** | Aug - Oct 2025 |
+| ![Infosys](https://img.shields.io/badge/Infosys_Springboard-007DC5?style=flat-square&logo=infosys&logoColor=white) | **Pragati Cohort 3 Trainee** | Dec 2024 - Mar 2025 |
 
 </div>
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="30" /> Featured Project
+## 🎓 Education
 
 <div align="center">
 
-<a href="https://harshitha.dev">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=chittapragadaharshitha&repo=harshitha.dev&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=6366F1&icon_color=F97316" alt="Portfolio Repo" />
-</a>
-
-### Tech Stack
-![Next.js](https://img.shields.io/badge/Next.js_14-000000?style=flat-square&logo=next.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+| Degree | Institution | Year | Achievement |
+|:------:|:-----------:|:----:|:-----------:|
+| **B.Tech CSE** | Vignan's IMTW | 2022 - 2026 | In Progress |
+| **Intermediate (MPC)** | Sri Chaitanya | 2020 - 2022 | **90%** |
+| **SSC** | Bhashyam High School | 2016 | **CGPA: 10/10** |
 
 </div>
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Stats" width="30" /> GitHub Stats
+## 🚀 Featured Project
 
 <div align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=chittapragadaharshitha&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=6366F1&icon_color=F97316&text_color=ffffff" alt="GitHub Stats" />
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chittapragadaharshitha&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=ffffff" alt="Top Languages" />
+
+### [harshitha.dev](https://harshitha.dev) - Personal Portfolio
+
+My personal portfolio website showcasing my work and skills.
+
+![Next.js](https://img.shields.io/badge/Next.js_14-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+
 </div>
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" alt="Handshake" width="30" /> Let's Connect
+## 🏃‍♀️ Running Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/chittapragadaharshitha/harshitha.dev.git
+
+# Navigate to the project
+cd harshitha.dev
+
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+```
+
+---
+
+## 🤝 Let's Connect
 
 <div align="center">
 
 **I'm always excited to collaborate on innovative projects and discuss new opportunities!**
 
-<a href="https://harshitha.dev/meet">
-<img src="https://img.shields.io/badge/Schedule_a_Call-6366F1?style=for-the-badge&logo=googlecalendar&logoColor=white" alt="Schedule Call"/>
-</a>
-<a href="mailto:chittapragadaharshitha@gmail.com">
-<img src="https://img.shields.io/badge/Send_an_Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
-</a>
-<a href="https://harshitha.dev">
-<img src="https://img.shields.io/badge/Visit_Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/>
-</a>
+[![Schedule a Call](https://img.shields.io/badge/📅_Schedule_a_Call-6366F1?style=for-the-badge)](https://harshitha.dev/meet)
+[![Send an Email](https://img.shields.io/badge/📧_Send_an_Email-EA4335?style=for-the-badge)](mailto:chittapragadaharshitha@gmail.com)
+[![Visit Portfolio](https://img.shields.io/badge/🌐_Visit_Portfolio-000000?style=for-the-badge)](https://harshitha.dev)
 
 </div>
 
@@ -164,7 +158,7 @@ const harshitha = {
 
 ### 💜 Thanks for visiting!
 
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Sparkling%20Heart.png" alt="Heart" width="20" /> **If you like my work, consider giving this repo a star!** <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Star.png" alt="Star" width="20" />
+**If you like my work, consider giving this repo a ⭐**
 
 ![Footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer)
 
