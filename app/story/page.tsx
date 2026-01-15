@@ -15,7 +15,7 @@ export default function StoryPage() {
         <div className="prose prose-zinc prose-invert max-w-none">
           <div className="text-zinc-400 space-y-4 text-xs sm:text-sm leading-relaxed">
             <p>
-              I'm Harshitha Vaddiparthy, a builder at the intersection of AI, blockchain, and human progress. 
+              I'm Harshitha Chittapragada, a builder at the intersection of AI, blockchain, and human progress. 
               My journey into technology began not in a classroom, but through an insatiable curiosity about 
               how systems work and how they can be made better.
             </p>

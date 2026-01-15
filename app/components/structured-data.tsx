@@ -5,7 +5,7 @@ export default function StructuredData() {
       {
         "@type": "Person",
         "@id": "https://harshith.com/#person",
-        "name": "Harshitha Vaddiparthy",
+        "name": "Harshitha Chittapragada",
         "alternateName": "Harshitha",
         "description": "AI Product Engineer and entrepreneur, Head of Growth at JustPaid (YC W23). Expert in building and scaling AI-powered products, machine learning, and growth strategies.",
         "url": "https://harshith.com",
@@ -17,7 +17,7 @@ export default function StructuredData() {
         },
         "sameAs": [
           "https://github.com/chittapragadaharshitha",
-          "https://x.com/Harshitha_AM",
+          "https://x.com/harshithaa_ch",
           "https://www.linkedin.com/in/chittapragadaharshitha/",
           "https://youtube.com/@harshithvaddiparthy",
           "https://scholar.google.com/citations?user=W-bXoUMAAAAJ&hl=en",
@@ -49,8 +49,8 @@ export default function StructuredData() {
         "@type": "WebSite",
         "@id": "https://harshith.com/#website",
         "url": "https://harshith.com",
-        "name": "Harshitha Vaddiparthy",
-        "description": "Personal website of Harshitha Vaddiparthy, AI Product Engineer and entrepreneur",
+        "name": "Harshitha Chittapragada",
+        "description": "Personal website of Harshitha Chittapragada, AI Product Engineer and entrepreneur",
         "publisher": {
           "@id": "https://harshith.com/#person"
         },
@@ -60,7 +60,7 @@ export default function StructuredData() {
         "@type": "WebPage",
         "@id": "https://harshith.com/#webpage",
         "url": "https://harshith.com",
-        "name": "Harshitha Vaddiparthy - AI Product Engineer & Entrepreneur",
+        "name": "Harshitha Chittapragada - AI Product Engineer & Entrepreneur",
         "description": "AI Product Engineer and entrepreneur, Head of Growth at JustPaid (YC W23). Expert in building and scaling AI-powered products, machine learning, and growth strategies.",
         "isPartOf": {
           "@id": "https://harshith.com/#website"
@@ -81,7 +81,7 @@ export default function StructuredData() {
       {
         "@type": "Organization",
         "@id": "https://harshith.com/#organization",
-        "name": "Harshitha Vaddiparthy",
+        "name": "Harshitha Chittapragada",
         "url": "https://harshith.com",
         "logo": {
           "@type": "ImageObject",
@@ -94,7 +94,7 @@ export default function StructuredData() {
         },
         "sameAs": [
           "https://github.com/chittapragadaharshitha",
-          "https://x.com/Harshitha_AM",
+          "https://x.com/harshithaa_ch",
           "https://www.linkedin.com/in/chittapragadaharshitha/"
         ]
       }
