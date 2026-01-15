@@ -21,7 +21,7 @@ export default function StructuredData() {
           "https://www.linkedin.com/in/chittapragadaharshitha/",
           "https://youtube.com/@harshithvaddiparthy",
           "https://scholar.google.com/citations?user=W-bXoUMAAAAJ&hl=en",
-          "https://harshith-vaddiparthy.medium.com",
+          "https://medium.com/@chittapragadaharshitha",
           "https://councils.forbes.com/profile/Harshith-Vaddiparthy-Head-Growth-JustPaid/5747f601-ca29-4255-a79b-3518154819a7",
           "https://harshithvaddiparthy.com",
           "https://harshith.io"

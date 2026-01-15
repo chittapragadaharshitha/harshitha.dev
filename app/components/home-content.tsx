@@ -105,7 +105,7 @@ export default function HomeContent() {
               <SiGooglescholar className="h-4 w-4" />
             </Link> */}
             <Link
-              href="https://harshith-vaddiparthy.medium.com"
+              href="https://medium.com/@chittapragadaharshitha"
               target="_blank"
               className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
             >
@@ -194,7 +194,7 @@ export default function HomeContent() {
                 <SiGooglescholar className="h-4 w-4" />
               </Link> */}
               <Link
-                href="https://harshith-vaddiparthy.medium.com"
+                href="https://medium.com/@chittapragadaharshitha"
                 target="_blank"
                 className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
               >
