@@ -6,27 +6,28 @@ import { Analytics } from "./components/analytics";
 import StructuredData from "./components/structured-data";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://harshith.com"),
+  metadataBase: new URL("https://harshitha.dev"),
   title: {
-    default: "Harshitha Chittapragada - AI Product Engineer & Entrepreneur",
+    default: "Harshitha Chittapragada - AI & Data Science Engineer",
     template: "%s | Harshitha Chittapragada",
   },
-  description: "Harshitha Chittapragada is an AI Product Engineer and entrepreneur, Head of Growth at JustPaid (YC W23). Expert in building and scaling AI-powered products, machine learning, and growth strategies.",
+  description: "Harshitha Chittapragada is an AI & Data Science engineering student, Google Student Ambassador, and Operations Lead at Harshith Ventures. Building AI agents, vibe coding, and exploring the future of technology.",
   keywords: [
     "Harshitha Chittapragada",
     "Harshitha",
-    "AI Product Engineer",
-    "Machine Learning Engineer",
-    "Entrepreneur",
-    "JustPaid",
-    "Y Combinator",
-    "AI Products",
-    "Growth Engineering",
-    "Startup Founder",
-    "Tech Leadership",
-    "Product Management",
+    "AI Engineer",
+    "Data Science",
+    "Google Student Ambassador",
+    "Harshith Ventures",
+    "OpenClaw",
+    "Cursor AI",
+    "Vibe Coding",
+    "Computer Science",
+    "Machine Learning",
     "Artificial Intelligence",
-    "Software Engineering"
+    "Software Engineering",
+    "Python",
+    "Java"
   ],
   authors: [{ name: "Harshitha Chittapragada" }],
   creator: "Harshitha Chittapragada",
@@ -37,17 +38,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Harshitha Chittapragada - AI Product Engineer & Entrepreneur",
+    title: "Harshitha Chittapragada - AI & Data Science Engineer",
     description:
-      "AI Product Engineer and entrepreneur, Head of Growth at JustPaid (YC W23). Expert in building and scaling AI-powered products, machine learning, and growth strategies.",
-    url: "https://harshith.com",
+      "AI & Data Science engineering student, Google Student Ambassador, and Operations Lead at Harshith Ventures. Building AI agents and exploring the future of technology.",
+    url: "https://harshitha.dev",
     siteName: "Harshitha Chittapragada",
     images: [
       {
-        url: "https://harshith.com/og.png",
-        width: 478,
-        height: 466,
-        alt: "Harshitha Chittapragada - AI Product Engineer & Entrepreneur",
+        url: "https://harshitha.dev/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Harshitha Chittapragada - AI & Data Science Engineer",
       },
     ],
     locale: "en-US",
@@ -68,18 +69,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harshitha Chittapragada - AI Product Engineer & Entrepreneur",
-    description: "AI Product Engineer and entrepreneur, Head of Growth at JustPaid (YC W23). Expert in building and scaling AI-powered products.",
+    title: "Harshitha Chittapragada - AI & Data Science Engineer",
+    description: "AI & Data Science engineering student, Google Student Ambassador, and Operations Lead at Harshith Ventures.",
     creator: "@harshithaa_ch",
-    images: ["https://harshith.com/og.png"],
+    images: ["https://harshitha.dev/og.png"],
   },
   verification: {
     google: "uZV_tVoCjrWEVuxBw6WYcGP5ZiXokGdgqbSFkrvKl7Y",
   },
   alternates: {
-    canonical: "https://harshith.com",
+    canonical: "https://harshitha.dev",
     languages: {
-      'en-US': 'https://harshith.com',
+      'en-US': 'https://harshitha.dev',
     },
   },
   icons: {
