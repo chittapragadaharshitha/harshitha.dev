@@ -9,6 +9,14 @@ import Particles from "../components/particles";
 
 const workExperience = [
   {
+    title: "Harshith Ventures",
+    role: "Operations Lead",
+    period: "Jan 2026 - Present",
+    description: "Headed operations for a venture building and investment company. Built Clawd Bot — an AI Slack assistant using Claude Opus 4.6 integrated across Telegram, WhatsApp, and Slack for omnichannel productivity. Vibe coded tools using Cursor AI, Vercel, and GitHub.",
+    tags: ["Operations", "AI Agents", "Cursor", "Vercel", "Slack"],
+    current: true
+  },
+  {
     title: "Google",
     role: "Student Ambassador",
     period: "Aug 2025 - Present",
