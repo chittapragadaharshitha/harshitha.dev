@@ -102,28 +102,17 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 								</div>
 							</Link> */}
 
-							{/* Resume Button */}
+							{/* Resume Link */}
 							<Link
+								className="block overflow-hidden hover:[&>div]:-translate-y-[20px]"
 								href="/resume.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<button className="
-									relative z-0 flex items-center gap-2 overflow-hidden whitespace-nowrap rounded-full font-normal
-									px-3 py-1.5
-									transition-all duration-300 ease-in-out
-									before:absolute before:inset-0
-									before:-z-10 before:translate-y-[200%]
-									before:scale-[2.5]
-									before:rounded-[100%]
-									before:transition-transform before:duration-1000
-									before:content-['']
-									hover:before:translate-y-[0%]
-									active:scale-100
-									text-zinc-200 bg-gradient-to-tr from-zinc-800/90 to-zinc-700/90 via-zinc-900/90 before:bg-zinc-50 hover:text-zinc-800
-								">
-									Resume
-								</button>
+								<div className="h-[20px] will-change-transform transition-transform duration-300">
+									<span className="flex h-[20px] items-center">Resume</span>
+									<span className="flex h-[20px] items-center text-zinc-50">Resume</span>
+								</div>
 							</Link>
 
 							{/* Get in touch Button */}
@@ -231,28 +220,17 @@ export const Navigation: React.FC<NavigationProps> = ({ showMobileControls = fal
 				</div>
 			</Link> */}
 
-			{/* Resume Button */}
+			{/* Resume Link */}
 			<Link
+				className="block overflow-hidden hover:[&>div]:-translate-y-[20px]"
 				href="/resume.pdf"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<button className="
-					relative z-0 flex items-center gap-2 overflow-hidden whitespace-nowrap rounded-full font-normal
-					px-3 py-1.5
-					transition-all duration-300 ease-in-out
-					before:absolute before:inset-0
-					before:-z-10 before:translate-y-[200%]
-					before:scale-[2.5]
-					before:rounded-[100%]
-					before:transition-transform before:duration-1000
-					before:content-['']
-					hover:before:translate-y-[0%]
-					active:scale-100
-					text-zinc-200 bg-gradient-to-tr from-zinc-800/90 to-zinc-700/90 via-zinc-900/90 before:bg-zinc-50 hover:text-zinc-800
-				">
-					Resume
-				</button>
+				<div className="h-[20px] will-change-transform transition-transform duration-300">
+					<span className="flex h-[20px] items-center">Resume</span>
+					<span className="flex h-[20px] items-center text-zinc-50">Resume</span>
+				</div>
 			</Link>
 
 			{/* Get in touch Button with Special Styling */}
