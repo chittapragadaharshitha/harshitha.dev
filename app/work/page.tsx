@@ -9,57 +9,37 @@ import Particles from "../components/particles";
 
 const workExperience = [
   {
-    title: "Harshitha Ventures",
-    role: "Building & Investing",
-    period: "Jan 2023 - Present",
-    description: "Personal holding company focused on building and investing in transformative technologies at the intersection of AI, blockchain, and human progress. Portfolio of innovative projects and strategic investments.",
-    tags: ["Venture Building", "Angel Investing", "AI", "Web3"],
+    title: "Google",
+    role: "Student Ambassador",
+    period: "Aug 2025 - Present",
+    description: "Bridging the gap between cutting-edge technology and the student community — sharing knowledge, organizing events, and helping others discover their paths in tech.",
+    tags: ["Community", "Tech Evangelism", "Events", "Google"],
     current: true
   },
   {
-    title: "JustPaid AI (YC W23)",
-    role: "Marketing & Media",
-    period: "Sep 2024 - Present",
-    description: "Leveraging AI tools to enhance content production processes, developing user-friendly front-end solutions. Established and grew the Just Paid AI podcast and YouTube channel.",
-    tags: ["AI", "Content Production", "Frontend", "Analytics", "Podcasting"],
-    current: true
+    title: "Executive Software Guild Inc",
+    role: "Business Analyst — Internship",
+    period: "Oct 2025 - Nov 2025",
+    description: "Analyzed business requirements, identified process inefficiencies, and proposed data-driven solutions. Developed a sharper understanding of how technology serves business objectives.",
+    tags: ["Business Analysis", "Data-Driven Solutions", "Remote"],
+    current: false
   },
   {
-    title: "Metaschool",
-    role: "Content & Events Lead",
-    period: "Mar 2023 - Sep 2023",
-    description: "Led content strategy and global event management for a Peak XV (Sequoia) funded Web3 education platform, traveling internationally to manage hackathons and VC meetups. Managed Dubai Token 2049 hackathon and led a team of 5 content creators.",
-    tags: ["Web3", "Event Management", "Content Strategy", "Team Leadership"]
+    title: "DREP Software Solutions Pvt Ltd",
+    role: "AI Development Engineer — Internship",
+    period: "Aug 2025 - Oct 2025",
+    description: "Built AI-driven solutions and worked on translating machine learning concepts from theory to production. Gained hands-on experience with real-world AI engineering workflows.",
+    tags: ["AI", "Machine Learning", "Software Development", "Remote"],
+    current: false
   },
   {
-    title: "ARTIFIN.ai",
-    role: "Founder & CEO",
-    period: "Mar 2023 - Jan 2024",
-    description: "Founded and successfully exited an AI-driven financial analysis platform, acquired by Oasis Ventures. Bootstrapped and exited at a $50,000 valuation with 50% improved efficiency.",
-    tags: ["AI", "Fintech", "Startup", "Exit", "Financial Analysis"],
-    highlight: "Exited $50K"
+    title: "Infosys Springboard",
+    role: "Pragati: Path to Future — Cohort 3",
+    period: "Dec 2024 - Mar 2025",
+    description: "Selected for an initiative empowering women in tech. Built a strong foundation in citizen data science, interacted with industry professionals, and gained both technical knowledge and professional confidence.",
+    tags: ["Data Science", "Women in Tech", "Professional Development"],
+    current: false
   },
-  {
-    title: "BasedAF",
-    role: "Head of Social Media and Community",
-    period: "Jan 2023 - May 2024",
-    description: "Increased brand visibility in the Metaverse through strategic social media campaigns, led marketing for NFT drop, and directed community growth initiatives. 40% increased visibility with 30% higher user engagement.",
-    tags: ["NFT", "Community", "Social Media", "Web3", "Marketing"]
-  },
-  {
-    title: "Love, Death & Robots [Netflix Show]",
-    role: "Community & Operations Manager",
-    period: "May 2022 - Oct 2023",
-    description: "Led NFT minting project of 131,690 artworks with 25% increased online presence. Managed social media platforms to boost community engagement.",
-    tags: ["NFT", "Community Management", "Social Media", "Operations"]
-  },
-  {
-    title: "Ambassadors Solutions",
-    role: "Growth Manager",
-    period: "May 2022 - Oct 2023",
-    description: "Secured new business opportunities in the crypto and blockchain sector. Increased market share by 30% and company revenue by 20%.",
-    tags: ["Business Development", "Growth Hacking", "Crypto", "Blockchain"]
-  }
 ];
 
 export const revalidate = 60;
@@ -88,7 +68,7 @@ export default async function ProjectsPage() {
             Work
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base text-zinc-400">
-            Building products that push the boundaries of what's possible.
+            Experience, projects, and the things I've built along the way.
           </p>
         </div>
         <div className="w-full h-px bg-zinc-800" />
@@ -135,30 +115,32 @@ export default async function ProjectsPage() {
               .filter((_, i) => i % 3 === 0)
               .map((exp, index) => (
                 <Card key={`exp-0-${index}`}>
-                  <Link href={
-                    exp.title === "Harshitha Ventures" ? "/work/harshith-ventures" : 
-                    exp.title === "JustPaid AI (YC W23)" ? "/work/justpaid-ai" :
-                    exp.title === "Metaschool" ? "/work/metaschool" :
-                    exp.title === "ARTIFIN.ai" ? "/work/artifin" :
-                    exp.title === "BasedAF" ? "/work/basedaf" :
-                    exp.title === "Ambassadors Solutions" ? "/work/ambassadors-solutions" :
-                    exp.title === "Love, Death & Robots [Netflix Show]" ? "/work/love-death-robots" :
-                    "#"
-                  }>
-                    <article className="relative w-full h-full p-4 sm:p-6 md:p-8 min-h-[200px] md:min-h-[250px]">
-                      <h2 className="z-20 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium duration-1000 text-zinc-200 group-hover:text-white font-display">
-                        {exp.title}
-                      </h2>
-                      <p className="z-20 mt-3 sm:mt-4 text-xs sm:text-sm duration-1000 text-zinc-400 group-hover:text-zinc-200 pb-8">
-                        {exp.description}
-                      </p>
-                      <div className="absolute bottom-4 md:bottom-8">
-                        <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
-                          Read more <span aria-hidden="true">&rarr;</span>
-                        </p>
-                      </div>
-                    </article>
-                  </Link>
+                  <article className="relative w-full h-full p-4 sm:p-6 md:p-8 min-h-[200px] md:min-h-[250px]">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Briefcase className="w-3 h-3 text-zinc-500" />
+                      <span className="text-xs text-zinc-500">{exp.role}</span>
+                    </div>
+                    <h2 className="z-20 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium duration-1000 text-zinc-200 group-hover:text-white font-display">
+                      {exp.title}
+                    </h2>
+                    <div className="flex items-center gap-1.5 mt-2 mb-3">
+                      <Calendar className="w-3 h-3 text-zinc-600" />
+                      <span className="text-xs text-zinc-600">{exp.period}</span>
+                      {exp.current && (
+                        <span className="ml-2 text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Current</span>
+                      )}
+                    </div>
+                    <p className="z-20 mt-3 sm:mt-4 text-xs sm:text-sm duration-1000 text-zinc-400 group-hover:text-zinc-200">
+                      {exp.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 mt-4">
+                      {exp.tags.map((tag) => (
+                        <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-zinc-800/50 text-zinc-500 border border-zinc-800">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </article>
                 </Card>
               ))}
           </div>
@@ -167,30 +149,32 @@ export default async function ProjectsPage() {
               .filter((_, i) => i % 3 === 1)
               .map((exp, index) => (
                 <Card key={`exp-1-${index}`}>
-                  <Link href={
-                    exp.title === "Harshitha Ventures" ? "/work/harshith-ventures" : 
-                    exp.title === "JustPaid AI (YC W23)" ? "/work/justpaid-ai" :
-                    exp.title === "Metaschool" ? "/work/metaschool" :
-                    exp.title === "ARTIFIN.ai" ? "/work/artifin" :
-                    exp.title === "BasedAF" ? "/work/basedaf" :
-                    exp.title === "Ambassadors Solutions" ? "/work/ambassadors-solutions" :
-                    exp.title === "Love, Death & Robots [Netflix Show]" ? "/work/love-death-robots" :
-                    "#"
-                  }>
-                    <article className="relative w-full h-full p-4 sm:p-6 md:p-8 min-h-[200px] md:min-h-[250px]">
-                      <h2 className="z-20 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium duration-1000 text-zinc-200 group-hover:text-white font-display">
-                        {exp.title}
-                      </h2>
-                      <p className="z-20 mt-3 sm:mt-4 text-xs sm:text-sm duration-1000 text-zinc-400 group-hover:text-zinc-200 pb-8">
-                        {exp.description}
-                      </p>
-                      <div className="absolute bottom-4 md:bottom-8">
-                        <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
-                          Read more <span aria-hidden="true">&rarr;</span>
-                        </p>
-                      </div>
-                    </article>
-                  </Link>
+                  <article className="relative w-full h-full p-4 sm:p-6 md:p-8 min-h-[200px] md:min-h-[250px]">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Briefcase className="w-3 h-3 text-zinc-500" />
+                      <span className="text-xs text-zinc-500">{exp.role}</span>
+                    </div>
+                    <h2 className="z-20 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium duration-1000 text-zinc-200 group-hover:text-white font-display">
+                      {exp.title}
+                    </h2>
+                    <div className="flex items-center gap-1.5 mt-2 mb-3">
+                      <Calendar className="w-3 h-3 text-zinc-600" />
+                      <span className="text-xs text-zinc-600">{exp.period}</span>
+                      {exp.current && (
+                        <span className="ml-2 text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Current</span>
+                      )}
+                    </div>
+                    <p className="z-20 mt-3 sm:mt-4 text-xs sm:text-sm duration-1000 text-zinc-400 group-hover:text-zinc-200">
+                      {exp.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 mt-4">
+                      {exp.tags.map((tag) => (
+                        <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-zinc-800/50 text-zinc-500 border border-zinc-800">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </article>
                 </Card>
               ))}
           </div>
@@ -199,32 +183,123 @@ export default async function ProjectsPage() {
               .filter((_, i) => i % 3 === 2)
               .map((exp, index) => (
                 <Card key={`exp-2-${index}`}>
-                  <Link href={
-                    exp.title === "Harshitha Ventures" ? "/work/harshith-ventures" : 
-                    exp.title === "JustPaid AI (YC W23)" ? "/work/justpaid-ai" :
-                    exp.title === "Metaschool" ? "/work/metaschool" :
-                    exp.title === "ARTIFIN.ai" ? "/work/artifin" :
-                    exp.title === "BasedAF" ? "/work/basedaf" :
-                    exp.title === "Ambassadors Solutions" ? "/work/ambassadors-solutions" :
-                    exp.title === "Love, Death & Robots [Netflix Show]" ? "/work/love-death-robots" :
-                    "#"
-                  }>
-                    <article className="relative w-full h-full p-4 sm:p-6 md:p-8 min-h-[200px] md:min-h-[250px]">
-                      <h2 className="z-20 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium duration-1000 text-zinc-200 group-hover:text-white font-display">
-                        {exp.title}
-                      </h2>
-                      <p className="z-20 mt-3 sm:mt-4 text-xs sm:text-sm duration-1000 text-zinc-400 group-hover:text-zinc-200 pb-8">
-                        {exp.description}
-                      </p>
-                      <div className="absolute bottom-4 md:bottom-8">
-                        <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
-                          Read more <span aria-hidden="true">&rarr;</span>
-                        </p>
-                      </div>
-                    </article>
-                  </Link>
+                  <article className="relative w-full h-full p-4 sm:p-6 md:p-8 min-h-[200px] md:min-h-[250px]">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Briefcase className="w-3 h-3 text-zinc-500" />
+                      <span className="text-xs text-zinc-500">{exp.role}</span>
+                    </div>
+                    <h2 className="z-20 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium duration-1000 text-zinc-200 group-hover:text-white font-display">
+                      {exp.title}
+                    </h2>
+                    <div className="flex items-center gap-1.5 mt-2 mb-3">
+                      <Calendar className="w-3 h-3 text-zinc-600" />
+                      <span className="text-xs text-zinc-600">{exp.period}</span>
+                      {exp.current && (
+                        <span className="ml-2 text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Current</span>
+                      )}
+                    </div>
+                    <p className="z-20 mt-3 sm:mt-4 text-xs sm:text-sm duration-1000 text-zinc-400 group-hover:text-zinc-200">
+                      {exp.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 mt-4">
+                      {exp.tags.map((tag) => (
+                        <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-zinc-800/50 text-zinc-500 border border-zinc-800">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </article>
                 </Card>
               ))}
+          </div>
+        </div>
+
+        {/* Education Section */}
+        <div className="mt-12 sm:mt-16">
+          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-100 mb-6">
+            Education
+          </h3>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <Card>
+              <article className="relative w-full h-full p-4 sm:p-6 md:p-8">
+                <h2 className="text-lg sm:text-xl font-medium text-zinc-200 font-display">
+                  Vignan's Institute of Management and Technology for Women
+                </h2>
+                <p className="mt-2 text-sm text-zinc-400">Bachelor of Technology — Computer Science</p>
+                <p className="mt-1 text-xs text-zinc-600">Nov 2022 – Jun 2026</p>
+                <div className="flex flex-wrap gap-1.5 mt-4">
+                  {["C Programming", "Java", "SQL", "Web Development", "Data Science"].map((tag) => (
+                    <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-zinc-800/50 text-zinc-500 border border-zinc-800">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            </Card>
+            <Card>
+              <article className="relative w-full h-full p-4 sm:p-6 md:p-8">
+                <h2 className="text-lg sm:text-xl font-medium text-zinc-200 font-display">
+                  Sri Chaitanya Junior Kalasala
+                </h2>
+                <p className="mt-2 text-sm text-zinc-400">Intermediate — MPC</p>
+                <p className="mt-1 text-xs text-zinc-600">Jun 2020 – Jun 2022</p>
+                <p className="mt-1 text-xs text-zinc-500">Grade: 90%</p>
+              </article>
+            </Card>
+          </div>
+        </div>
+
+        {/* Certifications Section */}
+        <div className="mt-12 sm:mt-16">
+          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-100 mb-6">
+            Certifications
+          </h3>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+            <Card>
+              <article className="relative w-full h-full p-4 sm:p-6">
+                <h2 className="text-base sm:text-lg font-medium text-zinc-200 font-display">MySQL</h2>
+                <p className="mt-1 text-xs text-zinc-500">Udemy · Issued Mar 2025</p>
+              </article>
+            </Card>
+            <Card>
+              <article className="relative w-full h-full p-4 sm:p-6">
+                <h2 className="text-base sm:text-lg font-medium text-zinc-200 font-display">MySQL Bootcamp</h2>
+                <p className="mt-1 text-xs text-zinc-500">Issued 2025</p>
+              </article>
+            </Card>
+            <Card>
+              <article className="relative w-full h-full p-4 sm:p-6">
+                <h2 className="text-base sm:text-lg font-medium text-zinc-200 font-display">Power BI Workshop</h2>
+                <p className="mt-1 text-xs text-zinc-500">Office Master · Jul 2024 – Jul 2028</p>
+              </article>
+            </Card>
+          </div>
+        </div>
+
+        {/* Skills Section */}
+        <div className="mt-12 sm:mt-16 mb-8">
+          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-100 mb-6">
+            Skills
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {["C Programming", "Java", "SQL", "HTML", "CSS", "Power BI", "Python", "Problem Solving", "Communication"].map((skill) => (
+              <span key={skill} className="text-xs px-3 py-1.5 rounded-full bg-zinc-800/50 text-zinc-400 border border-zinc-800 hover:text-zinc-200 hover:border-zinc-600 transition-colors">
+                {skill}
+              </span>
+            ))}
+          </div>
+          <div className="mt-6">
+            <h4 className="text-sm font-medium text-zinc-300 mb-3">Languages</h4>
+            <div className="flex gap-4">
+              <div>
+                <span className="text-xs text-zinc-400">English</span>
+                <span className="text-[10px] text-zinc-600 ml-2">Full professional proficiency</span>
+              </div>
+              <div>
+                <span className="text-xs text-zinc-400">Hindi</span>
+                <span className="text-[10px] text-zinc-600 ml-2">Native or bilingual proficiency</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

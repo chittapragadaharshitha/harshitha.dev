@@ -15,73 +15,72 @@ export default function StoryPage() {
         <div className="prose prose-zinc prose-invert max-w-none">
           <div className="text-zinc-400 space-y-4 text-xs sm:text-sm leading-relaxed">
             <p>
-              I'm Harshitha Chittapragada, a builder at the intersection of AI, blockchain, and human progress. 
-              My journey into technology began not in a classroom, but through an insatiable curiosity about 
-              how systems work and how they can be made better.
+              I'm Harshitha Chittapragada, a final-year Computer Science student at Vignan's Institute 
+              of Management and Technology for Women. I'm an engineering student with a strong foundation 
+              in programming and a passion for continuous learning — always looking for ways to combine 
+              technical expertise with a creative approach to problem solving.
             </p>
-            
+
             <p>
-              Growing up, I was fascinated by the potential of technology to solve real-world problems. 
-              While my peers were playing games, I was building them. This early exposure to programming 
-              taught me that with the right tools and determination, you could create anything.
+              My journey started with the fundamentals — C Programming, Java, SQL, HTML, and CSS — and 
+              grew into a genuine love for building things. From a currency converter built with Java Swing 
+              to working on real-world AI and business projects, every step has reinforced one thing: I 
+              learn by doing.
             </p>
-            
+
             <p>
-              In 2023, I founded Harshitha Ventures, my personal holding company focused on building and 
-              investing in transformative technologies. This wasn't just about starting a business - it was 
-              about creating a vehicle for systematic innovation and impact.
+              One of my proudest experiences was being selected as a <span className="text-zinc-200">Google Student Ambassador</span>. 
+              It's a role that lets me bridge the gap between cutting-edge technology and the student 
+              community — sharing knowledge, organizing events, and helping others discover their own 
+              paths in tech.
             </p>
-            
+
             <p>
-              My first major venture, ARTIFIN.ai, was an AI-driven financial analysis platform that I 
-              successfully exited to Oasis Ventures in 2024. This experience taught me invaluable lessons 
-              about building products that people actually need, not just what we think they need.
+              I've had the opportunity to gain real industry experience through internships that pushed 
+              me beyond the classroom. As an <span className="text-zinc-200">AI Development Engineer at DREP Software Solutions</span>, 
+              I worked on building AI-driven solutions and learned how machine learning translates from 
+              theory to production. As a <span className="text-zinc-200">Business Analyst at Executive Software Guild</span>, I 
+              developed a sharper understanding of how technology serves business objectives — analyzing 
+              requirements, identifying inefficiencies, and proposing data-driven solutions.
             </p>
-            
+
             <p>
-              Currently, as Head of Growth at JustPaid AI (YC W23), I'm at the forefront of the AI 
-              revolution, helping shape how businesses leverage artificial intelligence for financial 
-              operations. We're not just building tools; we're reimagining entire workflows.
+              I was also part of <span className="text-zinc-200">Infosys Springboard's Pragati: Path to Future — Cohort 3</span>, 
+              an initiative empowering women in tech. Through this program, I built a strong foundation 
+              in citizen data science, interacted with industry professionals, and gained both technical 
+              knowledge and the confidence to pursue bigger goals. It wasn't just about learning tools — 
+              it was about understanding how the industry works and growing as a professional.
             </p>
-            
+
             <p>
-              But technology is just a means to an end. What drives me is the potential for human progress. 
-              Whether it's through Web3 education at Metaschool, NFT communities with Netflix's Love, Death 
-              & Robots, or strategic growth at BasedAF, every project is an opportunity to push boundaries 
-              and create value.
+              Beyond coding, I value clear communication and collaboration. Whether it's working in a 
+              team, presenting ideas, or writing about tech on Medium, I believe the ability to convey 
+              complex ideas simply is just as important as the technical skill itself.
             </p>
-            
+
             <p>
-              I believe in first-principles thinking, rapid iteration, and the power of community. The best 
-              products aren't built in isolation - they're crafted through constant dialogue with users, 
-              refined through failure, and scaled through systematic thinking.
+              I'm proficient in C, Java, SQL, Power BI, and web technologies. I hold certifications in 
+              MySQL from Udemy and Power BI from Office Master. I actively refine my skills and stay 
+              updated with emerging technologies — because in this field, standing still means falling behind.
             </p>
-            
+
             <p>
-              My approach is simple: identify inefficiencies, understand root causes, and build solutions 
-              that are 10x better, not just incrementally improved. This isn't about disruption for 
-              disruption's sake - it's about genuine progress.
+              Right now, I'm open to opportunities in development and management roles where I can bring 
+              a fresh perspective, learn from experienced teams, and contribute meaningfully. I speak 
+              English and Hindi fluently, and I bring energy, curiosity, and a builder's mindset to 
+              everything I take on.
             </p>
-            
+
             <p>
-              The convergence of AI, blockchain, and other emerging technologies presents unprecedented 
-              opportunities. I'm focused on building products and companies that will define the next 
-              decade of human-computer interaction.
+              If you're working on something interesting or just want to connect, I'd love to hear from you.
             </p>
-            
-                         <p>
-               If you're building something ambitious, thinking about hard problems, or just want to discuss 
-               the future of technology, I'd love to connect. The best ideas often come from unexpected 
-               conversations.
-             </p>
-             
-           </div>
-         </div>
-         
-         {/* Signature Section - Bottom Left */}
-         <div className="mt-16 pt-8 text-left">
-         </div>
+          </div>
+        </div>
+        
+        {/* Signature Section - Bottom Left */}
+        <div className="mt-16 pt-8 text-left">
         </div>
       </div>
+    </div>
   );
 }
