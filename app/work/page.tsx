@@ -263,40 +263,33 @@ export default async function ProjectsPage() {
             Certifications
           </h3>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-            <Card>
-              <article className="relative w-full h-full p-4 sm:p-6">
-                <h2 className="text-base sm:text-lg font-medium text-zinc-200 font-display">Pragati: Path to Future, Cohort 3</h2>
-                <p className="mt-1 text-xs text-zinc-500">Infosys Springboard · Dec 2024 - Mar 2025</p>
-                <p className="mt-2 text-xs text-zinc-500">Career development, citizen Data Science, digital dexterity, and industry engagement</p>
-              </article>
-            </Card>
-            <Card>
-              <article className="relative w-full h-full p-4 sm:p-6">
-                <h2 className="text-base sm:text-lg font-medium text-zinc-200 font-display">MySQL Bootcamp</h2>
-                <p className="mt-1 text-xs text-zinc-500">Udemy · 2025</p>
-                <p className="mt-2 text-xs text-zinc-500">Data analysis, aggregate functions, complex queries, and database schema design</p>
-              </article>
-            </Card>
-            <Card>
-              <article className="relative w-full h-full p-4 sm:p-6">
-                <h2 className="text-base sm:text-lg font-medium text-zinc-200 font-display">Programming in Java</h2>
-                <p className="mt-1 text-xs text-zinc-500">NPTEL · 2025</p>
-                <p className="mt-2 text-xs text-zinc-500">12-week course covering essential Java topics and problem solving</p>
-              </article>
-            </Card>
-            <Card>
-              <article className="relative w-full h-full p-4 sm:p-6">
-                <h2 className="text-base sm:text-lg font-medium text-zinc-200 font-display">Getting Started with Artificial Intelligence</h2>
-                <p className="mt-1 text-xs text-zinc-500">IBM · 2025</p>
-                <p className="mt-2 text-xs text-zinc-500">Foundational AI concepts, processes, and common applications</p>
-              </article>
-            </Card>
-            <Card>
-              <article className="relative w-full h-full p-4 sm:p-6">
-                <h2 className="text-base sm:text-lg font-medium text-zinc-200 font-display">Power BI Workshop</h2>
-                <p className="mt-1 text-xs text-zinc-500">Office Master · Jul 2024 - Jul 2028</p>
-              </article>
-            </Card>
+            <a href="https://www.linkedin.com/in/chittapragadaharshitha/overlay/Certifications/610845554/treasury/" target="_blank" rel="noopener noreferrer">
+              <Card>
+                <article className="relative w-full h-full p-4 sm:p-6">
+                  <h2 className="text-base sm:text-lg font-medium text-zinc-200 font-display">MySQL Bootcamp</h2>
+                  <p className="mt-1 text-xs text-zinc-500">Udemy · Issued Mar 2025</p>
+                  <p className="mt-2 text-xs text-zinc-500">Skills: SQL</p>
+                </article>
+              </Card>
+            </a>
+            <a href="https://www.linkedin.com/in/chittapragadaharshitha/overlay/Certifications/282584012/treasury/" target="_blank" rel="noopener noreferrer">
+              <Card>
+                <article className="relative w-full h-full p-4 sm:p-6">
+                  <h2 className="text-base sm:text-lg font-medium text-zinc-200 font-display">Power BI Workshop</h2>
+                  <p className="mt-1 text-xs text-zinc-500">Office Master · Issued Jul 2024 · Expires Jul 2028</p>
+                  <p className="mt-2 text-xs text-zinc-500">Skills: Microsoft Power BI</p>
+                </article>
+              </Card>
+            </a>
+            <a href="https://www.linkedin.com/in/chittapragadaharshitha/overlay/Certifications/1887493972/treasury/" target="_blank" rel="noopener noreferrer">
+              <Card>
+                <article className="relative w-full h-full p-4 sm:p-6">
+                  <h2 className="text-base sm:text-lg font-medium text-zinc-200 font-display">Programming in Java</h2>
+                  <p className="mt-1 text-xs text-zinc-500">NPTEL · Issued Apr 2024</p>
+                  <p className="mt-2 text-xs text-zinc-500">Skills: Java</p>
+                </article>
+              </Card>
+            </a>
           </div>
         </div>
 
