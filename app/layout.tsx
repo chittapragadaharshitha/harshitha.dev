@@ -3,7 +3,16 @@ import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
+import { SiteIntro } from "./components/site-intro";
 import StructuredData from "./components/structured-data";
+
+const introSessionCheck = `
+  try {
+    if (sessionStorage.getItem("harshitha:intro:v1")) {
+      document.documentElement.dataset.introSeen = "true";
+    }
+  } catch (_) {}
+`;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://harshitha.dev"),
@@ -121,11 +130,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
+    <html
+      lang="en"
+      className={[inter.variable, calSans.variable].join(" ")}
+      suppressHydrationWarning
+    >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <script dangerouslySetInnerHTML={{ __html: introSessionCheck }} />
         <StructuredData />
         <Analytics />
       </head>
@@ -133,6 +147,7 @@ export default function RootLayout({
         className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
           }`}
       >
+        <SiteIntro />
         {children}
       </body>
     </html>
