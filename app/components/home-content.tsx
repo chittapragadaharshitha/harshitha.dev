@@ -11,9 +11,22 @@ import { Navigation } from "./nav";
 import Particles from "./particles";
 
 const systems = [
-  { name: "AgentMag", detail: "Governed workflow and agent platform" },
-  { name: "Hiring Automation", detail: "Enterprise recruitment operations" },
-  { name: "Content Studio", detail: "Review-first publishing workflows" },
+  { name: "AgentMag", detail: "Governed workflow and agent platform", href: "/work/agentmag" },
+  {
+    name: "Hiring Automation",
+    detail: "Enterprise recruitment operations",
+    href: "/work/enterprise-hiring-automation",
+  },
+  {
+    name: "OpenClaw Setup",
+    detail: "Secure self-hosted agent deployment",
+    href: "/work/openclaw-setup",
+  },
+  {
+    name: "Content Studio",
+    detail: "Review-first publishing workflows",
+    href: "/work/content-automation-studio",
+  },
 ];
 
 const socialLinks = [
@@ -51,7 +64,7 @@ export default function HomeContent() {
         <section className={entrance}>
           <div className="flex items-center gap-3 text-xs text-zinc-500">
             <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
-            Open to product engineering and automation roles
+            Open to enterprise product engineering and automation roles
           </div>
 
           <h1 className="mt-7 text-5xl font-medium leading-[0.95] tracking-[-0.055em] text-white sm:text-7xl lg:text-8xl font-display">
@@ -60,11 +73,12 @@ export default function HomeContent() {
           </h1>
 
           <p className="mt-8 max-w-2xl text-base leading-8 text-zinc-300 sm:text-lg">
-            I build reliable AI automation products for finance, hiring, and content operations.
+            I engineer AI systems that keep working when the demo ends.
           </p>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-500 sm:text-base">
-            My work connects models to real operational systems through integrations, deterministic
-            workflows, human approvals, recovery, and auditability—not demo-only AI.
+            Across finance, hiring, content, and self-hosted agents, I connect models to real
+            operations through integrations, deterministic workflows, human approvals, recovery,
+            and auditability.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
@@ -121,7 +135,7 @@ export default function HomeContent() {
               {systems.map((system, index) => (
                 <Link
                   key={system.name}
-                  href={index === 0 ? "/work/agentmag" : index === 1 ? "/work/enterprise-hiring-automation" : "/work/content-automation-studio"}
+                  href={system.href}
                   className="group grid grid-cols-[1.5rem_1fr_auto] items-center gap-3 border-t border-zinc-800 pt-4 focus:outline-none focus:ring-2 focus:ring-zinc-500"
                 >
                   <span className="font-mono text-[10px] text-zinc-700">0{index + 1}</span>

@@ -23,6 +23,7 @@ const requiredClaims = [
   "AgentMag",
   "Enterprise Hiring Automation",
   "Content Automation Studio",
+  "OpenClaw Setup",
   "enterprise-grade architecture",
   "Microsoft Graph",
   "candidate matching",
@@ -34,12 +35,15 @@ const requiredClaims = [
   "385",
   "1,165",
   "fixed-recipient",
+  "Docker isolation",
+  "client-owned host",
 ];
 
 const expectedProjectSlugs = [
   "agentmag",
   "enterprise-hiring-automation",
   "content-automation-studio",
+  "openclaw-setup",
   "ai-internship-recommendation-engine",
   "absolute-prosthetics",
   "pneumonia-detection-cnn",

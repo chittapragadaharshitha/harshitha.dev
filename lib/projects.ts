@@ -8,11 +8,50 @@ export interface ProjectLink {
   href: string;
 }
 
+export interface ArchitectureComponent {
+  name: string;
+  responsibility: string;
+  technology: string;
+}
+
+export interface FlowStep {
+  step: string;
+  detail: string;
+}
+
+export interface ReliabilityControl {
+  risk: string;
+  control: string;
+}
+
+export interface TechnicalDecision {
+  decision: string;
+  rationale: string;
+}
+
+export interface EvidenceItem {
+  label: string;
+  detail: string;
+  href?: string;
+}
+
+export interface TechnicalDossier {
+  systemContext: string;
+  architecture: ArchitectureComponent[];
+  flow: FlowStep[];
+  implementation: string[];
+  reliability: ReliabilityControl[];
+  decisions: TechnicalDecision[];
+  evidence: EvidenceItem[];
+  contributionBoundary: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
   eyebrow: string;
   description: string;
+  architectureLine: string;
   role: string;
   status: string;
   date: string;
@@ -25,6 +64,7 @@ export interface Project {
   stack: string[];
   metrics: ProjectMetric[];
   links: ProjectLink[];
+  technicalDossier: TechnicalDossier;
   note?: string;
 }
 
@@ -32,31 +72,33 @@ export const projects: Project[] = [
   {
     slug: "agentmag",
     title: "AgentMag",
-    eyebrow: "Flagship system · nine-month build cycle",
+    eyebrow: "Flagship system · nine-month product cycle",
     description:
-      "A governed automation platform for building, running, and observing operational workflows. Finance is its first deep domain, but the underlying system supports agents, integrations, approvals, knowledge, files, data tables, dashboards, and reusable workflow modules.",
-    role: "Product builder and automation operator",
+      "A governed automation platform for composing, running, and observing operational workflows. Finance is the first deep domain, but the platform primitives support agents, approvals, files, knowledge, tables, integrations, and reusable workflow modules across operations.",
+    architectureLine: "Studio → API control plane → durable workers → integrations → audit state",
+    role: "Product builder and workflow operator",
     status: "Private product · active development",
     date: "2026-08-01",
     published: true,
     featured: true,
     challenge:
-      "High-stakes operational work is spread across finance tools, inboxes, spreadsheets, and manual approvals. A useful automation platform must do more than generate an answer: it must control execution, preserve context, recover from failure, and show exactly what happened.",
+      "High-stakes operational work crosses finance tools, inboxes, documents, spreadsheets, and approval chains. A useful platform has to do more than generate an answer: it must separate probabilistic reasoning from controlled execution, preserve state, pause for review, recover from failure, and leave an audit trail.",
     approach:
-      "AgentMag separates agent reasoning from deterministic workflow execution. Agents investigate and prepare work; durable workflows run approved actions; human approval gates protect consequential steps; integrations, files, knowledge, and audit events remain attached to the same operating context.",
+      "AgentMag separates the visual product surface, API control plane, durable worker runtime, integration modules, and operational database. Agents investigate and prepare work; typed workflow blocks execute bounded actions; approval nodes stop consequential steps; runs and outputs remain attached to a company context.",
     outcome:
-      "The result is a reusable product foundation rather than a single automation. The current codebase spans a visual Studio, API, worker runtime, documentation surface, multi-company data model, and a growing library of finance and operations recipes.",
+      "The result is a reusable operating foundation rather than a single finance bot: a Studio, API, worker runtime, documentation surface, multi-company data model, and a growing module library for finance and broader back-office automation.",
     contributions: [
-      "Worked across a nine-month product cycle to build and operationalize governed finance and operations workflows.",
-      "Designed workflow behavior around agent investigation, deterministic execution, human approvals, and traceable run history.",
-      "Worked with a broad platform surface: visual workflow design, reusable blocks, integrations, agents, files, knowledge, data tables, dashboards, and multi-company operations.",
-      "Tested real operator flows and helped translate complex business processes into reviewable automation systems rather than one-off scripts.",
+      "Translated finance and operations processes into reviewable workflow stages, approval points, and operator-visible states.",
+      "Worked across the product surface covering workflows, agents, integrations, files, knowledge, tables, dashboards, and run history.",
+      "Tested operator journeys and helped turn ambiguous business procedures into deterministic steps around model-driven work.",
+      "Supported the nine-month product cycle through workflow design, product feedback, operational testing, and demo readiness.",
     ],
     stack: [
       "TypeScript",
       "Next.js",
-      "ReactFlow",
+      "Hono",
       "PostgreSQL",
+      "Drizzle ORM",
       "Trigger.dev",
       "Nango",
       "OpenAI",
@@ -64,7 +106,7 @@ export const projects: Project[] = [
       "Slack",
     ],
     metrics: [
-      { value: "17", label: "integration modules" },
+      { value: "17", label: "integration modules in the reviewed codebase" },
       { value: "16", label: "core workflow blocks" },
       { value: "31", label: "database migrations" },
       { value: "4", label: "deployable product surfaces" },
@@ -75,32 +117,174 @@ export const projects: Project[] = [
         href: "https://packaging-tier-considerable-afterwards.trycloudflare.com/login",
       },
     ],
-    note: "The demo is access-controlled. Credentials and source access are shared privately when appropriate.",
+    note:
+      "The demo is access-controlled. Architecture and scale describe the reviewed platform; credentials and source access are shared privately when appropriate.",
+    technicalDossier: {
+      systemContext:
+        "AgentMag is designed for operational workflows where a model may interpret, investigate, or draft, but the surrounding system must own permissions, execution order, approvals, integrations, and evidence. Its first substantial recipes target finance operations; the same primitives can support contract, customer, inventory, document, and internal-service workflows.",
+      architecture: [
+        {
+          name: "Operator Studio",
+          responsibility:
+            "Composes workflows on a visual canvas and gives operators access to agents, runs, files, knowledge, tables, templates, schedules, dashboards, and deployment state.",
+          technology: "Next.js · React · XYFlow · Zustand · TanStack Query",
+        },
+        {
+          name: "API control plane",
+          responsibility:
+            "Validates requests, applies authentication and tenancy context, manages configuration, receives webhooks, and starts or observes execution without keeping long work inside the request lifecycle.",
+          technology: "Hono · TypeScript · Zod · Better Auth · Socket.IO",
+        },
+        {
+          name: "Durable execution",
+          responsibility:
+            "Runs long-lived tasks, agent steps, extraction, browser work, transformations, approval waits, and provider actions with retryable worker semantics.",
+          technology: "Trigger.dev · TypeScript workers",
+        },
+        {
+          name: "Operational state",
+          responsibility:
+            "Stores workflows, deployments, runs, approvals, audit events, files, knowledge, company-scoped records, and integration metadata as reconstructable state.",
+          technology: "PostgreSQL · Drizzle ORM · 31 migrations",
+        },
+        {
+          name: "Module and integration layer",
+          responsibility:
+            "Exposes typed core blocks and provider adapters for email, documents, accounting, CRM, payments, inventory, signatures, storage, and collaboration systems.",
+          technology: "16 core blocks · 17 integration modules · Nango",
+        },
+        {
+          name: "Reasoning layer",
+          responsibility:
+            "Uses models for investigation, extraction, classification, drafting, and agent decisions while returning bounded outputs to the workflow runtime.",
+          technology: "OpenAI · Anthropic · structured schemas",
+        },
+      ],
+      flow: [
+        {
+          step: "Compose and validate",
+          detail:
+            "An operator assembles typed blocks, connects integrations, supplies company context, and validates required configuration before deployment.",
+        },
+        {
+          step: "Start a durable run",
+          detail:
+            "The control plane creates persistent run state and hands long-running work to the worker runtime instead of tying it to one browser or HTTP connection.",
+        },
+        {
+          step: "Investigate with bounded agents",
+          detail:
+            "Agent steps can search knowledge, inspect documents, extract structured fields, or prepare a proposed action without receiving authority to execute every downstream effect.",
+        },
+        {
+          step: "Pause for human control",
+          detail:
+            "Approval blocks suspend consequential work and expose the proposed inputs and context for an operator decision.",
+        },
+        {
+          step: "Execute deterministic actions",
+          detail:
+            "Approved provider operations run through typed integration modules such as accounting, CRM, document, email, payment, or inventory adapters.",
+        },
+        {
+          step: "Persist evidence",
+          detail:
+            "Outputs, errors, timestamps, approval decisions, and audit events remain connected to the run and company so an operator can reconstruct what happened.",
+        },
+      ],
+      implementation: [
+        "Mapped operational procedures into explicit triggers, model-assisted investigation stages, deterministic actions, waits, conditions, parallel branches, subworkflows, and approval gates.",
+        "Worked with the Studio information architecture across workflows, deployments, runs, schedules, files, knowledge, user tables, integrations, dashboards, and chat-based interaction.",
+        "Evaluated whether operator flows exposed enough context to review an action before approving it and enough run state to diagnose what happened afterward.",
+        "Helped position finance recipes as implementations on top of reusable platform primitives rather than hard-coding the product as a single-purpose finance assistant.",
+        "Tested access-controlled demo paths and translated operational feedback into product and workflow requirements during the nine-month cycle.",
+      ],
+      reliability: [
+        {
+          risk: "A long workflow outlives a browser request or worker process.",
+          control:
+            "Durable Trigger.dev execution and persisted run state move work outside the request lifecycle and make progress observable.",
+        },
+        {
+          risk: "A model proposes an unsafe or irreversible action.",
+          control:
+            "Typed action blocks and explicit approval nodes separate model reasoning from execution authority.",
+        },
+        {
+          risk: "An operator cannot explain a historical outcome.",
+          control:
+            "Run outputs, errors, timestamps, approval decisions, and audit events are stored against the workflow and company context.",
+        },
+        {
+          risk: "Provider credentials leak into browser state or prompts.",
+          control:
+            "Connections are handled through the server-side integration layer rather than embedded in client workflows.",
+        },
+        {
+          risk: "Work from one company is applied to another.",
+          control:
+            "Company and workspace context is carried through operational records and execution boundaries.",
+        },
+      ],
+      decisions: [
+        {
+          decision: "Separate agents from workflows",
+          rationale:
+            "Agents are useful where interpretation is needed; deterministic workflows remain easier to review, retry, and govern for consequential operations.",
+        },
+        {
+          decision: "Treat approvals as runtime primitives",
+          rationale:
+            "Human review must survive refreshes and worker restarts, so it belongs in persisted execution state rather than an informal chat step.",
+        },
+        {
+          decision: "Build domain recipes on reusable modules",
+          rationale:
+            "The same email, document, CRM, accounting, table, wait, and approval blocks can support more than finance without duplicating the runtime.",
+        },
+      ],
+      evidence: [
+        {
+          label: "Reviewed private codebase",
+          detail:
+            "The current monorepo contains four deployable applications, 16 core workflow blocks, 17 provider integrations, a PostgreSQL schema with 31 migrations, and extensive run, approval, file, knowledge, table, and workflow surfaces.",
+        },
+        {
+          label: "Access-controlled product demo",
+          detail:
+            "The private Cloudflare demo exposes the current operator product while protecting internal access.",
+          href: "https://packaging-tier-considerable-afterwards.trycloudflare.com/login",
+        },
+      ],
+      contributionBoundary:
+        "The architecture, module counts, and scale above describe the AgentMag platform reviewed for this case study. Harshitha's attributable work is product building, workflow design, operational testing, and helping turn business procedures into governed operator flows across the nine-month cycle. The available Git authorship does not support claiming that she solely wrote every platform module.",
+    },
   },
   {
     slug: "enterprise-hiring-automation",
     title: "Enterprise Hiring Automation",
-    eyebrow: "Recruitment operations · live system",
+    eyebrow: "Recruitment operations · production-oriented system",
     description:
-      "An Azure-backed recruitment operations platform that turns inbound requirements into structured roles, matched candidate shortlists, controlled replies, and an auditable operating pipeline.",
+      "An Azure-backed recruitment operations platform that converts inconsistent Outlook requirements into structured roles, ranked candidate shortlists, controlled replies, and a recoverable processing history.",
+    architectureLine: "Microsoft Graph → parser → weighted matcher → controlled reply → audit state",
     role: "Product engineer",
     status: "Live private deployment",
-    date: "2026-04-21",
+    date: "2026-05-10",
     published: true,
     featured: true,
     challenge:
-      "Staffing requirements arrived as inconsistent email threads, forwarded messages, and attachments. Manual processing created slow responses, repeated work, missed recipients, and a real risk of replying twice after a process restart.",
+      "Staffing requirements arrived through forwarded messages, conversational threads, inconsistent separators, copied recipients, and attachments. Manual processing caused slow responses, repeated work, weak matching, and a real risk of duplicate replies after restarts.",
     approach:
-      "The platform ingests Outlook mail through Microsoft Graph, classifies and parses each requirement, normalizes the role data, matches candidates with weighted scoring, assembles response drafts and resume attachments, and records every step before a reply is sent.",
+      "The platform evolved through two Harshitha-owned repositories: a PostgreSQL/Fastify foundation and a later Azure-native Next.js iteration. It ingests Outlook mail through Microsoft Graph, classifies and parses requirements, ranks candidates with skill-heavy scoring, reconstructs recipients, sends controlled replies, and persists processing state.",
     outcome:
-      "Recruiters get a centralized pipeline with structured requirements, candidate visibility, controlled communication, and operational safeguards designed for long-running enterprise use rather than a demo-only workflow.",
+      "Recruiters receive a centralized operating pipeline with structured requirements, candidate visibility, controlled communication, authentication, scheduled intake, error handling, and safeguards for long-running enterprise use.",
     contributions: [
-      "Implemented Microsoft Graph inbox intake and full-message retrieval for forwarded and conversational email threads.",
-      "Built structured requirement extraction and candidate matching across skills, role, experience, location, and availability signals.",
-      "Added duplicate-reply prevention with layered identifiers and a persisted replied state so restarts cannot resend the same response.",
-      "Implemented restart recovery for unprocessed mail, shared connection pooling, retry and timeout handling, and safe recipient validation.",
-      "Attached matched candidate resumes to outbound responses and improved handling of original senders, forwarders, and copied recipients.",
-      "Deployed and operated the application on Azure with Microsoft Graph, PostgreSQL, Azure Communication Services, and production-oriented configuration.",
+      "Migrated inbound mailbox processing to Microsoft Graph and implemented full-message retrieval for forwarded and conversational threads.",
+      "Built section-aware requirement extraction and expanded recognition to 385 skills with 1,165 aliases in the later production codebase.",
+      "Improved candidate matching so required skills dominate generic role-word overlap, with explicit experience, location, and availability signals.",
+      "Implemented layered duplicate-reply prevention, persisted replied state, restart recovery, connection pooling, retries, timeouts, date guards, and result checking.",
+      "Implemented resume attachments during the system's evolution and repaired original-sender, forwarder, CC, and self-reply-loop behavior.",
+      "Built Azure deployment paths spanning App Service, Azure Functions timer polling, Cosmos DB in the later iteration, Entra ID/NextAuth, and Key Vault-backed secrets.",
     ],
     stack: [
       "TypeScript",
@@ -108,15 +292,18 @@ export const projects: Project[] = [
       "Fastify",
       "Microsoft Graph",
       "PostgreSQL",
-      "Azure",
-      "Azure Communication Services",
-      "Microsoft Teams",
+      "Azure Cosmos DB",
+      "Azure App Service",
+      "Azure Functions",
+      "Microsoft Entra ID",
+      "Azure Key Vault",
+      "Vitest",
     ],
     metrics: [
-      { value: "3", label: "deduplication layers" },
-      { value: "5 min", label: "scheduled intake cycle" },
-      { value: "End-to-end", label: "email-to-shortlist workflow" },
-      { value: "Live", label: "Azure deployment" },
+      { value: "385", label: "recognized skill families" },
+      { value: "1,165", label: "skill aliases in the later codebase" },
+      { value: "5 min", label: "Azure Functions intake schedule" },
+      { value: "60%", label: "skills weight in candidate scoring" },
     ],
     links: [
       {
@@ -124,81 +311,409 @@ export const projects: Project[] = [
         href: "https://esg-ai-automation.vercel.app/login",
       },
     ],
-    note: "The production workspace and source repository are private because the system handles recruitment operations and candidate information.",
+    note:
+      "The production workspace and repositories are private because the system handles recruitment operations and candidate information. Historical implementation details are described separately from current enabled behavior.",
+    technicalDossier: {
+      systemContext:
+        "The platform automates a real recruitment-operations loop: monitor a shared Outlook mailbox, identify requirements among unrelated mail, normalize inconsistent content, rank an internal candidate pool, reconstruct the correct recipients, and send or stage a controlled response without replying twice. Harshitha's Git history shows sustained implementation work from the initial monorepo through the later Azure-native application.",
+      architecture: [
+        {
+          name: "Mailbox intake",
+          responsibility:
+            "Polls the shared Outlook mailbox, acquires delegated OAuth tokens, fetches full message bodies, and retains provider identifiers needed for processing and deduplication.",
+          technology: "Microsoft Graph · delegated OAuth · Azure Functions timer",
+        },
+        {
+          name: "Classification and parsing",
+          responsibility:
+            "Rejects notifications and self-loops, detects requirements and follow-ups, strips HTML, identifies forwarded-message boundaries, and extracts role, skills, experience, location, budget, client, and priority.",
+          technology: "TypeScript · section-aware parsing · 385 skills / 1,165 aliases",
+        },
+        {
+          name: "Candidate matching",
+          responsibility:
+            "Ranks eligible candidates with skills weighted above role, experience, location, and availability; applies thresholds so weak role-word overlap cannot dominate missing required skills.",
+          technology: "60/15/10/5/10 weighted scoring · candidate pool",
+        },
+        {
+          name: "Response engine",
+          responsibility:
+            "Builds shortlist or clarification replies, handles original sender and forwarded recipients, applies CC policy, and supported candidate resume attachments during the system's evolution.",
+          technology: "Microsoft Graph replies · HTML composition · attachment encoding",
+        },
+        {
+          name: "Processing state",
+          responsibility:
+            "Stores requirements, candidates, sent/skipped outcomes, message identifiers, reply status, sync state, and dashboard records so a restart can resume safely.",
+          technology: "PostgreSQL with pooling · later Azure Cosmos DB",
+        },
+        {
+          name: "Enterprise operations",
+          responsibility:
+            "Secures polling and dashboard access, schedules intake, surfaces failures, manages secrets, and deploys repeatably across Azure services.",
+          technology: "App Service · Functions · Entra ID · NextAuth v5 · Key Vault · structured logs",
+        },
+      ],
+      flow: [
+        {
+          step: "Poll Outlook",
+          detail:
+            "A secured Azure Functions timer calls the poll endpoint every five minutes; the Graph adapter refreshes delegated credentials and requests unread mail.",
+        },
+        {
+          step: "Retrieve and normalize the thread",
+          detail:
+            "The service fetches the full body, removes HTML noise, recognizes forwards and conversational phrasing, and discards system notifications or messages that would create a self-reply loop.",
+        },
+        {
+          step: "Classify and extract",
+          detail:
+            "Requirement and follow-up classification runs before section-aware extraction normalizes title, client, required skills, experience, location, budget, priority, and sender context.",
+        },
+        {
+          step: "Check processing identity",
+          detail:
+            "Provider message IDs, unread state, normalized identifiers, and persisted reply state are checked so an already handled message cannot be sent again after a process restart.",
+        },
+        {
+          step: "Rank candidates",
+          detail:
+            "The matcher scores skills at 60%, role at 15%, experience at 10%, location at 5%, and availability at 10%, then applies overall and skill-overlap thresholds.",
+        },
+        {
+          step: "Construct the response",
+          detail:
+            "The response engine prepares candidate profiles or a missing-information prompt, restores the correct original sender and copied recipients, and historically supported attached resumes where configured.",
+        },
+        {
+          step: "Persist before and after sending",
+          detail:
+            "Intent, result, status, and errors are recorded so retries and restart recovery can distinguish unsent, skipped, failed, and completed messages.",
+        },
+        {
+          step: "Expose operations state",
+          detail:
+            "Authenticated dashboard views show requirements, candidates, categories, sent responses, and failure states for manual follow-through.",
+        },
+      ],
+      implementation: [
+        "Replaced earlier IMAP and webhook experiments with Microsoft Graph inbox intake and hardened full-message retrieval for an Outlook mailbox.",
+        "Implemented HTML cleanup, forwarded-email detection, conversational/free-form parsing, separator normalization, explicit client and priority extraction, and system-notification filtering.",
+        "Expanded the later skills directory to 385 categorized skills with 1,165 aliases and fixed false SAP classification caused by overly broad token matching.",
+        "Changed candidate ranking to prioritize required-skill overlap over generic title words, using a 60% skills, 15% role, 10% experience, 5% location, and 10% availability model.",
+        "Added duplicate-reply protection across unread filtering, Graph/provider identifiers, persisted processing state, and an explicit replied marker.",
+        "Added restart recovery for unprocessed mail, shared PostgreSQL connection pooling in the first production implementation, retry/timeout/result checks, and date guards.",
+        "Implemented original-sender reconstruction, vendor and employee CC behavior, self-loop prevention, and safe validation for outbound recipients.",
+        "Implemented candidate resume attachments and automatic schema migration in the first repository; a later iteration removed PDF resume infrastructure, so this is historical implementation work rather than a current-state claim.",
+        "Migrated deployment through Azure PostgreSQL and standalone App Service toward an Azure-native stack using Cosmos DB, Azure Functions, Entra ID/NextAuth, Key Vault access, and reproducible lockfiles.",
+        "Added unit coverage for classification, parsing, matching, and auto-reply behavior, plus dashboard resilience and production error handling in the later application.",
+      ],
+      reliability: [
+        {
+          risk: "The process restarts after reading a message but before completing a reply.",
+          control:
+            "Persisted processing and replied state plus restart recovery distinguish work that still needs action from mail that has already produced a response.",
+        },
+        {
+          risk: "The same thread is fetched again and receives a duplicate response.",
+          control:
+            "Unread filtering, provider identifiers, normalized identity checks, and persisted reply state form layered duplicate-reply prevention.",
+        },
+        {
+          risk: "Forwarded mail sends a response to the wrong person or back to the monitored mailbox.",
+          control:
+            "Forward-boundary parsing, original-sender recovery, recipient validation, CC reconstruction, and self-loop detection run before sending.",
+        },
+        {
+          risk: "Generic role words rank technically unsuitable candidates.",
+          control:
+            "Skills carry the largest weight, skill-overlap thresholds gate inclusion, and the expanded alias directory normalizes equivalent technologies.",
+        },
+        {
+          risk: "Scheduled polling exhausts database connections or hangs on a provider call.",
+          control:
+            "The first implementation shares a PostgreSQL pool; provider operations use retry, timeout, result checking, and guarded scheduling.",
+        },
+        {
+          risk: "Deployment configuration or secrets are exposed to the client.",
+          control:
+            "Entra ID protects dashboard access, a poll API key protects scheduled intake, and provider credentials are held in Azure Key Vault/server configuration.",
+        },
+      ],
+      decisions: [
+        {
+          decision: "Move mailbox intake to Microsoft Graph",
+          rationale:
+            "Graph fits the Outlook environment, exposes stable message identity and reply semantics, and avoids keeping a fragile IMAP loop inside the Azure API process.",
+        },
+        {
+          decision: "Weight skills above titles",
+          rationale:
+            "Recruitment requirements frequently use broad titles; hard technical requirements are a stronger signal of actual candidate fit.",
+        },
+        {
+          decision: "Persist processing state before trusting mailbox flags",
+          rationale:
+            "Unread state alone does not survive every partial failure. Application state is needed to make restart and duplicate behavior explicit.",
+        },
+        {
+          decision: "Separate scheduled triggers from the web process",
+          rationale:
+            "Azure Functions can initiate polling on a fixed cadence without a self-restarting loop competing with the production application lifecycle.",
+        },
+      ],
+      evidence: [
+        {
+          label: "Harshitha-authored repository history",
+          detail:
+            "The private Git history records sustained work across the Microsoft Graph migration, extraction, matching, deduplication, restart recovery, pooling, forwarding, resume attachments, tests, and Azure deployment—not a single cosmetic commit.",
+        },
+        {
+          label: "Live authenticated platform",
+          detail:
+            "The current login surface is publicly reachable while operational data and source remain private.",
+          href: "https://esg-ai-automation.vercel.app/login",
+        },
+      ],
+      contributionBoundary:
+        "The hiring case study is directly supported by Harshitha's sustained Git authorship across the private `esg-ai-automation` and `email-auto` repositories. The system changed architecture during development; PostgreSQL pooling and resume attachments are verified implementation work from the earlier stage, while Cosmos DB, Azure Functions, Entra ID, and Key Vault describe the later production iteration.",
+    },
   },
   {
     slug: "content-automation-studio",
     title: "Content Automation Studio",
-    eyebrow: "Research-to-publishing workflow",
+    eyebrow: "Research-to-publishing · review-gated system",
     description:
-      "A review-first content operating system that researches current topics, drafts LinkedIn carousels and newsletters, generates visual assets, and keeps publishing behind explicit human approval.",
-    role: "Automation product builder",
-    status: "Live project",
+      "A single-operator content system that turns current research into cited newsletter drafts and five-slide LinkedIn carousel packages while keeping generation separate from publication.",
+    architectureLine: "Firecrawl research → structured generation → asset rendering → human review → guarded delivery",
+    role: "Product and automation workflow contributor",
+    status: "Live project · controlled publishing",
     date: "2026-08-02",
     published: true,
     featured: true,
     challenge:
-      "Content teams lose time moving between research, writing, image generation, review, and distribution. Fully autonomous publishing is fast but unsafe; manual production is controlled but difficult to scale.",
+      "Content production loses time across research, writing, image generation, source review, formatting, and delivery. Fully autonomous publishing is fast but unsafe; purely manual work preserves control but does not scale.",
     approach:
-      "The studio combines current-source research, structured writing, asset generation, review states, and guarded delivery paths. Research and generation can run automatically, while LinkedIn publishing and newsletter delivery remain separate, deliberate actions.",
+      "The system keeps carousel and newsletter pipelines independent, streams real provider progress, retains sources and citations, generates channel-specific assets, and makes LinkedIn or email delivery a separate action with explicit confirmation and constrained recipients.",
     outcome:
-      "One workspace can move from a topic to cited newsletter copy or a five-slide carousel, show real pipeline progress, and preserve a clear approval boundary before anything reaches an audience.",
+      "One operator workspace can move from a topic to reviewable newsletter or carousel output, inspect the exact sources and generated assets, and deliberately choose whether to deliver anything.",
     contributions: [
-      "Built research pipelines for current AI, cloud, security, infrastructure, and developer-tool topics.",
-      "Structured carousel and newsletter generation as separate workflows with independent prompts, assets, state, and tests.",
-      "Added generated carousel artwork, optional newsletter lead visuals, citations, source review, and real pipeline progress in the dashboard.",
-      "Kept provider credentials server-side and separated generation from publication with explicit review and confirmation steps.",
-      "Added guarded LinkedIn publishing and fixed-recipient test delivery so automation cannot silently broadcast content.",
+      "Helped shape research-to-output workflows around real operator review rather than one-click autonomous publication.",
+      "Worked with separate carousel and newsletter paths, including current-source research, structured copy, image assets, citations, and visible pipeline state.",
+      "Defined safety boundaries around server-only credentials, fixed-recipient email tests, local-only LinkedIn controls, identity checks, dry runs, and second confirmation.",
+      "Evaluated complete operator journeys from topic selection through source inspection, output review, and guarded delivery.",
     ],
     stack: [
       "Next.js",
       "TypeScript",
       "Firecrawl",
-      "OpenAI",
+      "OpenAI Responses",
       "OpenAI Image",
       "Resend",
       "LinkedIn API",
       "Python",
+      "GitHub Actions",
+      "Vitest",
     ],
     metrics: [
-      { value: "2", label: "independent content pipelines" },
-      { value: "5", label: "carousel assets per run" },
-      { value: "2-step", label: "publish confirmation" },
-      { value: "Review-first", label: "delivery model" },
+      { value: "2", label: "isolated content pipelines" },
+      { value: "5", label: "complete carousel assets per run" },
+      { value: "2-step", label: "LinkedIn publication confirmation" },
+      { value: "1 fixed", label: "allowed newsletter test recipient" },
     ],
     links: [
       {
         label: "Open live studio",
         href: "https://linkedin-agency-automation.vercel.app/",
       },
+      {
+        label: "Inspect public implementation",
+        href: "https://github.com/harshith-vaddiparthy/linkedin-agency-automation",
+      },
     ],
+    note:
+      "The public implementation is a single-user operator workspace. It requires authentication, durable rate limiting, run storage, and production observability before use as a public multi-user service.",
+    technicalDossier: {
+      systemContext:
+        "The Studio automates the expensive middle of content operations—research, synthesis, drafting, visual production, and packaging—without collapsing review and distribution into the same action. Carousel and newsletter workflows share provider infrastructure but retain separate prompts, types, state, routes, tests, and delivery rules.",
+      architecture: [
+        {
+          name: "Operator workspace",
+          responsibility:
+            "Presents node-based carousel and newsletter workflows, real pipeline state, source links, generated outputs, review controls, and delivery readiness in one responsive dashboard.",
+          technology: "Next.js 16 · React 19 · TypeScript · shadcn · Tailwind",
+        },
+        {
+          name: "Research adapter",
+          responsibility:
+            "Searches bounded current sources across AI, automation, cloud, security, infrastructure, developer tools, and operator-entered newsletter topics.",
+          technology: "Firecrawl server SDK",
+        },
+        {
+          name: "Generation layer",
+          responsibility:
+            "Produces schema-validated carousel copy, structured newsletter sections, citations, four content-slide designs, a deterministic CTA slide, and an optional newsletter lead visual.",
+          technology: "OpenAI Responses · OpenAI Image · Zod",
+        },
+        {
+          name: "Progress and review state",
+          responsibility:
+            "Streams real research, writing, and per-slide events to the browser and preserves the generated copy, sources, citations, and final assets for inspection.",
+          technology: "NDJSON streaming · isolated React state",
+        },
+        {
+          name: "Guarded LinkedIn publisher",
+          responsibility:
+            "Validates five PNG assets, verifies the configured identity, performs a dry run, requires Publish plus browser confirmation, and reserves a duplicate-prevention ledger entry before a live post.",
+          technology: "Local-only Next.js route · Python 3.12 · LinkedIn API · GitHub issue ledger",
+        },
+        {
+          name: "Constrained email delivery",
+          responsibility:
+            "Sends only a reviewed newsletter test to a server-configured recipient; the browser cannot choose or override the destination.",
+          technology: "Resend server API",
+        },
+      ],
+      flow: [
+        {
+          step: "Choose a workflow",
+          detail:
+            "The operator selects carousel or newsletter; each path initializes its own prompt, validation schema, state, progress events, and output model.",
+        },
+        {
+          step: "Research current sources",
+          detail:
+            "Firecrawl gathers a bounded set of recent pages, and the pipeline retains source URLs so the operator can inspect what informed the draft.",
+        },
+        {
+          step: "Generate channel-specific copy",
+          detail:
+            "The carousel path selects a timely story and writes concise slide copy; the newsletter path produces a structured long-form draft with citations tied to collected sources.",
+        },
+        {
+          step: "Render visual assets",
+          detail:
+            "OpenAI Image creates complete carousel artwork and can create one text-free 16:9 newsletter lead visual. The fifth carousel slide uses a deterministic subscription CTA.",
+        },
+        {
+          step: "Stream and inspect",
+          detail:
+            "The dashboard shows actual provider milestones and per-slide completion, then exposes copy, citations, source links, and images for review.",
+        },
+        {
+          step: "Confirm a bounded delivery action",
+          detail:
+            "LinkedIn requires a ready five-image package, identity verification, validation, dry run, explicit Publish, and a second confirmation. Newsletter delivery is limited to one server-configured test recipient.",
+        },
+        {
+          step: "Record publication identity",
+          detail:
+            "The LinkedIn flow reserves a GitHub issue ledger entry to prevent duplicates and support recovery when an upstream response is ambiguous.",
+        },
+      ],
+      implementation: [
+        "Structured carousel and newsletter generation as isolated sibling workflows instead of sharing prompts, routes, UI state, and tests that could leak behavior across channels.",
+        "Used current-source Firecrawl research and retained citations/source links so generated claims remain reviewable before distribution.",
+        "Designed carousel output as five complete images: four generated content slides plus a deterministic fifth CTA, avoiding a fragile second browser text-overlay layer.",
+        "Exposed real NDJSON research, writing, and per-slide progress rather than simulated client-side timers.",
+        "Kept Firecrawl, OpenAI, Resend, and LinkedIn credentials in server-only configuration and out of browser bundles.",
+        "Separated generation from LinkedIn publication through readiness checks, exact identity verification, validation, dry run, manual Publish, and second confirmation.",
+        "Constrained newsletter testing to a fixed-recipient server setting so a client request cannot turn the endpoint into an arbitrary broadcast path.",
+        "Added a scheduled path that processes only explicitly approved manifest entries and uses a ledger for duplicate prevention and ambiguous-outcome recovery.",
+      ],
+      reliability: [
+        {
+          risk: "Generation silently publishes incomplete or unreviewed content.",
+          control:
+            "Research/generation and delivery are separate routes and actions; no completed generation run automatically invokes LinkedIn or Resend.",
+        },
+        {
+          risk: "A carousel is published with missing or inconsistent media.",
+          control:
+            "The publisher requires a complete five-PNG package, validates the assets, verifies identity, and performs a dry run before live publication.",
+        },
+        {
+          risk: "A retry creates a duplicate LinkedIn post.",
+          control:
+            "An issue-ledger reservation records publication identity before the external action and supports ambiguous-result recovery.",
+        },
+        {
+          risk: "The email endpoint becomes an open relay.",
+          control:
+            "The server owns the only permitted test recipient and rejects destinations supplied by the browser.",
+        },
+        {
+          risk: "Secrets leak through the dashboard.",
+          control:
+            "Provider keys remain server-side and are excluded from committed source; public exposure is explicitly blocked pending authentication and rate limiting.",
+        },
+      ],
+      decisions: [
+        {
+          decision: "Keep workflows isolated",
+          rationale:
+            "Carousel and newsletter outputs have different schemas, review needs, visual generation, and delivery risks; independent paths prevent accidental coupling.",
+        },
+        {
+          decision: "Stream real provider milestones",
+          rationale:
+            "Operators need truthful progress and actionable failures, not animation that continues after an upstream provider has already failed.",
+        },
+        {
+          decision: "Constrain delivery before adding autonomy",
+          rationale:
+            "A fixed recipient, local LinkedIn route, identity checks, confirmations, and ledger are safer foundations than exposing general publishing first.",
+        },
+      ],
+      evidence: [
+        {
+          label: "Live workflow interface",
+          detail:
+            "The deployed dashboard exposes the carousel and newsletter operator experience and its review-first controls.",
+          href: "https://linkedin-agency-automation.vercel.app/",
+        },
+        {
+          label: "Public implementation",
+          detail:
+            "The repository documents routes, provider boundaries, NDJSON progress, fixed-recipient delivery, LinkedIn validation, tests, and explicit production limitations.",
+          href: "https://github.com/harshith-vaddiparthy/linkedin-agency-automation",
+        },
+      ],
+      contributionBoundary:
+        "This dossier describes a system Harshitha worked with and helped shape at the product and automation-workflow level. The linked public repository is owned by Harshith Vaddiparthy and its visible commits do not establish sole code authorship by Harshitha; the case study therefore separates system capability from her product, workflow, review, and operational contribution.",
+    },
   },
   {
     slug: "ai-internship-recommendation-engine",
     title: "AI Internship Recommendation Engine",
-    eyebrow: "Accessible matching experience",
+    eyebrow: "Accessible matching · public source",
     description:
-      "A mobile-friendly recommendation system that matches applicants to a focused shortlist of PM Internship Scheme opportunities using education, skills, sector interests, and location.",
+      "A mobile-oriented recommendation application that turns a candidate profile into a focused shortlist of PM Internship Scheme opportunities using explicit, explainable weighted matching.",
+    architectureLine: "React profile form → FastAPI scoring → ranked shortlist → SMTP or download",
     role: "Full-stack developer",
-    status: "Public source",
+    status: "Public source · two-commit build",
     date: "2026-06-09",
     published: true,
     featured: false,
     challenge:
-      "Large opportunity lists are difficult to navigate, especially for first-generation applicants and people with limited digital access.",
+      "Large opportunity catalogs create decision overload, especially for first-generation applicants and users with limited digital confidence. The product needed a short, explainable result rather than a search interface that simply moved the filtering burden to the applicant.",
     approach:
-      "The application prioritizes a small set of relevant opportunities, highlights matched signals, uses a responsive interface, and supports email delivery with a download fallback.",
+      "A React profile flow collects education, skills, sector interest, and location. Harshitha migrated the recommendation logic to a Python FastAPI backend, scores all 20 sample opportunities, returns the top five with a score breakdown, and supports HTML email delivery with a client-side download fallback.",
     outcome:
-      "Applicants receive a clearer, lower-friction path from their profile to a useful internship shortlist and the official application portal.",
+      "The project demonstrates an end-to-end profile-to-shortlist flow, explicit ranking logic, server validation, responsive presentation, official application links, and two ways to retain the result.",
     contributions: [
-      "Designed the matching experience around education, skills, interests, and geography.",
-      "Moved the recommendation engine to a Python backend and connected real email delivery.",
-      "Built for mobile use, simple language, and low digital-literacy contexts.",
+      "Built the React/Vite applicant journey from scheme introduction through validated profile capture and ranked recommendations.",
+      "Moved the recommendation engine from TypeScript to a Python FastAPI service with Pydantic request and response models.",
+      "Implemented explainable scoring across education, skills, sector, and location and sorted all opportunities into a top-five shortlist.",
+      "Added SMTP-backed HTML recommendation emails and retained a text-download fallback when email delivery is unavailable.",
+      "Designed for mobile use, large touch targets, simple language, and low digital-literacy contexts.",
     ],
-    stack: ["Python", "JavaScript", "HTML", "CSS", "Email"],
+    stack: ["React", "TypeScript", "Vite", "Python", "FastAPI", "Pydantic", "SMTP", "Tailwind CSS"],
     metrics: [
       { value: "20", label: "sample opportunities" },
-      { value: "3–5", label: "recommendations per user" },
+      { value: "4", label: "explicit matching dimensions" },
+      { value: "Top 5", label: "ranked results per profile" },
+      { value: "2", label: "result-retention paths" },
     ],
     links: [
       {
@@ -206,97 +721,804 @@ export const projects: Project[] = [
         href: "https://github.com/chittapragadaharshitha/AI-Internship-Recommendation-Engine",
       },
     ],
+    technicalDossier: {
+      systemContext:
+        "The application is an explainable recommendation prototype for the PM Internship Scheme. It uses a deliberately small local opportunity dataset and deterministic scoring so a reviewer can understand why an internship ranks above another. It is not an opaque learned recommendation model.",
+      architecture: [
+        {
+          name: "Candidate experience",
+          responsibility:
+            "Collects name, email, education, selected skills, sector interest, and preferred location with required-field and email-format validation.",
+          technology: "React · TypeScript · Vite · React Router",
+        },
+        {
+          name: "Recommendation API",
+          responsibility:
+            "Validates the candidate profile, scores every opportunity, sorts descending, and returns the top five internships with per-dimension breakdowns.",
+          technology: "FastAPI · Pydantic · Python",
+        },
+        {
+          name: "Opportunity catalog",
+          responsibility:
+            "Provides 20 sample internships with scheme IDs, education rules, skill requirements, sector, state, duration, stipend, and application context.",
+          technology: "Typed in-memory records",
+        },
+        {
+          name: "Result delivery",
+          responsibility:
+            "Formats the shortlist for the responsive results page, sends an HTML email through configured SMTP, or allows a local file fallback.",
+          technology: "SMTP · MIME HTML · browser download",
+        },
+      ],
+      flow: [
+        {
+          step: "Capture the profile",
+          detail:
+            "The form requires contact information, education, at least one skill, sector, and location before navigating to recommendations.",
+        },
+        {
+          step: "Validate at the API boundary",
+          detail:
+            "Pydantic models validate the email and the shape of candidate and internship data before scoring runs.",
+        },
+        {
+          step: "Score every opportunity",
+          detail:
+            "Education contributes up to 30 points, skills up to 40, sector 20, and location 10; an `Any Degree` or `Any Location` match receives partial credit.",
+        },
+        {
+          step: "Rank and explain",
+          detail:
+            "The API sorts all 20 records by total score, returns the top five, and includes matching skills plus the dimension breakdown.",
+        },
+        {
+          step: "Present or retain the shortlist",
+          detail:
+            "The UI highlights matched skills and application details; the user can request an HTML email or save a fallback file.",
+        },
+      ],
+      implementation: [
+        "Built the multi-page React flow and client-side profile persistence between form and recommendation routes.",
+        "Implemented required-field and email-format checks before a profile can be scored.",
+        "Created FastAPI models for candidate profiles, internship records, recommendation responses, and email requests.",
+        "Ported the scoring engine to Python with explicit caps and partial-credit rules rather than an uninspectable model call.",
+        "Added health, recommendation, catalog, sector, state, and send-recommendation endpoints.",
+        "Built responsive recommendation cards with scheme IDs, stipends, location, duration, eligibility, required skills, and matched-skill highlighting.",
+        "Generated personalized HTML email output with profile context, internship cards, and application actions.",
+      ],
+      reliability: [
+        {
+          risk: "An incomplete profile produces meaningless ranking.",
+          control:
+            "The client requires all ranking dimensions and the API validates typed request fields independently.",
+        },
+        {
+          risk: "Email configuration is missing or delivery fails.",
+          control:
+            "The API returns explicit configuration/delivery errors and the interface retains a local download fallback.",
+        },
+        {
+          risk: "A result feels arbitrary to the applicant.",
+          control:
+            "The engine uses fixed weights, returns score components, and highlights matched skills in the UI.",
+        },
+        {
+          risk: "A large list recreates the original decision burden.",
+          control:
+            "The backend deliberately limits results to the top five after ranking the complete sample catalog.",
+        },
+      ],
+      decisions: [
+        {
+          decision: "Use deterministic scoring",
+          rationale:
+            "For a small prototype dataset, explicit rules are easier to explain, test, and tune than branding a model call as AI without evidence.",
+        },
+        {
+          decision: "Move scoring to FastAPI",
+          rationale:
+            "A typed backend centralizes ranking and email delivery and prevents recommendation rules from being duplicated across browser clients.",
+        },
+        {
+          decision: "Optimize for a short list",
+          rationale:
+            "The target user benefits more from three to five actionable options than from another filter-heavy catalog.",
+        },
+      ],
+      evidence: [
+        {
+          label: "Harshitha-authored public repository",
+          detail:
+            "Both commits are attributed to Harshitha, including the explicit migration of the recommendation engine from TypeScript to Python.",
+          href: "https://github.com/chittapragadaharshitha/AI-Internship-Recommendation-Engine",
+        },
+        {
+          label: "Inspectable scoring implementation",
+          detail:
+            "The public FastAPI source exposes the 30/40/20/10 caps, partial-credit behavior, top-five ranking, Pydantic models, and SMTP delivery path.",
+          href: "https://github.com/chittapragadaharshitha/AI-Internship-Recommendation-Engine/blob/main/backend/main.py",
+        },
+      ],
+      contributionBoundary:
+        "This is a portfolio prototype using a curated 20-record sample catalog and deterministic weighted matching. It should not be represented as a deployed government system, a learned recommendation model, or a production integration with the official PM Internship Scheme database.",
+    },
   },
   {
     slug: "absolute-prosthetics",
     title: "Absolute Prosthetics",
-    eyebrow: "Production website",
+    eyebrow: "Customer-facing website · private source",
     description:
-      "A production web experience for a prosthetics provider, including responsive service presentation, media updates, and deployment support.",
+      "A production Next.js website for a prosthetics and orthotics provider, combining a specialist-service narrative with responsive contact paths, downloadable brochures, testimonial media, and deployment support.",
+    architectureLine: "Next.js page shell → service components → media and brochures → contact actions",
     role: "Web developer",
-    status: "Live site",
+    status: "Live site · iteratively maintained",
     date: "2026-05-25",
     published: true,
     featured: false,
     challenge:
-      "The business needed a clear, trustworthy web presence that explains specialist services and works reliably across devices.",
+      "A clinical services business needed to explain specialist prosthetic and orthotic work clearly, establish trust quickly, and give visitors practical ways to learn more or make contact on mobile and desktop.",
     approach:
-      "The project focused on a usable service structure, responsive presentation, real media, and a repeatable Vercel deployment path.",
+      "The application uses a componentized Next.js page with dedicated hero, philosophy, services, process, testimonial, contact, header, footer, and WhatsApp surfaces. Real brand assets, brochures, service images, testimonial media, metadata, and deployment iterations replace placeholder content.",
     outcome:
-      "The result is a live customer-facing website that can be maintained and updated as the practice grows.",
+      "The result is a live, maintainable customer-facing site with consistent branding, responsive service discovery, downloadable information, patient-facing proof, and multiple conversion paths.",
     contributions: [
-      "Maintained production content and service imagery.",
-      "Integrated testimonial media and supported release deployment.",
-      "Verified the site through iterative production updates.",
+      "Created the initial Next.js project and authored the complete site rebuild into reusable business sections.",
+      "Integrated the transparent brand mark across the header and footer and added business-specific OpenGraph metadata.",
+      "Added and corrected production service imagery, footer credits, brochure access, contact paths, and Vercel release triggers.",
+      "Worked through pull-request iterations that added testimonial media and refined customer-facing details.",
     ],
-    stack: ["Next.js", "TypeScript", "Vercel", "Responsive UI"],
-    metrics: [{ value: "Live", label: "production deployment" }],
+    stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Radix UI", "Vercel Analytics", "Vercel"],
+    metrics: [
+      { value: "8", label: "composed page sections" },
+      { value: "2", label: "downloadable service brochures" },
+      { value: "3", label: "direct contact paths" },
+      { value: "Live", label: "production deployment" },
+    ],
     links: [
       {
         label: "Visit website",
         href: "https://absolute-prosthetics.vercel.app/",
       },
     ],
+    technicalDossier: {
+      systemContext:
+        "This project is a production marketing and service-information site rather than an automation platform. Its engineering value is in translating a specialist healthcare business into a clear responsive information architecture, maintaining real assets and media, and repeatedly shipping updates without breaking the public experience.",
+      architecture: [
+        {
+          name: "Application shell",
+          responsibility:
+            "Defines global metadata, theme behavior, analytics, typography, responsive layout, and the top-level composition of the site.",
+          technology: "Next.js App Router · React · TypeScript",
+        },
+        {
+          name: "Narrative sections",
+          responsibility:
+            "Separates hero, philosophy, services, care process, testimonials, and contact information into maintainable components with clear content ownership.",
+          technology: "React components · Tailwind CSS",
+        },
+        {
+          name: "Resource layer",
+          responsibility:
+            "Serves real brand marks, specialist service photography, patient/testimonial media, and prosthetic/orthotic brochures from stable public paths.",
+          technology: "Next Image · static media · PDF downloads",
+        },
+        {
+          name: "Conversion paths",
+          responsibility:
+            "Provides navigation, contact details, WhatsApp access, brochure downloads, and service calls to action across viewport sizes.",
+          technology: "Responsive links · WhatsApp deep link · accessible controls",
+        },
+        {
+          name: "Release surface",
+          responsibility:
+            "Builds and deploys the application through Vercel with production metadata and iterative release commits.",
+          technology: "Vercel · OpenGraph metadata · Vercel Analytics",
+        },
+      ],
+      flow: [
+        {
+          step: "Establish trust",
+          detail:
+            "The header and hero expose the provider identity, specialist positioning, and primary contact direction immediately.",
+        },
+        {
+          step: "Explain the service model",
+          detail:
+            "Philosophy, service, and process sections move from the provider's approach into specific prosthetic and orthotic offerings and what a patient can expect.",
+        },
+        {
+          step: "Provide supporting evidence",
+          detail:
+            "Service imagery, testimonial media, and downloadable brochures let visitors inspect more detail without leaving the business context.",
+        },
+        {
+          step: "Offer a direct next action",
+          detail:
+            "Contact, WhatsApp, navigation, and footer paths remain available across desktop and mobile layouts.",
+        },
+        {
+          step: "Release and refine",
+          detail:
+            "Production commits update imagery, brochures, testimonial media, metadata, and deployment state as business content changes.",
+        },
+      ],
+      implementation: [
+        "Rebuilt the site around focused React components rather than one monolithic page, separating content and responsive behavior by business section.",
+        "Replaced placeholder presentation with the provider's transparent logo, real service imagery, brochures, contact information, and branded metadata.",
+        "Implemented responsive header/footer behavior and service navigation that remains usable on narrow screens.",
+        "Added downloadable prosthetic and orthotic brochures through stable public asset paths.",
+        "Integrated testimonial media through a pull-request iteration and maintained production-safe media references.",
+        "Added a WhatsApp contact surface and removed helper copy that distracted from the primary action.",
+        "Configured OpenGraph presentation and triggered verified Vercel releases after content and asset fixes.",
+      ],
+      reliability: [
+        {
+          risk: "Large clinical imagery harms mobile load and layout stability.",
+          control:
+            "Next.js image handling, constrained aspect ratios, responsive sizing, and stable component containers protect the page structure.",
+        },
+        {
+          risk: "A brochure or testimonial path breaks after deployment.",
+          control:
+            "Assets live under versioned public paths and production updates explicitly verify the release after media changes.",
+        },
+        {
+          risk: "Contact actions disappear on small screens.",
+          control:
+            "The responsive header, contact section, footer, and WhatsApp action provide multiple independent routes to the business.",
+        },
+        {
+          risk: "Search or social previews show generic inherited content.",
+          control:
+            "Business-specific layout metadata and OpenGraph assets are defined in the application shell.",
+        },
+      ],
+      decisions: [
+        {
+          decision: "Compose the page from business sections",
+          rationale:
+            "Services, process, proof, and contact information change independently and are easier to maintain as focused components.",
+        },
+        {
+          decision: "Keep brochures as direct assets",
+          rationale:
+            "Patients and referrers can download detailed information without requiring an account, form submission, or client-side viewer.",
+        },
+        {
+          decision: "Offer redundant contact paths",
+          rationale:
+            "A healthcare-service visitor may prefer phone, page contact details, or WhatsApp; the interface should not force a single channel.",
+        },
+      ],
+      evidence: [
+        {
+          label: "Live production website",
+          detail:
+            "The public Vercel deployment exposes the current responsive site, real assets, brochures, and contact paths.",
+          href: "https://absolute-prosthetics.vercel.app/",
+        },
+        {
+          label: "Private mixed-contributor Git history",
+          detail:
+            "Harshitha-authored commits include the initial project, full rebuild, logo/metadata work, imagery fixes, footer/contact refinements, and deployment updates; other contributors also authored or merged parts of the media and brochure work.",
+        },
+      ],
+      contributionBoundary:
+        "The private repository has mixed authorship. Harshitha's commits directly support the initial project, the full site rebuild, brand integration, metadata, imagery fixes, footer/contact refinements, and deployment work. Testimonial media and brochure changes include contributions or merges by others and are not presented as her sole implementation.",
+    },
   },
   {
     slug: "pneumonia-detection-cnn",
-    title: "Pneumonia Detection with CNNs",
-    eyebrow: "Applied machine learning",
+    title: "Pneumonia Model Comparison Prototype",
+    eyebrow: "Academic prototype · public source",
     description:
-      "A convolutional neural network project that analyzes chest X-rays and classifies likely pneumonia using learned visual features.",
-    role: "Machine learning developer",
-    status: "Public source",
+      "A Flask-based academic interface for loading a CSV dataset and comparing illustrative Random Forest, SVM, and CNN result summaries through JSON responses and generated accuracy charts.",
+    architectureLine: "CSV upload → Flask routes → model-result summaries → cached Matplotlib chart",
+    role: "Academic project developer",
+    status: "Public prototype · non-diagnostic",
     date: "2025-08-17",
     published: true,
     featured: false,
     challenge:
-      "Chest X-ray classification is a useful way to study how image preprocessing, convolutional features, and evaluation work together in a healthcare context.",
+      "The project explores how a simple web interface can present multiple classification-result summaries, confusion matrices, and comparative accuracy visualizations for a pneumonia-detection topic.",
     approach:
-      "The project prepares image data, trains a CNN, and exposes the classification flow for experimentation and learning.",
+      "A Flask server accepts a CSV upload, exposes endpoints for running one or all named algorithms, accumulates result summaries, and renders a base64 Matplotlib chart. The committed source uses fixed illustrative metrics rather than training models at runtime.",
     outcome:
-      "It demonstrates an end-to-end applied computer-vision workflow while keeping the result clearly positioned as an academic project, not a diagnostic device.",
+      "The repository demonstrates API routing, file handling, JSON response design, server-side chart generation, and comparison-state management, while remaining explicitly an academic visualization prototype rather than a medical model.",
     contributions: [
-      "Prepared the image-classification workflow and model pipeline.",
-      "Worked with image processing, numerical analysis, training, and result visualization.",
+      "Built Flask routes for the home, upload, algorithm execution, chart generation, and accumulated-result reset flows.",
+      "Implemented CSV ingestion with success/error JSON responses and in-memory dataset state.",
+      "Represented precision, recall, F1, support, confusion matrix, and accuracy results for three algorithm labels.",
+      "Generated and cached a base64 Matplotlib comparison chart for the accumulated results.",
     ],
-    stack: ["Python", "TensorFlow", "PyTorch", "OpenCV", "NumPy", "Pandas"],
-    metrics: [{ value: "CNN", label: "model architecture" }],
+    stack: ["Python", "Flask", "Flask-CORS", "Pandas", "Matplotlib", "JSON APIs"],
+    metrics: [
+      { value: "3", label: "algorithm result sets" },
+      { value: "5", label: "HTTP routes in the committed prototype" },
+      { value: "CSV", label: "accepted dataset format" },
+      { value: "0", label: "trained models included in source" },
+    ],
     links: [
       {
         label: "View source",
         href: "https://github.com/chittapragadaharshitha/Pneumonia-Detection-using-CNN",
       },
     ],
+    technicalDossier: {
+      systemContext:
+        "The committed project is best understood as a web/API prototype for comparing model-result presentations. Its source does not contain a CNN architecture, image preprocessing pipeline, training loop, serialized model, or chest X-ray inference endpoint. The case study therefore documents the actual Flask and visualization work instead of repeating the repository title as a production claim.",
+      architecture: [
+        {
+          name: "Flask application",
+          responsibility:
+            "Hosts the interface routes, upload handler, algorithm-selection endpoint, reset behavior, and chart endpoint.",
+          technology: "Python · Flask · Flask-CORS",
+        },
+        {
+          name: "Dataset intake",
+          responsibility:
+            "Accepts a multipart file, loads CSV content into a process-level Pandas DataFrame, and returns the dataset size or a parsing error.",
+          technology: "Pandas · multipart upload",
+        },
+        {
+          name: "Result registry",
+          responsibility:
+            "Returns fixed classification reports, confusion matrices, and accuracy values for Random Forest, SVM, and CNN labels and accumulates selected outputs in memory.",
+          technology: "Python dictionaries · JSON",
+        },
+        {
+          name: "Visualization layer",
+          responsibility:
+            "Builds a comparative accuracy bar chart, annotates percentages, encodes the PNG as base64, and caches it by the selected-result signature.",
+          technology: "Matplotlib Agg · BytesIO · base64",
+        },
+      ],
+      flow: [
+        {
+          step: "Upload a dataset",
+          detail:
+            "The browser posts a CSV file; Flask validates that a file exists and Pandas parses it into in-memory state.",
+        },
+        {
+          step: "Select comparison scope",
+          detail:
+            "The client requests Random Forest, SVM, CNN, or all result sets through the algorithm endpoint.",
+        },
+        {
+          step: "Return illustrative metrics",
+          detail:
+            "The server returns fixed precision, recall, F1, support, confusion matrix, and accuracy structures and stores them in the accumulated-result map.",
+        },
+        {
+          step: "Render a comparison chart",
+          detail:
+            "The chart endpoint converts accumulated accuracies into a labeled bar chart and returns a base64 PNG, reusing the cache for an identical result signature.",
+        },
+      ],
+      implementation: [
+        "Defined Flask endpoints for page rendering, CSV upload, algorithm selection, accumulated state, and chart generation.",
+        "Handled missing files, CSV parsing failures, unknown algorithm names, and chart-generation exceptions through JSON responses.",
+        "Structured classification-report and confusion-matrix payloads consistently across three named algorithms.",
+        "Used Matplotlib's non-interactive Agg backend so chart rendering can run in a server process.",
+        "Encoded generated figures as base64 PNG data and cached charts by a key derived from the accumulated accuracy state.",
+      ],
+      reliability: [
+        {
+          risk: "A missing or invalid upload crashes the request.",
+          control:
+            "The upload route checks filename presence and catches Pandas parsing exceptions before returning structured errors.",
+        },
+        {
+          risk: "Server-side plotting requires a desktop display.",
+          control:
+            "Matplotlib uses the Agg backend and writes figures to an in-memory buffer.",
+        },
+        {
+          risk: "Repeated chart requests redo the same rendering work.",
+          control:
+            "A result-derived cache key reuses the base64 chart for unchanged accumulated metrics.",
+        },
+        {
+          risk: "Illustrative metrics are mistaken for a validated medical model.",
+          control:
+            "The portfolio explicitly labels the values as fixed prototype data and the project as non-diagnostic.",
+        },
+      ],
+      decisions: [
+        {
+          decision: "Document the implementation as a comparison prototype",
+          rationale:
+            "The public source supports Flask, data-loading, JSON, and charting claims, but it does not support a trained-CNN or X-ray inference claim.",
+        },
+        {
+          decision: "Keep chart output in memory",
+          rationale:
+            "BytesIO and base64 avoid temporary image files for a small academic demo.",
+        },
+        {
+          decision: "Use a consistent metrics schema",
+          rationale:
+            "Matching report and matrix shapes make it simpler for one client UI to compare different algorithm labels.",
+        },
+      ],
+      evidence: [
+        {
+          label: "Harshitha-authored public repository",
+          detail:
+            "All three visible commits are attributed to Harshitha and expose the complete 150-line Python prototype plus the project report.",
+          href: "https://github.com/chittapragadaharshitha/Pneumonia-Detection-using-CNN",
+        },
+        {
+          label: "Source-level limitation",
+          detail:
+            "The committed `code` file returns hard-coded illustrative RF, SVM, and CNN metrics; it does not train or load a model. This boundary is intentionally public here.",
+          href: "https://github.com/chittapragadaharshitha/Pneumonia-Detection-using-CNN/blob/main/code",
+        },
+      ],
+      contributionBoundary:
+        "This is an academic Flask visualization prototype, not a diagnostic device and not evidence of a trained CNN. No medical use, clinical accuracy, or 97% validated performance is claimed because the public source contains fixed illustrative metrics rather than a training or inference implementation.",
+    },
+  },
+  {
+    slug: "openclaw-setup",
+    title: "OpenClaw Setup",
+    eyebrow: "Self-hosted agent deployment · live service",
+    description:
+      "A client implementation service for turning OpenClaw into a secure, self-hosted operating agent: infrastructure provisioning, Docker isolation, hardened access, encrypted credentials, channel integrations, workflow validation, and a controlled handoff.",
+    architectureLine: "Workflow discovery → client-owned host → sandboxed agent → integrations → verified handoff",
+    role: "AI product engineer and client implementation operator",
+    status: "Live service · production deployments",
+    date: "2026-08-10",
+    published: true,
+    featured: true,
+    challenge:
+      "Installing an open-source agent is only the first step. A useful production deployment must reconcile host security, Docker isolation, OAuth and API permissions, multiple communication channels, credential custody, workflow-specific behavior, and a handoff that leaves the client in control.",
+    approach:
+      "The service starts with workflow discovery, deploys OpenClaw on infrastructure owned by the client, hardens the host and runtime boundary, configures each provider independently, tests real end-to-end scenarios, removes implementation access, and includes a focused post-launch support window.",
+    outcome:
+      "Clients receive a self-hosted agent connected to the tools they actually use, with documented ownership of infrastructure and credentials, an explicit security boundary, verified workflows, and a support path for the first production edge cases.",
+    contributions: [
+      "Owns the public client implementation surface and works directly with customers from workflow discovery through deployment, testing, handoff, and support.",
+      "Maps requested outcomes—such as inbox triage, calendar coordination, Slack monitoring, or mobile agent access—into integrations, permissions, triggers, and acceptance checks.",
+      "Applies deployment controls around Docker isolation, firewall and SSH hardening, encrypted credential storage, and removal of implementation access after handoff.",
+      "Validates Gmail, Calendar, Slack, WhatsApp, Telegram, and Notion connections as separate failure domains instead of treating one successful login as a complete deployment.",
+      "Maintains the service experience around booking, implementation scope, technical expectations, ownership, and 14-day post-launch support.",
+    ],
+    stack: [
+      "OpenClaw",
+      "Docker",
+      "Linux",
+      "VPS",
+      "SSH",
+      "OAuth",
+      "Gmail",
+      "Google Calendar",
+      "Slack",
+      "WhatsApp",
+      "Telegram",
+      "Notion",
+      "Next.js",
+      "Azure Static Web Apps",
+    ],
+    metrics: [
+      { value: "6", label: "named productivity and communication integrations" },
+      { value: "14 days", label: "post-launch support included" },
+      { value: "1", label: "client-owned deployment boundary" },
+      { value: "0", label: "implementation access retained after handoff" },
+    ],
+    links: [
+      {
+        label: "Visit live service",
+        href: "https://openclawsetup.dev/",
+      },
+    ],
+    note:
+      "The service runs on client-owned infrastructure. Provider availability and exact integrations depend on each customer's environment and permissions.",
+    technicalDossier: {
+      systemContext:
+        "OpenClaw Setup is an implementation layer around an open-source agent. The engineering work is not merely launching a container: it is creating a bounded operating environment, assigning minimum necessary provider permissions, connecting communication surfaces, translating a client's recurring work into testable behaviors, and transferring control without leaving a hidden dependency on the implementer.",
+      architecture: [
+        {
+          name: "Discovery and acceptance layer",
+          responsibility:
+            "Turns loosely described work such as email triage or meeting preparation into named channels, required permissions, expected outputs, escalation rules, and pass/fail scenarios.",
+          technology: "Workflow mapping · acceptance criteria · human review rules",
+        },
+        {
+          name: "Client-owned host",
+          responsibility:
+            "Provides the durable compute and storage boundary on a VPS, Mac mini, or Linux server controlled by the client rather than a shared service account.",
+          technology: "Linux · VPS or Mac mini · SSH",
+        },
+        {
+          name: "Sandboxed agent runtime",
+          responsibility:
+            "Runs OpenClaw inside an isolated container boundary and limits host exposure through firewall rules, hardened remote access, and deliberate filesystem or service access.",
+          technology: "OpenClaw · Docker · firewall hardening",
+        },
+        {
+          name: "Credential and permission boundary",
+          responsibility:
+            "Stores provider credentials outside public code, scopes OAuth/API access to the requested jobs, and returns custody entirely to the client after implementation.",
+          technology: "Encrypted secrets · OAuth · provider API keys",
+        },
+        {
+          name: "Channel and productivity adapters",
+          responsibility:
+            "Connects the agent to email, calendar, team chat, mobile messaging, and knowledge tools while testing each provider's authentication and behavior independently.",
+          technology: "Gmail · Calendar · Slack · WhatsApp · Telegram · Notion",
+        },
+        {
+          name: "Service and acquisition surface",
+          responsibility:
+            "Explains scope, captures bookings, publishes implementation guidance, and deploys as a static web surface independent from client agent runtimes.",
+          technology: "Next.js · Azure Static Web Apps · custom DNS · Cal.com",
+        },
+      ],
+      flow: [
+        {
+          step: "Define the operating job",
+          detail:
+            "Harshitha identifies the recurring work, systems involved, acceptable autonomous behavior, actions that require review, and observable acceptance criteria.",
+        },
+        {
+          step: "Provision the ownership boundary",
+          detail:
+            "The agent is installed on a client-owned VPS, Mac mini, or Linux host so infrastructure, data, and shutdown authority remain with the customer.",
+        },
+        {
+          step: "Harden and isolate the runtime",
+          detail:
+            "Docker isolation, firewall rules, SSH controls, and encrypted credential handling are configured before production integrations are enabled.",
+        },
+        {
+          step: "Connect providers one by one",
+          detail:
+            "Gmail, Calendar, Slack, WhatsApp, Telegram, and Notion are authorized and validated as independent integrations with distinct permissions and failure behavior.",
+        },
+        {
+          step: "Exercise real workflows",
+          detail:
+            "Representative inbox, calendar, messaging, and knowledge scenarios are executed end to end, including escalation and human-review paths rather than only connection tests.",
+        },
+        {
+          step: "Transfer and stabilize",
+          detail:
+            "The client receives operational ownership, implementation access is removed, and the first production edge cases are handled during a 14-day support period.",
+        },
+      ],
+      implementation: [
+        "Converted customer goals into a deployment checklist covering hosts, accounts, channels, permissions, expected agent behavior, human review, and acceptance tests.",
+        "Structured the installation around a client-owned host instead of a shared black-box SaaS environment.",
+        "Applied Docker sandboxing, firewall restrictions, SSH hardening, and encrypted credential storage as baseline deployment work rather than optional follow-up security.",
+        "Configured and separately validated Gmail, Google Calendar, Slack, WhatsApp, Telegram, and Notion integration paths.",
+        "Tested real operational scenarios and tuned the agent around expected actions, escalation behavior, and user-facing outputs.",
+        "Designed the handoff so the customer owns infrastructure and credentials and implementation access can be removed after setup.",
+        "Operates the public service surface used for positioning, booking, expectation-setting, and post-launch support.",
+      ],
+      reliability: [
+        {
+          risk: "A successful installation is mistaken for a working business workflow.",
+          control:
+            "Acceptance checks exercise complete email, calendar, messaging, and knowledge scenarios with expected outcomes and review points.",
+        },
+        {
+          risk: "An OAuth token is over-scoped or one provider silently fails.",
+          control:
+            "Each integration is authorized and tested independently with only the permissions required for the agreed workflow.",
+        },
+        {
+          risk: "The agent can reach more of the host than the job requires.",
+          control:
+            "Docker isolation, firewall rules, hardened SSH, and deliberate host access reduce the blast radius of the runtime.",
+        },
+        {
+          risk: "The implementer remains an undisclosed dependency after launch.",
+          control:
+            "Infrastructure and credentials stay client-owned, implementation access is removed, and ownership is made explicit during handoff.",
+        },
+        {
+          risk: "Edge cases appear only after the agent meets real traffic.",
+          control:
+            "A 14-day stabilization window covers early workflow tuning and failures that cannot be reproduced in a one-session setup test.",
+        },
+      ],
+      decisions: [
+        {
+          decision: "Deploy into the client's infrastructure",
+          rationale:
+            "Client ownership reduces platform lock-in, keeps operational data inside an explicit boundary, and gives the customer final control over access and shutdown.",
+        },
+        {
+          decision: "Harden before connecting business accounts",
+          rationale:
+            "Security controls are most effective when they define the runtime from the start, before email, messages, calendars, or credentials enter the system.",
+        },
+        {
+          decision: "Test workflows, not just integrations",
+          rationale:
+            "A green OAuth callback proves connectivity, not that an agent handles ambiguity, review, and escalation correctly in the client's operating context.",
+        },
+        {
+          decision: "Keep the marketing site separate from agent runtimes",
+          rationale:
+            "A static Azure-hosted acquisition surface can change or deploy without sharing code, secrets, or failure modes with any customer's agent environment.",
+        },
+      ],
+      evidence: [
+        {
+          label: "Live service surface",
+          detail:
+            "The public site documents the deployment scope, Docker and host hardening, supported integration categories, client ownership model, booking path, and support window.",
+          href: "https://openclawsetup.dev/",
+        },
+        {
+          label: "Production web delivery",
+          detail:
+            "The Next.js acquisition surface is statically exported to Azure Static Web Apps on the custom domain, with DNS, booking, analytics, blog, and structured metadata separated from client runtime infrastructure.",
+        },
+        {
+          label: "Named operator responsibility",
+          detail:
+            "Harshitha is publicly identified as the AI product engineer clients work with directly across discovery, setup, validation, handoff, and support.",
+          href: "https://openclawsetup.dev/#team",
+        },
+      ],
+      contributionBoundary:
+        "This case study covers Harshitha's current responsibility as the public, client-facing implementation operator for OpenClaw Setup: workflow discovery, secure deployment, integration validation, handoff, and support. The website repository's visible Git history is not presented as Harshitha-authored code; the portfolio separates service ownership and implementation work from source-code authorship.",
+    },
   },
   {
     slug: "currency-converter",
     title: "Currency Converter",
-    eyebrow: "Java desktop application",
+    eyebrow: "Java desktop exercise · public source",
     description:
-      "A desktop currency-conversion utility built with Java's GUI libraries to make common denomination calculations quick and approachable.",
+      "An early single-window Java Swing exercise covering desktop layout, user input, event-driven execution, currency selection, static-rate arithmetic, and invalid-number handling.",
+    architectureLine: "Swing form → ActionListener → conversion function → result state",
     role: "Java developer",
-    status: "Public source",
+    status: "Public learning project",
     date: "2025-03-09",
     published: true,
     featured: false,
     challenge:
-      "The project explores state, input handling, calculation logic, and desktop interface design in a compact application.",
+      "The project was a compact way to practice object-oriented structure, desktop widgets, event listeners, numeric parsing, branching conversion logic, and UI error feedback in Java.",
     approach:
-      "A Java Swing and AWT interface connects user inputs to conversion logic and presents the result in a simple desktop flow.",
+      "A JFrame owns the amount field, source and target currency selectors, convert button, and result label. An ActionListener parses the amount and calls a dedicated conversion method using static USD-to-EUR and USD-to-GBP rates.",
     outcome:
-      "It established an early foundation in object-oriented programming and interface-driven application development.",
+      "The repository captures an early event-driven desktop application and a clear separation between UI setup, click handling, and arithmetic, with an intentionally limited three-currency scope.",
     contributions: [
-      "Built the desktop interface and conversion logic in Java.",
-      "Handled user inputs, denomination selection, and result presentation.",
+      "Built the JFrame application and BoxLayout-based form using Java Swing and AWT event APIs.",
+      "Connected the Convert button to numeric parsing and a dedicated conversion method through an ActionListener.",
+      "Implemented USD, EUR, and GBP selection with static conversion constants and a same-currency fallback rate.",
+      "Handled non-numeric input by replacing the result label with a direct validation message.",
     ],
-    stack: ["Java", "Swing", "AWT"],
-    metrics: [{ value: "Desktop", label: "application format" }],
+    stack: ["Java", "Swing", "AWT events"],
+    metrics: [
+      { value: "3", label: "selectable currencies" },
+      { value: "2", label: "static base rates" },
+      { value: "1", label: "desktop window" },
+      { value: "2", label: "Harshitha-authored commits" },
+    ],
     links: [
       {
         label: "View source",
         href: "https://github.com/chittapragadaharshitha/Currency-Converter",
       },
     ],
+    technicalDossier: {
+      systemContext:
+        "This is a small learning project, not a live foreign-exchange product. Its value is the direct use of Java's desktop UI and event model in one inspectable source file. Rates are constants, there is no provider API, and the conversion matrix is intentionally incomplete.",
+      architecture: [
+        {
+          name: "Desktop shell",
+          responsibility:
+            "Owns the application lifecycle, window title and size, close behavior, and visibility on Swing's event-dispatch thread.",
+          technology: "JFrame · SwingUtilities.invokeLater",
+        },
+        {
+          name: "Input form",
+          responsibility:
+            "Collects an amount and source/target denominations through one text field and two combo boxes arranged vertically.",
+          technology: "JPanel · BoxLayout · JTextField · JComboBox",
+        },
+        {
+          name: "Event boundary",
+          responsibility:
+            "Runs conversion only after an explicit button click and catches malformed numeric input before arithmetic.",
+          technology: "JButton · ActionListener · NumberFormatException",
+        },
+        {
+          name: "Conversion function",
+          responsibility:
+            "Chooses a static rate from nested source/target branches and multiplies the parsed amount by that rate.",
+          technology: "Java switch statements · double arithmetic",
+        },
+      ],
+      flow: [
+        {
+          step: "Launch on the UI thread",
+          detail:
+            "The main method schedules construction and visibility through `SwingUtilities.invokeLater`.",
+        },
+        {
+          step: "Capture amount and denominations",
+          detail:
+            "The user enters a numeric amount and selects USD, EUR, or GBP in the source and target combo boxes.",
+        },
+        {
+          step: "Handle the click",
+          detail:
+            "The ActionListener calls `convertCurrency`, which parses the text and reads the selected combo-box values.",
+        },
+        {
+          step: "Select and apply a rate",
+          detail:
+            "The conversion function selects a static branch and returns `amount × rate`; malformed amounts are caught and reported in the result label.",
+        },
+      ],
+      implementation: [
+        "Extended `JFrame` to keep window state and UI construction inside one application class.",
+        "Created a vertical form with labeled amount input, source currency, target currency, action button, and result label.",
+        "Used an anonymous `ActionListener` to connect the button event to application logic.",
+        "Separated input parsing in `convertCurrency` from rate selection and arithmetic in `convert`.",
+        "Defined USD-to-EUR and USD-to-GBP constants and same-currency fallback behavior.",
+        "Caught `NumberFormatException` and surfaced an actionable invalid-number message instead of allowing the event handler to fail.",
+      ],
+      reliability: [
+        {
+          risk: "The amount field contains non-numeric text.",
+          control:
+            "Numeric parsing is wrapped in a `try/catch`, and the result label shows a validation message.",
+        },
+        {
+          risk: "UI construction runs off Swing's event-dispatch thread.",
+          control:
+            "The application launches through `SwingUtilities.invokeLater`.",
+        },
+        {
+          risk: "Static rates are mistaken for live market values.",
+          control:
+            "The portfolio labels the project as a learning exercise and states that no exchange-rate API is connected.",
+        },
+        {
+          risk: "Unsupported cross-rate branches produce misleading output.",
+          control:
+            "The case study discloses the incomplete conversion matrix rather than presenting the snapshot as production-ready finance software.",
+        },
+      ],
+      decisions: [
+        {
+          decision: "Use Swing instead of a web UI",
+          rationale:
+            "The learning goal was Java object-oriented and event-driven desktop programming without a server or browser runtime.",
+        },
+        {
+          decision: "Keep rates as constants",
+          rationale:
+            "Static values keep the exercise focused on UI events and arithmetic, at the cost of freshness and complete cross-currency behavior.",
+        },
+        {
+          decision: "Separate conversion from click handling",
+          rationale:
+            "A dedicated arithmetic method is easier to inspect and later replace with a complete rate table or provider adapter.",
+        },
+      ],
+      evidence: [
+        {
+          label: "Harshitha-authored public source",
+          detail:
+            "Both repository commits are attributed to Harshitha, and the complete implementation is visible in one Java file.",
+          href: "https://github.com/chittapragadaharshitha/Currency-Converter/blob/main/CurrencyConverter.java",
+        },
+        {
+          label: "Explicit project limits",
+          detail:
+            "The snapshot has no live-rate API, persistence, tests, localization, or complete conversion matrix; it is presented as an early Java exercise.",
+        },
+      ],
+      contributionBoundary:
+        "This is an early educational desktop application with static rates and incomplete production behavior. The portfolio claims the Swing UI, event handling, parsing, branching arithmetic, and validation that are visible in source—nothing more.",
+    },
   },
 ];
 

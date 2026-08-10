@@ -29,7 +29,7 @@ export default function StoryPage() {
           <div>
             <p className="text-xs uppercase tracking-[0.22em] text-zinc-600">About</p>
             <h1 className="mt-4 text-4xl font-medium tracking-[-0.04em] text-white sm:text-6xl font-display">
-              I build the layer between AI capability and operational trust.
+              I design AI systems for the moment the prototype meets real operations.
             </h1>
           </div>
           <div className="space-y-5 pt-1 text-sm leading-7 text-zinc-400 sm:text-base sm:leading-8">
@@ -38,13 +38,15 @@ export default function StoryPage() {
               systems that teams can use for recurring, consequential work.
             </p>
             <p>
-              My recent work spans three operating domains. In AgentMag, I worked on governed
+              My recent work spans four operating domains. In AgentMag, I worked on governed
               workflows that combine agents, integrations, approvals, persistent data, and
               traceable execution. In enterprise hiring automation, I built an inbox-to-shortlist
               pipeline with Microsoft Graph, candidate matching, controlled replies, restart
               recovery, connection pooling, and duplicate-reply prevention. In content automation,
               I worked on research-to-publishing pipelines that keep human review between generation
-              and distribution.
+              and distribution. In OpenClaw Setup, I work directly on secure, self-hosted agent
+              deployments across infrastructure, credentials, integrations, acceptance testing, and
+              client handoff.
             </p>
             <p>
               The common thread is reliability. I care about what happens after the model produces
@@ -86,8 +88,15 @@ export default function StoryPage() {
               implementation, debugging, deployment, and operational follow-through.
             </p>
             <p>
-              I&apos;m looking for roles where that range is useful: product engineering, automation,
-              AI operations, or technical implementation work with real business ownership.
+              I&apos;m deliberately growing toward enterprise-grade architecture: multi-system products
+              with explicit security boundaries, durable state, observable execution, failure
+              recovery, and human control. I want to build the technical judgment required to own
+              those systems end to end—not adopt an architecture title before earning that scope.
+            </p>
+            <p>
+              I&apos;m looking for roles in enterprise product engineering, automation platforms, AI
+              operations, or technical implementation where I can deepen that responsibility against
+              real business constraints.
             </p>
             <Link
               href="/work"
