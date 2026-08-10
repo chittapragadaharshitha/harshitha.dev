@@ -23,6 +23,7 @@ const requiredClaims = [
   "AgentMag",
   "Enterprise Hiring Automation",
   "Content Automation Studio",
+  "enterprise-grade architecture",
   "Microsoft Graph",
   "candidate matching",
   "duplicate-reply prevention",
@@ -30,6 +31,28 @@ const requiredClaims = [
   "connection pooling",
   "resume attachments",
   "Azure",
+  "385",
+  "1,165",
+  "fixed-recipient",
+];
+
+const expectedProjectSlugs = [
+  "agentmag",
+  "enterprise-hiring-automation",
+  "content-automation-studio",
+  "ai-internship-recommendation-engine",
+  "absolute-prosthetics",
+  "pneumonia-detection-cnn",
+  "currency-converter",
+];
+
+const dossierHeadings = [
+  "System architecture",
+  "End-to-end execution",
+  "What Harshitha implemented",
+  "Reliability engineering",
+  "Technical decisions",
+  "Evidence and scope",
 ];
 
 const forbiddenClaims = [
@@ -57,6 +80,49 @@ for (const claim of requiredClaims) {
   if (!source.toLowerCase().includes(claim.toLowerCase())) {
     problems.push(`Missing required portfolio claim: ${claim}`);
   }
+}
+
+for (const slug of expectedProjectSlugs) {
+  if (!source.includes(`slug: "${slug}"`)) {
+    problems.push(`Missing project: ${slug}`);
+  }
+}
+
+const dossierCount = (source.match(/technicalDossier:/g) ?? []).length;
+if (dossierCount < expectedProjectSlugs.length) {
+  problems.push(
+    `Expected ${expectedProjectSlugs.length} technical dossiers, found ${dossierCount}`,
+  );
+}
+
+for (const heading of dossierHeadings) {
+  if (!source.includes(heading)) {
+    problems.push(`Missing dossier heading: ${heading}`);
+  }
+}
+
+const introPath = join(root, "app/components/site-intro.tsx");
+if (!existsSync(introPath)) {
+  problems.push("Missing first-session intro component");
+} else {
+  const introSource = readFileSync(introPath, "utf8");
+  for (const contractTerm of [
+    "harshitha:intro:v1",
+    "sessionStorage",
+    "aria-hidden",
+    "prefers-reduced-motion",
+  ]) {
+    if (!introSource.includes(contractTerm)) {
+      problems.push(`Intro is missing contract term: ${contractTerm}`);
+    }
+  }
+  if (introSource.includes("localStorage")) {
+    problems.push("Intro must be scoped to the current tab session, not localStorage");
+  }
+}
+
+if (/role:\s*["']Enterprise Architect["']/.test(source)) {
+  problems.push("Enterprise architecture must be framed as a direction, not a current job title");
 }
 
 for (const claim of forbiddenClaims) {
