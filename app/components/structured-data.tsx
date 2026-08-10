@@ -1,6 +1,6 @@
 export default function StructuredData() {
   const description =
-    "Automation product engineer building reliable AI systems across finance, hiring, and content operations.";
+    "AI Product Engineer and Founder of Agent Mag building agent platforms and enterprise automation from roadmap through production operations.";
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -22,13 +22,23 @@ export default function StructuredData() {
           "https://www.linkedin.com/in/chittapragadaharshitha/",
           "https://medium.com/@chittapragadaharshitha",
         ],
-        jobTitle: "Automation Product Engineer",
+        jobTitle: "AI Product Engineer",
+        worksFor: {
+          "@type": "Organization",
+          name: "Agent Mag",
+          url: "https://agentmag.dev",
+        },
         knowsAbout: [
           "AI automation",
           "Workflow engineering",
           "Finance automation",
           "Recruitment automation",
           "Content automation",
+          "AI agents",
+          "OpenClaw",
+          "Hermes",
+          "Claude Code",
+          "Codex",
           "Microsoft Graph",
           "Azure",
           "Next.js",
@@ -50,7 +60,7 @@ export default function StructuredData() {
         "@type": "ProfilePage",
         "@id": "https://harshitha.dev/#webpage",
         url: "https://harshitha.dev",
-        name: "Harshitha Chittapragada - Automation Product Engineer",
+        name: "Harshitha Chittapragada - AI Product Engineer and Founder of Agent Mag",
         description,
         isPartOf: { "@id": "https://harshitha.dev/#website" },
         mainEntity: { "@id": "https://harshitha.dev/#person" },

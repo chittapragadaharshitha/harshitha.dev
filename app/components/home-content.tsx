@@ -11,20 +11,25 @@ import { Navigation } from "./nav";
 import Particles from "./particles";
 
 const systems = [
-  { name: "AgentMag", detail: "Governed workflow and agent platform", href: "/work/agentmag" },
+  { name: "Agent Mag", detail: "Founder · 86 pages · 62 APIs", href: "/work/agentmag" },
+  {
+    name: "Skills Ecosystem",
+    detail: "492 installable agent capabilities",
+    href: "/work/agent-mag-skills",
+  },
+  {
+    name: "Jarvis",
+    detail: "Master agent with 3 specialists",
+    href: "/work/jarvis-multi-agent-operations",
+  },
   {
     name: "Hiring Automation",
-    detail: "Enterprise recruitment operations",
+    detail: "Microsoft Graph · matching · recovery",
     href: "/work/enterprise-hiring-automation",
   },
   {
-    name: "OpenClaw Setup",
-    detail: "Secure self-hosted agent deployment",
-    href: "/work/openclaw-setup",
-  },
-  {
-    name: "Content Studio",
-    detail: "Review-first publishing workflows",
+    name: "Content Automation",
+    detail: "Crestline Studios · review-gated publishing",
     href: "/work/content-automation-studio",
   },
 ];
@@ -64,7 +69,7 @@ export default function HomeContent() {
         <section className={entrance}>
           <div className="flex items-center gap-3 text-xs text-zinc-500">
             <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
-            Open to enterprise product engineering and automation roles
+            AI Product Engineer · Founder of Agent Mag
           </div>
 
           <h1 className="mt-7 text-5xl font-medium leading-[0.95] tracking-[-0.055em] text-white sm:text-7xl lg:text-8xl font-display">
@@ -73,12 +78,17 @@ export default function HomeContent() {
           </h1>
 
           <p className="mt-8 max-w-2xl text-base leading-8 text-zinc-300 sm:text-lg">
-            I engineer AI systems that keep working when the demo ends.
+            I turn operational ideas into working AI systems.
           </p>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-500 sm:text-base">
-            Across finance, hiring, content, and self-hosted agents, I connect models to real
-            operations through integrations, deterministic workflows, human approvals, recovery,
-            and auditability.
+            I take products from roadmap to production—designing agent workflows, building with
+            Claude Code and Codex, connecting business systems, deploying infrastructure, and
+            operating the result. My work spans Agent Mag, Jarvis, enterprise hiring, content
+            automation, and OpenClaw and Hermes client deployments.
+          </p>
+
+          <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600">
+            Roadmap · Agent design · Integrations · Deployment · Operations
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">

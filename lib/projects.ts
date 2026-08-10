@@ -71,27 +71,28 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "agentmag",
-    title: "AgentMag",
-    eyebrow: "Flagship system · nine-month product cycle",
+    title: "Agent Mag",
+    eyebrow: "Founder-led product · nine-month build cycle",
     description:
-      "A governed automation platform for composing, running, and observing operational workflows. Finance is the first deep domain, but the platform primitives support agents, approvals, files, knowledge, tables, integrations, and reusable workflow modules across operations.",
-    architectureLine: "Studio → API control plane → durable workers → integrations → audit state",
-    role: "Product builder and workflow operator",
-    status: "Private product · active development",
+      "A product family for AI-agent builders and operations teams: an 86-page public platform, a 492-skill open registry and CLI, Agent Mag AI, and a governed automation runtime whose first deep domain is finance operations.",
+    architectureLine: "Builder ecosystem → agent interface → workflow runtime → integrations → audit state",
+    role: "Founder and AI Product Engineer",
+    status: "Active product · public ecosystem and private operations runtime",
     date: "2026-08-01",
     published: true,
     featured: true,
     challenge:
       "High-stakes operational work crosses finance tools, inboxes, documents, spreadsheets, and approval chains. A useful platform has to do more than generate an answer: it must separate probabilistic reasoning from controlled execution, preserve state, pause for review, recover from failure, and leave an audit trail.",
     approach:
-      "AgentMag separates the visual product surface, API control plane, durable worker runtime, integration modules, and operational database. Agents investigate and prepare work; typed workflow blocks execute bounded actions; approval nodes stop consequential steps; runs and outputs remain attached to a company context.",
+      "Harshitha designed Agent Mag as connected product layers rather than a single chatbot: editorial and discovery surfaces for builders, a declarative skills registry and npm CLI, an OpenClaw-backed agent interface, and a governed runtime where agents investigate while typed workflows, approvals, and durable state control consequential actions.",
     outcome:
-      "The result is a reusable operating foundation rather than a single finance bot: a Studio, API, worker runtime, documentation surface, multi-company data model, and a growing module library for finance and broader back-office automation.",
+      "The result is a credible product and distribution system around agent infrastructure: 86 product pages, 62 API routes, 16 delivery workflows, 492 public skill bundles, and a reusable operations foundation that can extend from finance into broader back-office work.",
     contributions: [
-      "Translated finance and operations processes into reviewable workflow stages, approval points, and operator-visible states.",
-      "Worked across the product surface covering workflows, agents, integrations, files, knowledge, tables, dashboards, and run history.",
-      "Tested operator journeys and helped turn ambiguous business procedures into deterministic steps around model-driven work.",
-      "Supported the nine-month product cycle through workflow design, product feedback, operational testing, and demo readiness.",
+      "Founded Agent Mag and leads the roadmap across the publication, builder ecosystem, agent experience, and operations automation product.",
+      "Implemented Azure OpenAI GPT-4o streaming, then built a multi-step function-calling loop with visual tool-result blocks for production agent interactions.",
+      "Integrated an OpenClaw gateway and model routing, then hardened the chat surface with identity lock, security rules, persona controls, and an explicit OpenClaw workspace.",
+      "Translated finance and operations procedures into typed workflow stages, approval points, integration boundaries, and operator-visible execution state.",
+      "Uses Claude Code and Codex to move from product requirements through implementation, debugging, testing, deployment, and operational follow-through.",
     ],
     stack: [
       "TypeScript",
@@ -103,15 +104,27 @@ export const projects: Project[] = [
       "Nango",
       "OpenAI",
       "Anthropic",
+      "OpenClaw",
+      "Azure App Service",
+      "Claude Code",
+      "Codex",
       "Slack",
     ],
     metrics: [
-      { value: "17", label: "integration modules in the reviewed codebase" },
-      { value: "16", label: "core workflow blocks" },
-      { value: "31", label: "database migrations" },
-      { value: "4", label: "deployable product surfaces" },
+      { value: "86", label: "product pages in the reviewed platform" },
+      { value: "62", label: "API routes across product domains" },
+      { value: "16", label: "CI, release, sync, and review workflows" },
+      { value: "492", label: "public installable skill bundles" },
     ],
     links: [
+      {
+        label: "Explore Agent Mag",
+        href: "https://agentmag.dev",
+      },
+      {
+        label: "View the open ecosystem",
+        href: "https://github.com/Agent-mag",
+      },
       {
         label: "Open private demo",
         href: "https://packaging-tier-considerable-afterwards.trycloudflare.com/login",
@@ -121,8 +134,26 @@ export const projects: Project[] = [
       "The demo is access-controlled. Architecture and scale describe the reviewed platform; credentials and source access are shared privately when appropriate.",
     technicalDossier: {
       systemContext:
-        "AgentMag is designed for operational workflows where a model may interpret, investigate, or draft, but the surrounding system must own permissions, execution order, approvals, integrations, and evidence. Its first substantial recipes target finance operations; the same primitives can support contract, customer, inventory, document, and internal-service workflows.",
+        "Agent Mag is Harshitha's founder-led product family. The public platform helps builders discover technical content, tools, models, jobs, events, resources, and installable agent skills. Agent Mag AI provides a tool-using interaction layer. A separate governed automation runtime applies the same agent-building discipline to operational workflows where the surrounding system must own permissions, execution order, approvals, integrations, and evidence. Finance is its first substantial domain, but the primitives extend to contract, customer, inventory, document, and internal-service workflows.",
       architecture: [
+        {
+          name: "Builder platform",
+          responsibility:
+            "Unifies editorial, tools, models, skills, jobs, resources, events, accounts, partner surfaces, and documentation into a coherent product for AI-agent builders.",
+          technology: "Next.js 16 · React 19 · 86 pages · 62 API routes",
+        },
+        {
+          name: "Agent Mag AI",
+          responsibility:
+            "Streams model responses, executes bounded function calls, renders structured tool results, and routes through an OpenClaw workspace with public-user identity and security constraints.",
+          technology: "Azure OpenAI · OpenClaw · function calling · streamed UI blocks",
+        },
+        {
+          name: "Open ecosystem",
+          responsibility:
+            "Distributes declarative skill bundles and builder tools through a public registry, product catalog, APIs, GitHub repositories, and an npm CLI.",
+          technology: "492 skills · Agent Mag CLI · GitHub Actions · npm",
+        },
         {
           name: "Operator Studio",
           responsibility:
@@ -193,6 +224,11 @@ export const projects: Project[] = [
         },
       ],
       implementation: [
+        "Implemented real Azure OpenAI streaming and expanded the chat surface into a multi-step tool loop with function calls and visual result blocks.",
+        "Connected Agent Mag AI to an OpenClaw gateway, added explicit model routing, and refactored the surface around a dedicated OpenClaw execution path.",
+        "Hardened the public agent with identity locking, untrusted-user rules, internal-detail boundaries, tier-aware behavior, persona files, and workspace context.",
+        "Shaped an 86-page product spanning editorial, tools, models, skills, jobs, events, resources, accounts, partners, documentation, and AI-native discovery.",
+        "Built the open ecosystem around 492 declarative skill bundles, CLI installation, public tools, documentation, and automated synchronization and release paths.",
         "Mapped operational procedures into explicit triggers, model-assisted investigation stages, deterministic actions, waits, conditions, parallel branches, subworkflows, and approval gates.",
         "Worked with the Studio information architecture across workflows, deployments, runs, schedules, files, knowledge, user tables, integrations, dashboards, and chat-based interaction.",
         "Evaluated whether operator flows exposed enough context to review an action before approving it and enough run state to diagnose what happened afterward.",
@@ -245,6 +281,17 @@ export const projects: Project[] = [
       ],
       evidence: [
         {
+          label: "Founder-owned GitHub organization",
+          detail:
+            "Harshitha is the sole public organization member and active owner of Agent-mag, which contains the product, skills registry, tools, documentation, roadmap, and community repositories.",
+          href: "https://github.com/Agent-mag",
+        },
+        {
+          label: "Direct implementation history",
+          detail:
+            "Her product commits cover Azure OpenAI streaming, a function-calling chat loop, visual workflow blocks, OpenClaw gateway integration, model routing, security and identity controls, persona workspace files, and interface refinement.",
+        },
+        {
           label: "Reviewed private codebase",
           detail:
             "The current monorepo contains four deployable applications, 16 core workflow blocks, 17 provider integrations, a PostgreSQL schema with 31 migrations, and extensive run, approval, file, knowledge, table, and workflow surfaces.",
@@ -257,7 +304,420 @@ export const projects: Project[] = [
         },
       ],
       contributionBoundary:
-        "The architecture, module counts, and scale above describe the AgentMag platform reviewed for this case study. Harshitha's attributable work is product building, workflow design, operational testing, and helping turn business procedures into governed operator flows across the nine-month cycle. The available Git authorship does not support claiming that she solely wrote every platform module.",
+        "Harshitha is Agent Mag's founder, product owner, and active organization owner. Her direct Git history verifies the named agent-chat, OpenClaw, security, persona, and interface implementations. The platform counts are a reviewed codebase snapshot; the finance-runtime architecture describes the wider product she has led and operated across its nine-month build cycle.",
+    },
+  },
+  {
+    slug: "agent-mag-skills",
+    title: "Agent Mag Skills Ecosystem",
+    eyebrow: "Open agent infrastructure · registry and CLI",
+    description:
+      "A public distribution system for 492 installable AI-agent capabilities, built around declarative skill bundles, catalog APIs, CLI installation, validation, documentation, usage signals, and automated release workflows.",
+    architectureLine: "Skill bundle → validation and sync → catalog API → CLI install → local agent",
+    role: "Founder and product engineer",
+    status: "Public ecosystem · active development",
+    date: "2026-08-08",
+    published: true,
+    featured: true,
+    challenge:
+      "Agent capabilities are often trapped in private prompts, copied manually between tools, or distributed without a consistent contract. Builders need a way to inspect, install, update, and contribute skills without turning a prompt file into an opaque executable package.",
+    approach:
+      "Agent Mag treats a skill as a declarative configuration bundle: metadata, instructions, tool requirements, optional configuration, and documentation. GitHub is the reviewable source layer; validation and sync workflows feed the product catalog; APIs and the Agent Mag CLI provide discovery and installation into supported local agents.",
+    outcome:
+      "The ecosystem now exposes 492 skill bundles through a public repository and product catalog, backed by nine CLI command modules, automated sync and release paths, and a separate tools collection for reusable developer workflows.",
+    contributions: [
+      "Defined the product direction connecting an open GitHub registry, Agent Mag product surfaces, API routes, documentation, and CLI distribution.",
+      "Structured skills as inspectable configuration rather than arbitrary executable code, preserving a clear boundary between instructions, tool declarations, and the user's runtime.",
+      "Built catalog and installation journeys so builders can evaluate a skill before adding it to their local agent environment.",
+      "Established automated validation, synchronization, documentation, and release workflows around a community-contribution model.",
+      "Connected registry usage signals to the wider Agent Mag platform so installs can become product feedback rather than anonymous file copies.",
+    ],
+    stack: [
+      "TypeScript",
+      "Next.js",
+      "Node.js",
+      "npm CLI",
+      "GitHub Actions",
+      "MDX",
+      "JSON manifests",
+      "REST APIs",
+      "OpenClaw",
+      "Claude Code",
+      "Codex",
+    ],
+    metrics: [
+      { value: "492", label: "public installable skill bundles" },
+      { value: "9", label: "CLI command modules" },
+      { value: "16", label: "product sync, release, and review workflows" },
+      { value: "4", label: "standalone public builder tools" },
+    ],
+    links: [
+      {
+        label: "Browse the skills registry",
+        href: "https://github.com/Agent-mag/skills",
+      },
+      {
+        label: "Explore skills on Agent Mag",
+        href: "https://agentmag.dev/skills",
+      },
+      {
+        label: "View the Agent Mag CLI",
+        href: "https://www.npmjs.com/package/agentmag",
+      },
+    ],
+    note:
+      "The registry count is a reviewed repository snapshot. Skills are declarative configuration bundles; installing one does not silently grant credentials or execute arbitrary code.",
+    technicalDossier: {
+      systemContext:
+        "The Skills Ecosystem is the reusable capability layer of Agent Mag. A skill packages operational instructions and tool expectations into a format that can be reviewed in source control, presented in a product catalog, installed with a CLI, and adapted to a supported agent runtime. The architecture keeps community distribution separate from credential custody and runtime authority.",
+      architecture: [
+        {
+          name: "Declarative skill bundle",
+          responsibility:
+            "Defines the skill identity, operating instructions, tool requirements, configuration contract, and human-readable usage notes in inspectable files.",
+          technology: "manifest.json · prompt.md · tools.json · config.json · README.md",
+        },
+        {
+          name: "Source and review layer",
+          responsibility:
+            "Stores community skills in a public repository where changes can be diffed, reviewed, versioned, and discussed before distribution.",
+          technology: "GitHub · pull requests · MIT-licensed registry",
+        },
+        {
+          name: "Validation and synchronization",
+          responsibility:
+            "Checks bundle shape and metadata, rejects malformed entries, and synchronizes accepted skills into Agent Mag's product-facing catalog.",
+          technology: "Node.js scripts · schema checks · GitHub Actions",
+        },
+        {
+          name: "Catalog and API layer",
+          responsibility:
+            "Supports search, categories, detail views, rankings, installation metadata, and programmatic access from the web product and CLI.",
+          technology: "Next.js · REST routes · Cosmos DB · search metadata",
+        },
+        {
+          name: "Installation client",
+          responsibility:
+            "Resolves a requested skill, previews its files, and writes the bundle into a supported local agent configuration without owning the user's provider credentials.",
+          technology: "Agent Mag npm CLI · nine command modules",
+        },
+        {
+          name: "Adoption signal",
+          responsibility:
+            "Reports bounded installation events so maintainers can distinguish useful capabilities from registry inventory alone.",
+          technology: "Install API · catalog counters · product analytics",
+        },
+      ],
+      flow: [
+        {
+          step: "Author the capability contract",
+          detail:
+            "A contributor describes what the skill does, the instructions it gives an agent, the tools it expects, and any user-supplied configuration.",
+        },
+        {
+          step: "Review the bundle in source",
+          detail:
+            "The public repository makes prompt, manifest, and tool changes visible before they enter the distribution path.",
+        },
+        {
+          step: "Validate and synchronize",
+          detail:
+            "Automation checks required fields and normalizes accepted metadata before updating the Agent Mag catalog and documentation surfaces.",
+        },
+        {
+          step: "Discover through web or CLI",
+          detail:
+            "A builder searches by capability, reads the contract and requirements, and selects a named version rather than copying an untracked prompt.",
+        },
+        {
+          step: "Install into the local runtime",
+          detail:
+            "The CLI resolves the bundle and places configuration files into the supported agent environment; credentials stay under the builder's control.",
+        },
+        {
+          step: "Measure and improve",
+          detail:
+            "Bounded install signals and community changes inform ranking, documentation, compatibility work, and future product priorities.",
+        },
+      ],
+      implementation: [
+        "Structured a skill as a multi-file, declarative bundle so metadata, instructions, tools, optional configuration, and documentation can evolve independently.",
+        "Connected the public skills repository to product routes that support discovery, detail pages, categories, leaderboards, and install tracking.",
+        "Developed the product contract for CLI commands that add skills, tools, documentation context, and local model instructions.",
+        "Built automation around synchronization, review, publishing, indexing, and generated documentation instead of relying on manual catalog updates.",
+        "Kept runtime secrets outside skill bundles and documented the distinction between installing configuration and authorizing external services.",
+        "Extended the ecosystem beyond skills through public tools, roadmap proposals, documentation, and community-health repositories under the same organization.",
+      ],
+      reliability: [
+        {
+          risk: "A malformed community bundle breaks installation or catalog rendering.",
+          control:
+            "Required manifest fields, normalized metadata, and validation in the sync path reject incomplete bundle shapes before distribution.",
+        },
+        {
+          risk: "Installing a skill is confused with granting it authority.",
+          control:
+            "Bundles remain declarative and exclude credentials; the user's agent runtime and provider permissions continue to control execution.",
+        },
+        {
+          risk: "Web catalog data drifts from the source repository.",
+          control:
+            "Automated synchronization and generated documentation reduce manual duplication between GitHub, APIs, and product surfaces.",
+        },
+        {
+          risk: "A bundle update silently changes behavior.",
+          control:
+            "Source-controlled files, pull-request diffs, and explicit package metadata make behavior changes inspectable and reviewable.",
+        },
+        {
+          risk: "Registry size is mistaken for real adoption.",
+          control:
+            "Installation events are tracked separately from inventory so ranking and roadmap decisions can use actual usage signals.",
+        },
+      ],
+      decisions: [
+        {
+          decision: "Use declarative bundles instead of executable packages",
+          rationale:
+            "Prompts and tool contracts should be inspectable before installation; execution authority belongs to the user's runtime, not the registry artifact.",
+        },
+        {
+          decision: "Keep GitHub as the contribution source",
+          rationale:
+            "Pull requests provide an understood review, history, and attribution model while the Agent Mag product can focus on discovery and installation.",
+        },
+        {
+          decision: "Offer both web and CLI discovery",
+          rationale:
+            "The web product supports evaluation and comparison; the CLI shortens the path from a selected capability to a configured local agent.",
+        },
+        {
+          decision: "Separate skills from tools",
+          rationale:
+            "Instruction bundles and executable developer utilities have different security and installation expectations and should not share an ambiguous package type.",
+        },
+      ],
+      evidence: [
+        {
+          label: "Public skills registry",
+          detail:
+            "The Agent-mag/skills repository exposes 492 manifest-backed skill bundles for review and contribution.",
+          href: "https://github.com/Agent-mag/skills",
+        },
+        {
+          label: "Product and CLI surfaces",
+          detail:
+            "The reviewed Agent Mag codebase contains skills pages and APIs plus nine CLI command modules for skills, tools, docs context, models, search, and related workflows.",
+          href: "https://agentmag.dev/skills",
+        },
+        {
+          label: "Organization ownership",
+          detail:
+            "Harshitha is the sole public member and active owner of the organization containing the registry, product, tools, docs, and roadmap.",
+          href: "https://github.com/Agent-mag",
+        },
+      ],
+      contributionBoundary:
+        "Harshitha owns the Agent Mag ecosystem's product direction and organization. The 492-skill figure describes the public registry snapshot, including community-ready configuration bundles; it is not a claim that she manually authored every individual skill file.",
+    },
+  },
+  {
+    slug: "jarvis-multi-agent-operations",
+    title: "Jarvis Multi-Agent Operations",
+    eyebrow: "Personal operations system · live agent stack",
+    description:
+      "A multi-agent operations system that routes natural-language requests through one master agent to email, calendar, and meeting specialists, with provider tools, shared context, durable workflow execution, and chat and voice entry surfaces.",
+    architectureLine: "Chat or voice → master router → specialist agents → business tools → shared memory",
+    role: "AI product engineer and agent systems operator",
+    status: "Live private system · continuously operated",
+    date: "2026-07-09",
+    published: true,
+    featured: true,
+    challenge:
+      "Personal operations span systems with different permissions, data shapes, and failure modes. A single unconstrained prompt becomes difficult to reason about when it can read email, change calendars, inspect meetings, and act through communication tools.",
+    approach:
+      "Jarvis uses a master agent as the conversational front door and routing layer. Email, Calendar, and Meeting agents each own a narrower tool set and execution contract. n8n provides durable workflow orchestration, provider integrations expose bounded actions, and memory carries useful context without flattening every domain into one agent.",
+    outcome:
+      "The system operates as a private daily workflow layer with chat and a live voice service, specialized Gmail, Google Calendar, and Fireflies paths, and an architecture that can add tools without giving every agent unrestricted access to every account.",
+    contributions: [
+      "Designed and operates the master-agent plus specialist-agent topology for real email, calendar, and meeting work.",
+      "Mapped each specialist to bounded provider tools and kept routing responsibility separate from domain execution.",
+      "Built the n8n workflow layer that carries messages, tool requests, results, memory, and error behavior across the system.",
+      "Added and operates a live voice entry service alongside chat while preserving the same central agent and downstream tool boundaries.",
+      "Uses the running system as an operational test bed for permissions, prompt contracts, integrations, recovery, and agent observability.",
+    ],
+    stack: [
+      "n8n",
+      "OpenClaw",
+      "Hermes",
+      "Gmail",
+      "Google Calendar",
+      "Fireflies",
+      "Slack",
+      "Docker",
+      "Linux",
+      "Claude Code",
+      "Codex",
+    ],
+    metrics: [
+      { value: "1", label: "master routing agent" },
+      { value: "3", label: "specialist operational agents" },
+      { value: "3+", label: "provider domains behind bounded tools" },
+      { value: "2", label: "chat and voice entry surfaces" },
+    ],
+    links: [],
+    note:
+      "Jarvis is a private operational system because it connects to personal communication and calendar data. The architecture shown here is verified from the running workflow and services; credentials and message content remain private.",
+    technicalDossier: {
+      systemContext:
+        "Jarvis is an orchestration system, not one all-powerful chatbot. The master agent interprets an operator request, selects the appropriate specialist, and returns a consolidated answer. Specialist agents own narrower Gmail, Calendar, and meeting-intelligence actions. This reduces prompt and permission sprawl while keeping a single conversational interface.",
+      architecture: [
+        {
+          name: "Interaction surfaces",
+          responsibility:
+            "Accept operator requests through chat and a live voice service, normalize them into the central workflow, and return human-readable results.",
+          technology: "Chat trigger · Call Jarvis voice service",
+        },
+        {
+          name: "Master Agent",
+          responsibility:
+            "Understands intent, chooses a specialist, passes the minimum useful context, and assembles the final response without directly owning every provider action.",
+          technology: "n8n AI Agent · routing prompt · conversation memory",
+        },
+        {
+          name: "Email Agent",
+          responsibility:
+            "Handles bounded inbox search, thread retrieval, triage, drafting, and approved email actions through Gmail tools.",
+          technology: "Gmail integration · scoped tool actions",
+        },
+        {
+          name: "Calendar Agent",
+          responsibility:
+            "Reads availability, investigates calendar state, and performs explicitly requested scheduling actions through Google Calendar.",
+          technology: "Google Calendar integration · date/time normalization",
+        },
+        {
+          name: "Meeting Agent",
+          responsibility:
+            "Retrieves Fireflies meeting records and transcripts and converts them into summaries, decisions, and follow-up context.",
+          technology: "Fireflies integration · transcript processing",
+        },
+        {
+          name: "Workflow and runtime layer",
+          responsibility:
+            "Persists orchestration, invokes tools, carries results between agents, exposes execution state, and runs on a private Docker/Linux host.",
+          technology: "n8n · Docker · Linux · OpenClaw/Hermes profiles",
+        },
+      ],
+      flow: [
+        {
+          step: "Receive the operator request",
+          detail:
+            "A chat or voice surface converts the request into a normalized message for the Jarvis workflow.",
+        },
+        {
+          step: "Interpret and route",
+          detail:
+            "The Master Agent identifies whether the job belongs to email, calendar, meeting intelligence, or a combination and selects the required specialist contract.",
+        },
+        {
+          step: "Invoke bounded tools",
+          detail:
+            "The chosen specialist calls only its configured provider tools and returns structured results or a clear failure to the master workflow.",
+        },
+        {
+          step: "Coordinate multi-domain work",
+          detail:
+            "For requests such as preparing for a meeting, the master can combine calendar context, prior email, and meeting records without collapsing their credentials into one tool surface.",
+        },
+        {
+          step: "Return and remember",
+          detail:
+            "Jarvis composes a concise result for the original surface and retains useful conversational state for follow-up requests.",
+        },
+        {
+          step: "Inspect operational failures",
+          detail:
+            "n8n execution history and service state provide a concrete place to diagnose provider authentication, schema, tool, or routing failures.",
+        },
+      ],
+      implementation: [
+        "Created the central message-trigger-to-Master-Agent workflow and specialist routing contracts.",
+        "Separated Email, Calendar, and Meeting agents so each receives a narrower prompt, provider connection, and set of available actions.",
+        "Connected Gmail for inbox work, Google Calendar for scheduling context, and Fireflies for meeting intelligence.",
+        "Carried tool results back through the master workflow so multi-domain requests can be composed into one operator-facing response.",
+        "Deployed and operates the n8n runtime on a private Docker host with service-level checks and recoverable workflow definitions.",
+        "Added a live Call Jarvis service as a voice entry point while retaining the same downstream orchestration boundary.",
+        "Maintains OpenClaw and Hermes profiles as part of the broader agent runtime environment and experiments with new tools against the private stack before exposing them elsewhere.",
+      ],
+      reliability: [
+        {
+          risk: "One prompt receives unrestricted access to every personal system.",
+          control:
+            "Specialist agents expose domain-specific tools while the Master Agent owns routing and response composition.",
+        },
+        {
+          risk: "A provider schema or authentication change fails silently.",
+          control:
+            "n8n execution history, explicit tool nodes, and service checks expose the failing integration and its returned payload.",
+        },
+        {
+          risk: "A voice request bypasses the established agent controls.",
+          control:
+            "Voice is treated as an input adapter to the central workflow, not as a second independent operations brain.",
+        },
+        {
+          risk: "Context from one domain is over-shared with another.",
+          control:
+            "The master passes task-relevant context to the selected specialist instead of granting every domain the full conversation and all tools.",
+        },
+        {
+          risk: "A container or workflow process restarts mid-operation.",
+          control:
+            "The private Docker runtime, n8n persistence, and execution records separate service recovery from provider-side action review.",
+        },
+      ],
+      decisions: [
+        {
+          decision: "Keep one master agent and multiple specialists",
+          rationale:
+            "A single entry point is convenient for the operator; narrower execution agents are easier to prompt, permission, test, and debug.",
+        },
+        {
+          decision: "Preserve n8n as the orchestration layer",
+          rationale:
+            "The existing workflow makes routing, provider calls, payload shapes, and failures inspectable without hiding all behavior inside model code.",
+        },
+        {
+          decision: "Add voice as an adapter, not a redesign",
+          rationale:
+            "Keeping the Master Agent as the brain prevents chat and voice from diverging into two systems with different tools and safety behavior.",
+        },
+        {
+          decision: "Run the stack privately",
+          rationale:
+            "Email, calendar, and meeting data require a controlled host and explicit credential boundary rather than a public demo environment.",
+        },
+      ],
+      evidence: [
+        {
+          label: "Verified workflow topology",
+          detail:
+            "The inspected Jarvis workflow routes a chat trigger into one Master Agent with Email, Calendar, and Meeting specialists backed by Gmail, Google Calendar, Fireflies, and memory.",
+        },
+        {
+          label: "Running private services",
+          detail:
+            "The current host runs the n8n stack and an active Call Jarvis service alongside OpenClaw/Hermes runtime profiles.",
+        },
+        {
+          label: "Deliberate private boundary",
+          detail:
+            "No public demo is linked because the system holds personal communication, scheduling, and meeting context.",
+        },
+      ],
+      contributionBoundary:
+        "Harshitha designed and operates the Jarvis agent topology, workflow behavior, provider integrations, and live private runtime described here. The verified current voice surface is the Call Jarvis service; proposed third-party voice connectors are not presented as deployed production components.",
     },
   },
   {
@@ -482,12 +942,12 @@ export const projects: Project[] = [
   {
     slug: "content-automation-studio",
     title: "Content Automation Studio",
-    eyebrow: "Research-to-publishing · review-gated system",
+    eyebrow: "Crestline Studios · research-to-publishing system",
     description:
-      "A single-operator content system that turns current research into cited newsletter drafts and five-slide LinkedIn carousel packages while keeping generation separate from publication.",
+      "A Crestline Studios content-operations system that turns current research into cited newsletter drafts and complete LinkedIn carousel packages, with visible pipeline state and human approval before distribution.",
     architectureLine: "Firecrawl research → structured generation → asset rendering → human review → guarded delivery",
-    role: "Product and automation workflow contributor",
-    status: "Live project · controlled publishing",
+    role: "AI Product Engineer — content automation",
+    status: "Live Crestline Studios project · controlled publishing",
     date: "2026-08-02",
     published: true,
     featured: true,
@@ -496,12 +956,12 @@ export const projects: Project[] = [
     approach:
       "The system keeps carousel and newsletter pipelines independent, streams real provider progress, retains sources and citations, generates channel-specific assets, and makes LinkedIn or email delivery a separate action with explicit confirmation and constrained recipients.",
     outcome:
-      "One operator workspace can move from a topic to reviewable newsletter or carousel output, inspect the exact sources and generated assets, and deliberately choose whether to deliver anything.",
+      "Crestline Studios can move from a topic to reviewable newsletter or carousel output, inspect the exact sources and generated assets, and deliberately choose whether to publish—compressing research, production, and packaging without removing editorial control.",
     contributions: [
-      "Helped shape research-to-output workflows around real operator review rather than one-click autonomous publication.",
-      "Worked with separate carousel and newsletter paths, including current-source research, structured copy, image assets, citations, and visible pipeline state.",
-      "Defined safety boundaries around server-only credentials, fixed-recipient email tests, local-only LinkedIn controls, identity checks, dry runs, and second confirmation.",
-      "Evaluated complete operator journeys from topic selection through source inspection, output review, and guarded delivery.",
+      "Designed the research-to-output workflow around operator review rather than unsafe one-click autonomous publication.",
+      "Built separate carousel and newsletter paths for current-source research, structured copy, image assets, citations, and truthful pipeline progress.",
+      "Defined delivery controls around server-only credentials, fixed-recipient email tests, LinkedIn identity checks, dry runs, duplicate prevention, and second confirmation.",
+      "Tested the complete operator journey from topic selection through source inspection, asset review, delivery readiness, and guarded publication.",
     ],
     stack: [
       "Next.js",
@@ -523,16 +983,12 @@ export const projects: Project[] = [
     ],
     links: [
       {
-        label: "Open live studio",
-        href: "https://linkedin-agency-automation.vercel.app/",
-      },
-      {
-        label: "Inspect public implementation",
-        href: "https://github.com/harshith-vaddiparthy/linkedin-agency-automation",
+        label: "Visit Crestline Studios",
+        href: "https://www.crestlinestudios.dev/",
       },
     ],
     note:
-      "The public implementation is a single-user operator workspace. It requires authentication, durable rate limiting, run storage, and production observability before use as a public multi-user service.",
+      "The automation workspace is an operator system within Crestline Studios, not an unrestricted public publishing endpoint. Provider credentials and live distribution controls remain private.",
     technicalDossier: {
       systemContext:
         "The Studio automates the expensive middle of content operations—research, synthesis, drafting, visual production, and packaging—without collapsing review and distribution into the same action. Carousel and newsletter workflows share provider infrastructure but retain separate prompts, types, state, routes, tests, and delivery rules.",
@@ -667,20 +1123,19 @@ export const projects: Project[] = [
       ],
       evidence: [
         {
-          label: "Live workflow interface",
+          label: "Live Crestline Studios surface",
           detail:
-            "The deployed dashboard exposes the carousel and newsletter operator experience and its review-first controls.",
-          href: "https://linkedin-agency-automation.vercel.app/",
+            "The live Crestline Studios site is the canonical public surface for the content automation and AI implementation work.",
+          href: "https://www.crestlinestudios.dev/",
         },
         {
-          label: "Public implementation",
+          label: "Reviewed automation implementation",
           detail:
-            "The repository documents routes, provider boundaries, NDJSON progress, fixed-recipient delivery, LinkedIn validation, tests, and explicit production limitations.",
-          href: "https://github.com/harshith-vaddiparthy/linkedin-agency-automation",
+            "The reviewed system documents separate carousel and newsletter routes, provider boundaries, real NDJSON progress, fixed-recipient delivery, LinkedIn validation, duplicate prevention, and explicit production limits.",
         },
       ],
       contributionBoundary:
-        "This dossier describes a system Harshitha worked with and helped shape at the product and automation-workflow level. The linked public repository is owned by Harshith Vaddiparthy and its visible commits do not establish sole code authorship by Harshitha; the case study therefore separates system capability from her product, workflow, review, and operational contribution.",
+        "Harshitha's work covers the content-automation product flow, workflow design, review boundaries, provider integration behavior, delivery safeguards, and end-to-end operator testing described here. Crestline Studios is the canonical public product surface; private credentials and distribution infrastructure are intentionally excluded.",
     },
   },
   {
@@ -1161,11 +1616,11 @@ export const projects: Project[] = [
   },
   {
     slug: "openclaw-setup",
-    title: "OpenClaw Setup",
-    eyebrow: "Self-hosted agent deployment · live service",
+    title: "OpenClaw & Hermes Client Deployments",
+    eyebrow: "Self-hosted agent implementation · live service",
     description:
-      "A client implementation service for turning OpenClaw into a secure, self-hosted operating agent: infrastructure provisioning, Docker isolation, hardened access, encrypted credentials, channel integrations, workflow validation, and a controlled handoff.",
-    architectureLine: "Workflow discovery → client-owned host → sandboxed agent → integrations → verified handoff",
+      "A client implementation service for turning OpenClaw or Hermes into a secure, self-hosted operating agent: workflow discovery, infrastructure provisioning, Docker isolation, credentials, integrations, acceptance testing, and controlled handoff.",
+    architectureLine: "Workflow discovery → runtime selection → client-owned host → integrations → verified handoff",
     role: "AI product engineer and client implementation operator",
     status: "Live service · production deployments",
     date: "2026-08-10",
@@ -1174,7 +1629,7 @@ export const projects: Project[] = [
     challenge:
       "Installing an open-source agent is only the first step. A useful production deployment must reconcile host security, Docker isolation, OAuth and API permissions, multiple communication channels, credential custody, workflow-specific behavior, and a handoff that leaves the client in control.",
     approach:
-      "The service starts with workflow discovery, deploys OpenClaw on infrastructure owned by the client, hardens the host and runtime boundary, configures each provider independently, tests real end-to-end scenarios, removes implementation access, and includes a focused post-launch support window.",
+      "The service starts with workflow discovery, selects OpenClaw or Hermes for the operating requirements, deploys on infrastructure owned by the client, hardens the host and runtime boundary, configures each provider independently, tests real end-to-end scenarios, and transfers operational control.",
     outcome:
       "Clients receive a self-hosted agent connected to the tools they actually use, with documented ownership of infrastructure and credentials, an explicit security boundary, verified workflows, and a support path for the first production edge cases.",
     contributions: [
@@ -1186,6 +1641,7 @@ export const projects: Project[] = [
     ],
     stack: [
       "OpenClaw",
+      "Hermes",
       "Docker",
       "Linux",
       "VPS",
@@ -1216,7 +1672,7 @@ export const projects: Project[] = [
       "The service runs on client-owned infrastructure. Provider availability and exact integrations depend on each customer's environment and permissions.",
     technicalDossier: {
       systemContext:
-        "OpenClaw Setup is an implementation layer around an open-source agent. The engineering work is not merely launching a container: it is creating a bounded operating environment, assigning minimum necessary provider permissions, connecting communication surfaces, translating a client's recurring work into testable behaviors, and transferring control without leaving a hidden dependency on the implementer.",
+        "OpenClaw Setup is the public service surface for Harshitha's OpenClaw and Hermes implementations. The engineering work is not merely launching a container: it is selecting the right runtime, creating a bounded operating environment, assigning minimum necessary provider permissions, connecting communication surfaces, translating a client's recurring work into testable behaviors, and transferring control without leaving a hidden dependency on the implementer.",
       architecture: [
         {
           name: "Discovery and acceptance layer",
@@ -1233,8 +1689,8 @@ export const projects: Project[] = [
         {
           name: "Sandboxed agent runtime",
           responsibility:
-            "Runs OpenClaw inside an isolated container boundary and limits host exposure through firewall rules, hardened remote access, and deliberate filesystem or service access.",
-          technology: "OpenClaw · Docker · firewall hardening",
+            "Runs OpenClaw or Hermes inside an isolated boundary and limits host exposure through firewall rules, hardened remote access, and deliberate filesystem or service access.",
+          technology: "OpenClaw · Hermes · Docker · firewall hardening",
         },
         {
           name: "Credential and permission boundary",
@@ -1290,6 +1746,7 @@ export const projects: Project[] = [
       implementation: [
         "Converted customer goals into a deployment checklist covering hosts, accounts, channels, permissions, expected agent behavior, human review, and acceptance tests.",
         "Structured the installation around a client-owned host instead of a shared black-box SaaS environment.",
+        "Selects OpenClaw or Hermes according to the client's channel, workflow, tool, and runtime requirements instead of forcing every deployment into one agent framework.",
         "Applied Docker sandboxing, firewall restrictions, SSH hardening, and encrypted credential storage as baseline deployment work rather than optional follow-up security.",
         "Configured and separately validated Gmail, Google Calendar, Slack, WhatsApp, Telegram, and Notion integration paths.",
         "Tested real operational scenarios and tuned the agent around expected actions, escalation behavior, and user-facing outputs.",
@@ -1365,7 +1822,7 @@ export const projects: Project[] = [
         },
       ],
       contributionBoundary:
-        "This case study covers Harshitha's current responsibility as the public, client-facing implementation operator for OpenClaw Setup: workflow discovery, secure deployment, integration validation, handoff, and support. The website repository's visible Git history is not presented as Harshitha-authored code; the portfolio separates service ownership and implementation work from source-code authorship.",
+        "This case study covers Harshitha's current responsibility as the client-facing implementation operator for OpenClaw Setup and Hermes deployments: workflow discovery, runtime selection, secure deployment, integration validation, handoff, and support. Service delivery is distinguished from authorship of the upstream OpenClaw or Hermes projects.",
     },
   },
   {

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Harshitha Chittapragada - Automation Product Engineer",
+    name: "Harshitha Chittapragada - AI Product Engineer",
     short_name: "Harshitha",
     description:
       "Reliable AI automation products across finance, hiring, and content operations.",

@@ -17,16 +17,23 @@ const introSessionCheck = `
 export const metadata: Metadata = {
   metadataBase: new URL("https://harshitha.dev"),
   title: {
-    default: "Harshitha Chittapragada - Automation Product Engineer",
+    default: "Harshitha Chittapragada - AI Product Engineer & Founder of Agent Mag",
     template: "%s | Harshitha Chittapragada",
   },
-  description: "Harshitha Chittapragada builds reliable AI automation products across finance, hiring, and content operations, with a focus on integrations, approvals, recovery, and auditability.",
+  description: "Harshitha Chittapragada is an AI Product Engineer and Founder of Agent Mag. She builds agent platforms, enterprise automation, and client deployments from roadmap through production operations.",
   keywords: [
     "Harshitha Chittapragada",
     "Harshitha",
-    "Automation Product Engineer",
+    "AI Product Engineer",
+    "Founder of Agent Mag",
     "AI Automation",
     "AgentMag",
+    "Agent Mag Skills",
+    "Jarvis",
+    "OpenClaw",
+    "Hermes",
+    "Claude Code",
+    "Codex",
     "Finance Automation",
     "Hiring Automation",
     "Content Automation",
@@ -46,9 +53,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Harshitha Chittapragada - Automation Product Engineer",
+    title: "Harshitha Chittapragada - AI Product Engineer & Founder of Agent Mag",
     description:
-      "Building reliable AI automation products across finance, hiring, and content operations.",
+      "Building agent platforms and enterprise automation from roadmap through production operations.",
     url: "https://harshitha.dev",
     siteName: "Harshitha Chittapragada",
     images: [
@@ -56,7 +63,7 @@ export const metadata: Metadata = {
         url: "https://harshitha.dev/og.png",
         width: 1200,
         height: 630,
-        alt: "Harshitha Chittapragada - Automation Product Engineer",
+        alt: "Harshitha Chittapragada - AI Product Engineer and Founder of Agent Mag",
       },
     ],
     locale: "en-US",
@@ -77,8 +84,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harshitha Chittapragada - Automation Product Engineer",
-    description: "Building reliable AI automation products across finance, hiring, and content operations.",
+    title: "Harshitha Chittapragada - AI Product Engineer & Founder of Agent Mag",
+    description: "Building agent platforms and enterprise automation from roadmap through production operations.",
     creator: "@harshithaa_ch",
     images: ["https://harshitha.dev/og.png"],
   },

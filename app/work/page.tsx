@@ -47,6 +47,12 @@ const skills = [
   "Linux",
   "OAuth",
   "OpenAI",
+  "OpenClaw",
+  "Hermes",
+  "Claude Code",
+  "Codex",
+  "Agent architecture",
+  "Product roadmapping",
   "Workflow systems",
   "API integrations",
   "Human-in-the-loop automation",
@@ -68,13 +74,13 @@ export default function WorkPage() {
             Selected systems and product work
           </p>
           <h1 className="max-w-3xl text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-white sm:text-6xl md:text-7xl font-display">
-            Systems built for real operational pressure.
+            AI products built from roadmap to operations.
           </h1>
           <p className="mt-7 max-w-2xl text-sm leading-7 text-zinc-400 sm:text-base">
-            I build operational products that combine AI with deterministic workflows,
-            integrations, permissions, approvals, recovery, and auditability. Each case study below
-            shows the architecture, execution path, failure controls, technical decisions, and exact
-            boundary of my contribution.
+            I&apos;m an AI product engineer and Founder of Agent Mag. I turn clear operating ideas into
+            roadmaps, agent architectures, integrations, deployed products, and repeatable workflows.
+            Each case study shows the implementation path, reliability controls, technical decisions,
+            and evidence behind the work—without making the first page read like an engineering manual.
           </p>
         </header>
 
@@ -86,7 +92,7 @@ export default function WorkPage() {
                 Flagship systems
               </h2>
             </div>
-            <span className="hidden text-xs text-zinc-600 sm:block">Finance · Hiring · Content · Agent deployment</span>
+            <span className="hidden text-xs text-zinc-600 sm:block">Agent infrastructure · Operations · Hiring · Content</span>
           </div>
 
           <div className="grid gap-4 lg:grid-cols-12">
@@ -95,7 +101,11 @@ export default function WorkPage() {
                 key={project.slug}
                 href={`/work/${project.slug}`}
                 className={`group relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-zinc-600 hover:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-400 sm:p-8 ${
-                  index === 0 ? "lg:col-span-12" : "lg:col-span-4"
+                  index === 0
+                    ? "lg:col-span-12"
+                    : index <= 2
+                      ? "lg:col-span-6"
+                      : "lg:col-span-4"
                 }`}
               >
                 <div className="flex items-start justify-between gap-6">

@@ -29,29 +29,30 @@ export default function StoryPage() {
           <div>
             <p className="text-xs uppercase tracking-[0.22em] text-zinc-600">About</p>
             <h1 className="mt-4 text-4xl font-medium tracking-[-0.04em] text-white sm:text-6xl font-display">
-              I design AI systems for the moment the prototype meets real operations.
+              I build AI products from operating idea to deployed system.
             </h1>
           </div>
           <div className="space-y-5 pt-1 text-sm leading-7 text-zinc-400 sm:text-base sm:leading-8">
             <p>
-              I&apos;m Harshitha Chittapragada, a product-minded engineer focused on automation
-              systems that teams can use for recurring, consequential work.
+              I&apos;m Harshitha Chittapragada, an AI Product Engineer and Founder of Agent Mag. I work
+              across product discovery, roadmap definition, agent architecture, implementation,
+              integrations, deployment, and the operational details that determine whether a system
+              remains useful after launch.
             </p>
             <p>
-              My recent work spans four operating domains. In AgentMag, I worked on governed
-              workflows that combine agents, integrations, approvals, persistent data, and
-              traceable execution. In enterprise hiring automation, I built an inbox-to-shortlist
-              pipeline with Microsoft Graph, candidate matching, controlled replies, restart
-              recovery, connection pooling, and duplicate-reply prevention. In content automation,
-              I worked on research-to-publishing pipelines that keep human review between generation
-              and distribution. In OpenClaw Setup, I work directly on secure, self-hosted agent
-              deployments across infrastructure, credentials, integrations, acceptance testing, and
-              client handoff.
+              At Agent Mag, I lead an 86-page product, 62 API routes, a 492-skill open ecosystem,
+              Agent Mag AI, and a governed automation runtime for finance and broader operations. I
+              also designed and operate Jarvis, a master-agent system with Email, Calendar, and
+              Meeting specialists. My enterprise hiring work covers Microsoft Graph intake,
+              candidate matching, resume attachments, duplicate-reply prevention, restart recovery,
+              connection pooling, and Azure deployment. Content automation and OpenClaw and Hermes
+              client deployments extend the same work into publishing and private agent operations.
             </p>
             <p>
-              The common thread is reliability. I care about what happens after the model produces
-              an answer: how inputs are validated, where state lives, who can approve an action,
-              what happens after a crash, and whether an operator can reconstruct the run later.
+              Claude Code and Codex are core implementation tools in that process, but the job is
+              larger than prompting. I define the operating model, choose the system boundaries,
+              connect providers, inspect failures, ship the product, and keep the human decision
+              points clear where an automated action has consequences.
             </p>
           </div>
         </header>
@@ -78,20 +79,21 @@ export default function StoryPage() {
           </div>
           <div className="space-y-5 text-sm leading-7 text-zinc-500 sm:text-base sm:leading-8">
             <p>
-              My formal training is in Artificial Intelligence and Data Science. Industry work in
-              AI development, software delivery, recruitment operations, and technical community
-              building taught me to connect code with the people and processes around it.
+              My formal training is in Artificial Intelligence and Data Science. Building products
+              across agent infrastructure, recruitment operations, publishing, and client
+              implementation taught me to connect code with the people and processes around it.
             </p>
             <p>
               I work across TypeScript, Next.js, Python, Java, PostgreSQL, Microsoft Graph, Azure,
-              workflow runtimes, and model APIs. I&apos;m comfortable moving between product discovery,
-              implementation, debugging, deployment, and operational follow-through.
+              OpenClaw, Hermes, n8n, workflow runtimes, and model APIs. I&apos;m comfortable moving
+              between product discovery, implementation with Claude Code and Codex, debugging,
+              deployment, and operational follow-through.
             </p>
             <p>
               I&apos;m deliberately growing toward enterprise-grade architecture: multi-system products
               with explicit security boundaries, durable state, observable execution, failure
-              recovery, and human control. I want to build the technical judgment required to own
-              those systems end to end—not adopt an architecture title before earning that scope.
+              recovery, and human control. I want to deepen the technical judgment required to own
+              increasingly complex systems end to end.
             </p>
             <p>
               I&apos;m looking for roles in enterprise product engineering, automation platforms, AI

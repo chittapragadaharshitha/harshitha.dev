@@ -24,6 +24,16 @@ const requiredClaims = [
   "Enterprise Hiring Automation",
   "Content Automation Studio",
   "OpenClaw Setup",
+  "Founder of Agent Mag",
+  "AI Product Engineer",
+  "Claude Code",
+  "Codex",
+  "Jarvis",
+  "Hermes",
+  "492",
+  "86",
+  "62",
+  "16",
   "enterprise-grade architecture",
   "Microsoft Graph",
   "candidate matching",
@@ -37,6 +47,7 @@ const requiredClaims = [
   "fixed-recipient",
   "Docker isolation",
   "client-owned host",
+  "https://www.crestlinestudios.dev/",
 ];
 
 const expectedProjectSlugs = [
@@ -44,6 +55,8 @@ const expectedProjectSlugs = [
   "enterprise-hiring-automation",
   "content-automation-studio",
   "openclaw-setup",
+  "agent-mag-skills",
+  "jarvis-multi-agent-operations",
   "ai-internship-recommendation-engine",
   "absolute-prosthetics",
   "pneumonia-detection-cnn",
@@ -65,6 +78,8 @@ const forbiddenClaims = [
   "Head of Growth at JustPaid",
   "github.com/harshith-21",
   "twitter.com/harshithio",
+  "https://linkedin-agency-automation.vercel.app/",
+  "github.com/harshith-vaddiparthy/linkedin-agency-automation",
 ];
 
 const legacyRoutes = [
