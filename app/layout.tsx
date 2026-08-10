@@ -8,26 +8,25 @@ import StructuredData from "./components/structured-data";
 export const metadata: Metadata = {
   metadataBase: new URL("https://harshitha.dev"),
   title: {
-    default: "Harshitha Chittapragada - AI & Data Science Engineer",
+    default: "Harshitha Chittapragada - Automation Product Engineer",
     template: "%s | Harshitha Chittapragada",
   },
-  description: "Harshitha Chittapragada is an AI & Data Science engineering student, Google Student Ambassador, and Operations Lead at Harshith Ventures. Building AI agents, vibe coding, and exploring the future of technology.",
+  description: "Harshitha Chittapragada builds reliable AI automation products across finance, hiring, and content operations, with a focus on integrations, approvals, recovery, and auditability.",
   keywords: [
     "Harshitha Chittapragada",
     "Harshitha",
-    "AI Engineer",
-    "Data Science",
-    "Google Student Ambassador",
-    "Harshith Ventures",
-    "OpenClaw",
-    "Cursor AI",
-    "Vibe Coding",
-    "Computer Science",
-    "Machine Learning",
-    "Artificial Intelligence",
-    "Software Engineering",
-    "Python",
-    "Java"
+    "Automation Product Engineer",
+    "AI Automation",
+    "AgentMag",
+    "Finance Automation",
+    "Hiring Automation",
+    "Content Automation",
+    "Workflow Engineering",
+    "Microsoft Graph",
+    "Azure",
+    "Next.js",
+    "TypeScript",
+    "Python"
   ],
   authors: [{ name: "Harshitha Chittapragada" }],
   creator: "Harshitha Chittapragada",
@@ -38,9 +37,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Harshitha Chittapragada - AI & Data Science Engineer",
+    title: "Harshitha Chittapragada - Automation Product Engineer",
     description:
-      "AI & Data Science engineering student, Google Student Ambassador, and Operations Lead at Harshith Ventures. Building AI agents and exploring the future of technology.",
+      "Building reliable AI automation products across finance, hiring, and content operations.",
     url: "https://harshitha.dev",
     siteName: "Harshitha Chittapragada",
     images: [
@@ -48,7 +47,7 @@ export const metadata: Metadata = {
         url: "https://harshitha.dev/og.png",
         width: 1200,
         height: 630,
-        alt: "Harshitha Chittapragada - AI & Data Science Engineer",
+        alt: "Harshitha Chittapragada - Automation Product Engineer",
       },
     ],
     locale: "en-US",
@@ -69,8 +68,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harshitha Chittapragada - AI & Data Science Engineer",
-    description: "AI & Data Science engineering student, Google Student Ambassador, and Operations Lead at Harshith Ventures.",
+    title: "Harshitha Chittapragada - Automation Product Engineer",
+    description: "Building reliable AI automation products across finance, hiring, and content operations.",
     creator: "@harshithaa_ch",
     images: ["https://harshitha.dev/og.png"],
   },
@@ -88,7 +87,7 @@ export const metadata: Metadata = {
       {
         url: "/favicon.ico",
         sizes: "32x32",
-        type: "image/png",
+        type: "image/x-icon",
       },
       {
         url: "/favicon.png",

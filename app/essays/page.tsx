@@ -9,7 +9,7 @@ const essays = [
     title: "I Built an AI Assistant That Runs My Team's Slack, Telegram, and WhatsApp",
     date: "2026-02-05",
     readTime: "8 min read",
-    excerpt: "How we deployed an always-on AI assistant using OpenClaw at Harshith Ventures. From setup to daily operations, here's what it actually looks like to have an AI teammate across every messaging platform.",
+    excerpt: "How I built an always-on AI assistant across Slack, Telegram, and WhatsApp, and what it takes to make cross-channel automation useful in daily operations.",
     slug: "i-built-an-ai-assistant-with-openclaw",
     featured: true,
     tags: ["AI", "OpenClaw", "Automation", "Slack"]

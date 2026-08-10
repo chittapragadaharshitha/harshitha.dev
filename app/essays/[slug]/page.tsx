@@ -17,7 +17,7 @@ const essays: Record<string, {
     readTime: "8 min read",
     tags: ["AI", "OpenClaw", "Automation", "Slack"],
     content: `
-When I first heard about AI assistants that could live inside your messaging apps, I was skeptical. Another chatbot? We've all seen those. But when I got my hands on OpenClaw and started building what we now call Clawd Bot at Harshith Ventures, everything changed.
+When I first heard about AI assistants that could live inside messaging apps, I was skeptical. Another chatbot? We've all seen those. But when I started building a cross-channel operations assistant with OpenClaw, everything changed.
 
 ## What is OpenClaw?
 
@@ -27,7 +27,7 @@ The core idea is simple but powerful: give a large language model (like Claude o
 
 ## Why We Built Clawd Bot
 
-At Harshith Ventures, our team communicates across Slack, Telegram, and WhatsApp. Messages get lost. Action items fall through the cracks. Someone asks a question in Telegram, and the answer is buried in a Slack thread from two weeks ago.
+The team I worked with communicated across Slack, Telegram, and WhatsApp. Messages got lost. Action items fell through the cracks. Someone would ask a question in Telegram, while the answer was buried in a Slack thread from two weeks earlier.
 
 We needed something that could bridge all three platforms, maintain context, and actually do things, not just answer questions.
 

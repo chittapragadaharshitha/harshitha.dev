@@ -1,65 +1,24 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
+import { allProjects } from "../lib/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://harshith.com'
-  
-  // Static pages
-  const staticPages = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/story`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/work`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/media`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/essays`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/meet`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    },
-  ]
+  const baseUrl = "https://harshitha.dev";
+  const now = new Date();
 
-  // Work project pages
-  const workProjects = [
-    'ambassadors-solutions',
-    'artifin',
-    'basedaf',
-    'harshith-ventures',
-    'justpaid-ai',
-    'love-death-robots',
-    'metaschool',
-  ]
+  const staticPages: MetadataRoute.Sitemap = [
+    { url: baseUrl, lastModified: now, changeFrequency: "monthly", priority: 1 },
+    { url: `${baseUrl}/story`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/work`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/essays`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/meet`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+  ];
 
-  const workPages = workProjects.map((project) => ({
-    url: `${baseUrl}/work/${project}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
+  const workPages: MetadataRoute.Sitemap = allProjects.map((project) => ({
+    url: `${baseUrl}/work/${project.slug}`,
+    lastModified: new Date(project.date),
+    changeFrequency: "monthly",
+    priority: project.featured ? 0.8 : 0.6,
+  }));
 
-  return [...staticPages, ...workPages]
+  return [...staticPages, ...workPages];
 }

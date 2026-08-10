@@ -15,10 +15,8 @@ const menuItems: MenuItem[] = [
   { text: "Home", href: "/" },
   { text: "Story", href: "/story" },
   { text: "Work", href: "/work" },
-  // { text: "Media", href: "/media" }, // Hidden
   { text: "Essays", href: "/essays" },
   { text: "Resume", href: "/resume.pdf", external: true },
-  // { text: "Holdings", href: "https://harshith.vc", external: true }, // Hidden
 ]
 
 interface MobileNavProps {

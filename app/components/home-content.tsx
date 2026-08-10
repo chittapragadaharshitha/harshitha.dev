@@ -1,260 +1,141 @@
-'use client';
+"use client";
 
-import Link from "next/link";
-import React, { useState } from "react";
 import Image from "next/image";
-import Particles from "./particles";
-import { Navigation } from "./nav";
-import { MobileNav } from "./mobile-nav";
-import { FaGithub, FaLinkedinIn, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
+import { ArrowUpRight, CalendarDays, Mail } from "lucide-react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { SiGmail, SiGooglescholar } from "react-icons/si";
-import { BsCalendarCheck } from "react-icons/bs";
 import { useFirstVisit } from "../hooks/useFirstVisit";
-import WhatsAppModal from "./whatsapp-modal";
+import { MobileNav } from "./mobile-nav";
+import { Navigation } from "./nav";
+import Particles from "./particles";
 
-// Navigation items are now handled in the MobileNav component
+const systems = [
+  { name: "AgentMag", detail: "Governed workflow and agent platform" },
+  { name: "Hiring Automation", detail: "Enterprise recruitment operations" },
+  { name: "Content Studio", detail: "Review-first publishing workflows" },
+];
+
+const socialLinks = [
+  {
+    label: "GitHub",
+    href: "https://github.com/chittapragadaharshitha",
+    icon: FaGithub,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/chittapragadaharshitha/",
+    icon: FaLinkedinIn,
+  },
+  {
+    label: "X",
+    href: "https://x.com/harshithaa_ch",
+    icon: FaXTwitter,
+  },
+];
 
 export default function HomeContent() {
   const { isFirstVisit, isLoaded } = useFirstVisit();
-  const [isWhatsAppModalOpen, setIsWhatsAppModalOpen] = useState(false);
-
-  // Always render the same structure to avoid hydration mismatch
-  // Use opacity and visibility to control what shows
+  const entrance = isLoaded && isFirstVisit ? "animate-fade-in" : isLoaded ? "" : "opacity-0";
 
   return (
-    <div className="flex flex-col items-center justify-center w-full min-h-screen min-h-[100dvh] overflow-x-hidden bg-gradient-to-tl from-zinc-950/50 from-0% via-zinc-600/20 via-50% to-zinc-950/50 to-100%">
-      {/* New Mobile Navigation */}
+    <main className="relative flex min-h-screen min-h-[100dvh] w-full items-center overflow-hidden bg-zinc-950 text-zinc-100">
       <MobileNav showLogo={false} />
-      
-      {/* Main Content Container - Properly centered with uniform spacing */}
-      <div className="flex flex-col items-center px-6 pt-16 pb-8 max-w-4xl mx-auto">
-        
-        {/* Profile Picture */}
-        <div className={`mt-4 mb-8 ${isLoaded && isFirstVisit ? 'animate-fade-in' : isLoaded ? '' : 'opacity-0'}`}>
-          <Image
-            src="/harshitha.jpg"
-            alt="Harshitha Chittapragada - Developer"
-            width={160}
-            height={160}
-            className="rounded-xl w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44"
-            style={{ width: 'auto', height: 'auto' }}
-            priority
-            loading="eager"
-          />
-        </div>
-        
-        {/* Name */}
-        <h1 className={`mb-8 z-10 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-transparent duration-1000 bg-white cursor-default text-edge-outline font-display whitespace-nowrap bg-clip-text ${isLoaded && isFirstVisit ? 'animate-title' : isLoaded ? '' : 'opacity-0'}`}>
-          Harshitha
-        </h1>
-        
-        {/* About Section */}
-        <div className={`mb-8 text-center max-w-2xl mx-auto px-4 ${isLoaded && isFirstVisit ? 'animate-fade-in' : isLoaded ? '' : 'opacity-0'}`}>
-          <h2 className="text-xs sm:text-sm text-zinc-500 leading-relaxed mb-4">
-            I'm Harshitha Chittapragada, a developer in my final year of BTech. I build responsive web applications and create content about web development and AI tools. Previously interned as an AI Development Engineer at DREP.in and Business Analyst at Executive Softway Guild.
-          </h2>
-          <p className="text-xs sm:text-sm text-zinc-400">
-            Open to opportunities in development and management roles.
+      <Particles className="absolute inset-0 -z-10" quantity={90} />
+
+      <div className="absolute inset-x-0 top-0 z-20 hidden justify-center pt-6 md:flex">
+        <Navigation />
+      </div>
+
+      <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 pb-14 pt-24 md:grid-cols-[1.25fr_0.75fr] md:items-center md:px-10 md:pb-20 md:pt-28 lg:gap-20">
+        <section className={entrance}>
+          <div className="flex items-center gap-3 text-xs text-zinc-500">
+            <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
+            Open to product engineering and automation roles
+          </div>
+
+          <h1 className="mt-7 text-5xl font-medium leading-[0.95] tracking-[-0.055em] text-white sm:text-7xl lg:text-8xl font-display">
+            Harshitha
+            <span className="block text-zinc-500">Chittapragada</span>
+          </h1>
+
+          <p className="mt-8 max-w-2xl text-base leading-8 text-zinc-300 sm:text-lg">
+            I build reliable AI automation products for finance, hiring, and content operations.
           </p>
-        </div>
-        
-        {/* Social Media Icons */}
-        <div className={`mt-4 ${isLoaded && isFirstVisit ? 'animate-fade-in' : isLoaded ? '' : 'opacity-0'}`}>
-          {/* Desktop: Single row */}
-          <div className="hidden md:flex items-center justify-center gap-2 flex-wrap">
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-500 sm:text-base">
+            My work connects models to real operational systems through integrations, deterministic
+            workflows, human approvals, recovery, and auditability—not demo-only AI.
+          </p>
+
+          <div className="mt-9 flex flex-wrap gap-3">
             <Link
-              href="https://github.com/chittapragadaharshitha"
-              target="_blank"
-              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+              href="/work"
+              className="inline-flex items-center gap-2 rounded-lg bg-zinc-100 px-4 py-2.5 text-sm font-medium text-zinc-950 transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-zinc-950 active:scale-[0.98]"
             >
-              <FaGithub className="h-4 w-4" />
-            </Link>
-            <Link
-              href="https://x.com/harshithaa_ch"
-              target="_blank"
-              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-            >
-              <FaXTwitter className="h-4 w-4" />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/chittapragadaharshitha/"
-              target="_blank"
-              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-            >
-              <FaLinkedinIn className="h-4 w-4" />
-            </Link>
-            {/* <button
-              onClick={() => setIsWhatsAppModalOpen(true)}
-              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-            >
-              <FaWhatsapp className="h-4 w-4" />
-            </button> */}
-            {/* <Link
-              href="https://youtube.com/@harshithvaddiparthy"
-              target="_blank"
-              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-            >
-              <FaYoutube className="h-4 w-4" />
-            </Link> */}
-            {/* <Link
-              href="https://scholar.google.com/citations?user=W-bXoUMAAAAJ&hl=en"
-              target="_blank"
-              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-            >
-              <SiGooglescholar className="h-4 w-4" />
-            </Link> */}
-            <Link
-              href="https://medium.com/@chittapragadaharshitha"
-              target="_blank"
-              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-            >
-              <Image 
-                src="/icons8-medium.svg" 
-                alt="Harshitha Chittapragada on Medium - AI and Tech Articles" 
-                width={16} 
-                height={16} 
-                className="h-4 w-4 invert opacity-60 hover:opacity-100"
-              />
-            </Link>
-            {/* <Link
-              href="https://councils.forbes.com/profile/Harshith-Vaddiparthy-Head-Growth-JustPaid/5747f601-ca29-4255-a79b-3518154819a7"
-              target="_blank"
-              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-            >
-              <Image
-                src="/forbes-icon.svg"
-                alt="Harshitha Chittapragada - Forbes Technology Council Member"
-                width={16}
-                height={16}
-                className="h-4 w-4 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
-              />
-            </Link> */}
-            <Link
-              href="mailto:chittapragadaharshitha@gmail.com"
-              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-            >
-              <SiGmail className="h-4 w-4" />
+              View selected work
+              <ArrowUpRight className="h-4 w-4" />
             </Link>
             <Link
               href="/meet"
-              className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+              className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900/70 px-4 py-2.5 text-sm text-zinc-300 transition hover:border-zinc-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-zinc-500 active:scale-[0.98]"
             >
-              <BsCalendarCheck className="h-4 w-4" />
+              <CalendarDays className="h-4 w-4" />
+              Start a conversation
             </Link>
           </div>
 
-          {/* Mobile: Two rows of 5 icons each */}
-          <div className="flex flex-col items-center justify-center gap-3 md:hidden">
-            {/* First Row - 5 Icons */}
-            <div className="flex items-center justify-center gap-2">
+          <div className="mt-10 flex items-center gap-2">
+            {socialLinks.map(({ label, href, icon: Icon }) => (
               <Link
-                href="https://github.com/chittapragadaharshitha"
+                key={label}
+                href={href}
                 target="_blank"
-                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="rounded-md border border-zinc-800 bg-zinc-900/60 p-2 text-zinc-500 transition hover:border-zinc-600 hover:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-500"
               >
-                <FaGithub className="h-4 w-4" />
+                <Icon className="h-4 w-4" />
               </Link>
-              <Link
-                href="https://x.com/harshithaa_ch"
-                target="_blank"
-                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-              >
-                <FaXTwitter className="h-4 w-4" />
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/chittapragadaharshitha/"
-                target="_blank"
-                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-              >
-                <FaLinkedinIn className="h-4 w-4" />
-              </Link>
-              {/* <button
-                onClick={() => setIsWhatsAppModalOpen(true)}
-                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-              >
-                <FaWhatsapp className="h-4 w-4" />
-              </button> */}
-              {/* <Link
-                href="https://youtube.com/@harshithvaddiparthy"
-                target="_blank"
-                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-              >
-                <FaYoutube className="h-4 w-4" />
-              </Link> */}
-            </div>
-            
-            {/* Second Row - 5 Icons */}
-            <div className="flex items-center justify-center gap-2">
-              {/* <Link
-                href="https://scholar.google.com/citations?user=W-bXoUMAAAAJ&hl=en"
-                target="_blank"
-                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-              >
-                <SiGooglescholar className="h-4 w-4" />
-              </Link> */}
-              <Link
-                href="https://medium.com/@chittapragadaharshitha"
-                target="_blank"
-                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-              >
-                <Image 
-                  src="/icons8-medium.svg" 
-                  alt="Harshitha Chittapragada on Medium - AI and Tech Articles" 
-                  width={16} 
-                  height={16} 
-                  className="h-4 w-4 invert opacity-60 hover:opacity-100"
-                />
-              </Link>
-              {/* <Link
-                href="https://councils.forbes.com/profile/Harshith-Vaddiparthy-Head-Growth-JustPaid/5747f601-ca29-4255-a79b-3518154819a7"
-                target="_blank"
-                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-              >
-                <Image
-                  src="/forbes-icon.svg"
-                  alt="Harshitha Chittapragada - Forbes Technology Council Member"
-                  width={16}
-                  height={16}
-                  className="h-4 w-4 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
-                />
-              </Link> */}
-              <Link
-                href="mailto:chittapragadaharshitha@gmail.com"
-                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-              >
-                <SiGmail className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/meet"
-                className="p-1.5 rounded border border-zinc-600 bg-zinc-800/50 text-zinc-400 hover:text-zinc-300 hover:border-zinc-500 transition-all duration-300 hover:bg-zinc-700/50"
-              >
-                <BsCalendarCheck className="h-4 w-4" />
-              </Link>
+            ))}
+            <Link
+              href="mailto:chittapragadaharshitha@gmail.com"
+              aria-label="Email Harshitha"
+              className="rounded-md border border-zinc-800 bg-zinc-900/60 p-2 text-zinc-500 transition hover:border-zinc-600 hover:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-500"
+            >
+              <Mail className="h-4 w-4" />
+            </Link>
+          </div>
+        </section>
+
+        <aside className={`${entrance} md:justify-self-end`}>
+          <div className="relative mx-auto w-full max-w-sm rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4 shadow-2xl shadow-black/30 backdrop-blur sm:p-5">
+            <Image
+              src="/harshitha.jpg"
+              alt="Harshitha Chittapragada"
+              width={640}
+              height={640}
+              className="aspect-square w-full rounded-xl object-cover object-top grayscale-[12%]"
+              priority
+            />
+            <div className="mt-5 space-y-4">
+              {systems.map((system, index) => (
+                <Link
+                  key={system.name}
+                  href={index === 0 ? "/work/agentmag" : index === 1 ? "/work/enterprise-hiring-automation" : "/work/content-automation-studio"}
+                  className="group grid grid-cols-[1.5rem_1fr_auto] items-center gap-3 border-t border-zinc-800 pt-4 focus:outline-none focus:ring-2 focus:ring-zinc-500"
+                >
+                  <span className="font-mono text-[10px] text-zinc-700">0{index + 1}</span>
+                  <span>
+                    <span className="block text-sm text-zinc-300 group-hover:text-white">{system.name}</span>
+                    <span className="mt-0.5 block text-xs text-zinc-600">{system.detail}</span>
+                  </span>
+                  <ArrowUpRight className="h-4 w-4 text-zinc-700 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-zinc-300" />
+                </Link>
+              ))}
             </div>
           </div>
-        </div>
+        </aside>
       </div>
-
-      {/* Particles Background */}
-      <Particles
-        className={`absolute inset-0 -z-10 ${isLoaded && isFirstVisit ? 'animate-fade-in' : ''}`}
-        quantity={100}
-      />
-
-
-      {/* Top Navigation */}
-      <div className="absolute flex flex-col items-center space-y-2 md:space-y-6 top-0 w-full mt-4 md:mt-6">
-        <div className={`${isLoaded && isFirstVisit ? 'animate-fade-in' : isLoaded ? '' : 'opacity-0'}`}>
-          <Navigation />
-        </div>
-      </div>
-
-      {/* WhatsApp Modal */}
-      <WhatsAppModal 
-        isOpen={isWhatsAppModalOpen} 
-        onClose={() => setIsWhatsAppModalOpen(false)} 
-      />
-    </div>
+    </main>
   );
 }
