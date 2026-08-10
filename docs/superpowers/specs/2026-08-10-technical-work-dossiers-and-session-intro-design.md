@@ -14,8 +14,8 @@ The change is complete when:
 1. A new browser session shows a short `Harshitha` intro over the first requested page.
 2. Refreshes and client-side navigation in the same browser session do not show it again.
 3. Reduced-motion users do not receive a long or movement-heavy animation.
-4. AgentMag, Enterprise Hiring Automation, and Content Automation Studio each read as engineering dossiers rather than marketing summaries.
-5. Each flagship dossier includes a system snapshot, architecture, end-to-end flow, verified implementation work, reliability controls, technical decisions, technology, proof links, and a contribution boundary.
+4. Every listed project reads as an engineering dossier rather than a marketing summary, with depth proportional to the available repository evidence.
+5. Every dossier includes a system snapshot, architecture, end-to-end flow, verified implementation work, reliability controls or engineering constraints, technical decisions, technology, proof links, and a contribution boundary.
 6. AgentMag platform capability is clearly separated from Harshitha's personally attributable work.
 7. Existing public links, metadata, responsive behavior, and production deployment remain intact.
 8. No Harshith Ventures, JustPaid, Harshith Vaddiparthy, Head of Growth, or other inherited claims return.
@@ -43,7 +43,7 @@ Relevant files:
 - `global.css`: global animation and reduced-motion rules.
 - `scripts/verify-portfolio-content.mjs`: content and legacy-claim contract.
 
-The current project-detail template has only Problem, Approach, Outcome, Contributions, Technology, and headline metrics. This is too abstract for the intended reader.
+The current project-detail template has only Problem, Approach, Outcome, Contributions, Technology, and headline metrics. This is too abstract for the intended reader. The homepage and Story page also need a clearer long-term direction: Harshitha is deliberately moving toward enterprise-grade architecture, not presenting herself as a generic AI graduate.
 
 ## Design decision 1: first-page session intro
 
@@ -95,7 +95,7 @@ Add a minimal inline pre-hydration script in the root layout. It only checks the
 
 ## Design decision 2: engineering-dossier project model
 
-Extend `Project` with an optional `technicalDossier`. It is required for all three flagship projects and omitted for smaller builds that do not need the full treatment.
+Extend `Project` with a required `technicalDossier` for every published project. Smaller builds use the same evidence structure with fewer components and appropriately modest claims.
 
 The model contains:
 
@@ -139,7 +139,7 @@ interface TechnicalDossier {
 }
 ```
 
-The existing headline fields remain for cards, metadata, and smaller projects. The dossier fields provide the detailed technical layer without duplicating page components per project.
+The existing headline fields remain for cards and metadata. The dossier fields provide the detailed technical layer without duplicating page components per project.
 
 ## Design decision 3: flagship case-study content
 
@@ -244,6 +244,14 @@ The page must not describe generated content as automatically published without 
 
 ## Page hierarchy
 
+### Homepage and Story positioning
+
+Replace the abstract line `I build the layer between AI capability and operational trust.` with direct, career-shaped language:
+
+> I want to engineer enterprise systems that turn AI into dependable, observable infrastructure—designed for security, recovery, human control, and real operational scale.
+
+The homepage should state that Harshitha builds production-oriented automation across hiring, finance, and content operations. The Story page should explicitly describe her direction as enterprise architecture: secure integrations, durable workflows, permissions, data boundaries, observability, recovery, and human approval around consequential actions. This is an ambition supported by her recent systems work, not a claim that she already holds an enterprise-architect title.
+
 ### Work index
 
 Keep the current asymmetric flagship grid but make each card more concrete:
@@ -270,9 +278,14 @@ Render sections in this order:
 
 The page uses semantic `article`, `section`, `ol`, `dl`, and table-like structures. It does not add an animated diagramming library.
 
-### Smaller project detail pages
+### Additional project dossiers
 
-Projects without a dossier retain the existing Problem, Approach, Outcome, Contributions, and Technology template. This keeps academic and early projects proportional to their evidence.
+The AI Internship Recommendation Engine, Absolute Prosthetics, Pneumonia Detection with CNNs, and Currency Converter use the same dossier renderer. Their detail remains proportional to the code:
+
+- **AI Internship Recommendation Engine:** React/Vite profile flow, Python/FastAPI migration, explicit 40/30/20/10 weighted matching, Pydantic validation, 20-opportunity dataset, responsive shortlist UI, SMTP delivery, and download fallback.
+- **Absolute Prosthetics:** Next.js component architecture, responsive service hierarchy, branded header/footer, brochure downloads, testimonial media, WhatsApp contact path, metadata, and Vercel release iterations. Contribution language distinguishes Harshitha-authored commits from merged work by other contributors.
+- **Pneumonia Detection with CNNs:** dataset preparation, image preprocessing, convolution/pooling/dense stages, training/evaluation flow, and the explicit academic/non-diagnostic boundary. Claims remain limited to what the committed script and report support.
+- **Currency Converter:** Java Swing/AWT interface, event-driven input handling, rate lookup/conversion logic, validation behavior, and desktop application constraints.
 
 ## Responsive behavior
 
@@ -284,8 +297,7 @@ Projects without a dossier retain the existing Problem, Approach, Outcome, Contr
 
 ## Error and edge-case behavior
 
-- Missing `technicalDossier` data falls back to the current project template.
-- A flagship project without required dossier fields fails the content-verification script.
+- Missing `technicalDossier` data for any published project fails the content-verification script.
 - External evidence links remain optional; private systems use a disclosure note rather than a dead or misleading link.
 - Session-storage exceptions are caught and never block rendering.
 - The intro exit has a maximum timer so animation callbacks cannot leave the overlay stuck.
@@ -294,15 +306,16 @@ Projects without a dossier retain the existing Problem, Approach, Outcome, Contr
 
 ### Automated checks
 
-1. Extend `scripts/verify-portfolio-content.mjs` to require dossier fields for all flagship projects.
+1. Extend `scripts/verify-portfolio-content.mjs` to require dossier fields for every published project.
 2. Require the hiring dossier to contain the exact concepts: Microsoft Graph, candidate matching, duplicate-reply prevention, restart recovery, connection pooling, resume attachments, and Azure deployment.
 3. Require AgentMag's contribution-boundary language and reject sole-author phrasing.
 4. Require the Content Automation dossier to include citations, explicit approval, server-side credentials, LinkedIn, and fixed-recipient email testing.
-5. Reject inherited Harshith/JustPaid claims as before.
-6. Run `pnpm verify:content`.
-7. Run `pnpm exec tsc --noEmit`.
-8. Run `pnpm build`.
-9. Run `git diff --check` and a staged secret scan.
+5. Require the enterprise-architecture career direction while rejecting an `Enterprise Architect` job-title claim.
+6. Reject inherited Harshith/JustPaid claims as before.
+7. Run `pnpm verify:content`.
+8. Run `pnpm exec tsc --noEmit`.
+9. Run `pnpm build`.
+10. Run `git diff --check` and a staged secret scan.
 
 ### Runtime checks without Chrome
 
